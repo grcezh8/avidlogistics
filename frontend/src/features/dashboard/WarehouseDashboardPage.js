@@ -47,11 +47,11 @@ export default function WarehouseDashboardPage() {
   };
 
   return (
-    <div className="flex">
+    <div className="flex min-h-screen bg-gray-50">
       <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns']} />
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col">
         <TopBar title="Warehouse Staff Dashboard" />
-        <main className="p-4 space-y-4">
+        <main className="flex-1 p-6 space-y-6 fade-in">
           <NotificationsPanel alerts={alerts} />
           <QuickStatsGrid stats={stats} />
           <PackingJobsList jobs={packingJobs} />
