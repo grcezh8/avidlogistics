@@ -1,0 +1,1467 @@
+2025-07-09 15:51:06.668 -04:00 [ERR] An error occurred while initializing the database
+System.InvalidOperationException: No suitable constructor was found for entity type 'BDELRequest'. The following constructors had parameters that could not be bound to properties of the entity type: 
+    Cannot bind 'bdelReasonId' in 'BDELRequest(int? eventId, int? mapId, int? fromFacilityId, int? toFacilityId, int? bdelReasonId, int requestedBy, string notes)'
+Note that only mapped properties can be bound to constructor parameters. Navigations to related entities, including references to owned types, cannot be bound.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ConstructorBindingFactory.GetBindings[T](T type, Func`5 bindToProperty, Func`5 bind, InstantiationBinding& constructorBinding, InstantiationBinding& serviceOnlyBinding)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ConstructorBindingFactory.GetBindings(IMutableEntityType entityType, InstantiationBinding& constructorBinding, InstantiationBinding& serviceOnlyBinding)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ConstructorBindingConvention.ProcessModelFinalizing(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalizing(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalizing(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Program.<Main>$(String[] args) in C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi\Program.cs:line 155
+2025-07-09 15:51:06.789 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 15:51:06.810 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 15:51:06.823 -04:00 [INF] Creating key {93c16c10-3dfb-41d2-978b-c97225e18086} with creation date 2025-07-09 19:51:06Z, activation date 2025-07-09 19:51:06Z, and expiration date 2025-10-07 19:51:06Z.
+2025-07-09 15:51:06.842 -04:00 [INF] Writing data to file 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys\key-93c16c10-3dfb-41d2-978b-c97225e18086.xml'.
+2025-07-09 15:51:06.914 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 15:51:06.916 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 15:51:06.918 -04:00 [INF] Hosting environment: Development
+2025-07-09 15:51:06.919 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 15:51:16.035 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 15:51:16.088 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 15:51:16.094 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:51:16.108 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 73.475ms
+2025-07-09 15:51:16.135 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:51:16.157 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:51:16.378 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 242.7286ms
+2025-07-09 15:51:16.390 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:51:16.401 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 15:51:16.416 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:51:16.420 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 19.3561ms
+2025-07-09 15:51:16.434 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:51:16.445 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:51:16.450 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:51:16.478 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:51:16.563 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:51:16.594 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 107.1541ms
+2025-07-09 15:51:16.597 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:51:16.600 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 166.1889ms
+2025-07-09 15:51:18.078 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:51:18.094 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:51:18.106 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 27.77ms
+2025-07-09 15:51:18.117 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:51:18.127 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:51:18.140 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:51:18.145 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:51:18.150 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:51:18.239 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:51:18.246 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 86.2705ms
+2025-07-09 15:51:18.249 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:51:18.250 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 122.3317ms
+2025-07-09 15:53:49.265 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 15:53:49.281 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:49.283 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 18.3008ms
+2025-07-09 15:53:49.298 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:53:49.313 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:49.318 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 19.5967ms
+2025-07-09 15:53:49.331 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:53:49.339 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 15:53:49.352 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:49.354 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 15.2018ms
+2025-07-09 15:53:49.362 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:53:49.366 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:49.368 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:49.370 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:53:49.391 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:53:49.395 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 22.5401ms
+2025-07-09 15:53:49.401 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:49.405 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 43.822ms
+2025-07-09 15:53:49.903 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:53:49.908 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:49.914 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 11.4439ms
+2025-07-09 15:53:49.920 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:53:49.926 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:53:49.930 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:49.931 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:49.933 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:53:49.955 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:53:49.958 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 22.9584ms
+2025-07-09 15:53:49.963 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:49.967 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 41.1253ms
+2025-07-09 15:53:50.220 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:53:50.227 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:50.229 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 9.126ms
+2025-07-09 15:53:50.237 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:53:50.240 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:53:50.248 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:50.249 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:50.251 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:53:50.277 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:53:50.279 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 24.5672ms
+2025-07-09 15:53:50.281 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:50.282 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 42.1464ms
+2025-07-09 15:53:50.432 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:53:50.440 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:50.442 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 10.2318ms
+2025-07-09 15:53:50.450 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:53:50.454 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:53:50.456 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:53:50.457 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:50.459 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:53:50.475 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:53:50.479 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 16.4005ms
+2025-07-09 15:53:50.482 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:53:50.483 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 29.7963ms
+2025-07-09 15:55:02.972 -04:00 [ERR] An error occurred while initializing the database
+System.InvalidOperationException: No suitable constructor was found for entity type 'BDELRequestItem'. The following constructors had parameters that could not be bound to properties of the entity type: 
+    Cannot bind 'edid' in 'BDELRequestItem(int edid, string itemDescription, int quantity)'
+Note that only mapped properties can be bound to constructor parameters. Navigations to related entities, including references to owned types, cannot be bound.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ConstructorBindingFactory.GetBindings[T](T type, Func`5 bindToProperty, Func`5 bind, InstantiationBinding& constructorBinding, InstantiationBinding& serviceOnlyBinding)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ConstructorBindingFactory.GetBindings(IMutableEntityType entityType, InstantiationBinding& constructorBinding, InstantiationBinding& serviceOnlyBinding)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ConstructorBindingConvention.ProcessModelFinalizing(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalizing(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalizing(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Program.<Main>$(String[] args) in C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi\Program.cs:line 155
+2025-07-09 15:55:03.143 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 15:55:03.165 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 15:55:03.252 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 15:55:03.257 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 15:55:03.279 -04:00 [INF] Hosting environment: Development
+2025-07-09 15:55:03.287 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 15:55:45.017 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-09 15:55:45.050 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 15:55:45.070 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:55:45.091 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:55:45.153 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:55:45.177 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 77.1843ms
+2025-07-09 15:55:45.192 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:55:45.199 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 183.2273ms
+2025-07-09 15:56:41.304 -04:00 [ERR] An error occurred while initializing the database
+System.InvalidOperationException: No suitable constructor was found for entity type 'DeliveryManifest'. The following constructors had parameters that could not be bound to properties of the entity type: 
+    Cannot bind 'kitIds' in 'DeliveryManifest(int pollSiteId, List<int> kitIds)'
+Note that only mapped properties can be bound to constructor parameters. Navigations to related entities, including references to owned types, cannot be bound.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ConstructorBindingFactory.GetBindings[T](T type, Func`5 bindToProperty, Func`5 bind, InstantiationBinding& constructorBinding, InstantiationBinding& serviceOnlyBinding)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.ConstructorBindingFactory.GetBindings(IMutableEntityType entityType, InstantiationBinding& constructorBinding, InstantiationBinding& serviceOnlyBinding)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.ConstructorBindingConvention.ProcessModelFinalizing(IConventionModelBuilder modelBuilder, IConventionContext`1 context)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.ImmediateConventionScope.OnModelFinalizing(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Conventions.Internal.ConventionDispatcher.OnModelFinalizing(IConventionModelBuilder modelBuilder)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.Model.FinalizeModel()
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Program.<Main>$(String[] args) in C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi\Program.cs:line 155
+2025-07-09 15:56:41.391 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 15:56:41.411 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 15:56:41.495 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 15:56:41.499 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 15:56:41.501 -04:00 [INF] Hosting environment: Development
+2025-07-09 15:56:41.503 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 15:56:54.607 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 15:56:54.649 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 15:56:54.655 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:56:54.663 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 57.5895ms
+2025-07-09 15:56:54.691 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:56:54.710 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:56:54.735 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 43.8174ms
+2025-07-09 15:56:54.750 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:56:54.758 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 15:56:54.766 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:56:54.767 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 8.3328ms
+2025-07-09 15:56:54.769 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:56:54.775 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:56:54.779 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:56:54.797 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:56:54.869 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:56:54.909 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 98.9075ms
+2025-07-09 15:56:54.916 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:56:54.926 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 156.1419ms
+2025-07-09 15:56:58.438 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:56:58.444 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:56:58.460 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 22.6584ms
+2025-07-09 15:56:58.481 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:56:58.492 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:56:58.507 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:56:58.516 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:56:58.526 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:56:58.860 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:56:58.867 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 321.7171ms
+2025-07-09 15:56:58.873 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:56:58.879 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 386.0132ms
+2025-07-09 15:59:17.847 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 15:59:17.885 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 15:59:17.889 -04:00 [WRN] No store type was specified for the decimal property 'Tract' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 15:59:18.162 -04:00 [ERR] An error occurred while initializing the database
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.<>c__DisplayClass18_0.<Exists>b__0(DateTime giveUp)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.<>c__DisplayClass12_0`2.<Execute>b__0(DbContext _, TState s)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.ExecutionStrategyExtensions.Execute[TState,TResult](IExecutionStrategy strategy, TState state, Func`2 operation, Func`2 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.Exists(Boolean retryOnNotExists)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerDatabaseCreator.Exists()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabaseCreator.EnsureCreated()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Program.<Main>$(String[] args) in C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi\Program.cs:line 155
+2025-07-09 15:59:18.199 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 15:59:18.212 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 15:59:18.262 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 15:59:18.265 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 15:59:18.266 -04:00 [INF] Hosting environment: Development
+2025-07-09 15:59:18.267 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 15:59:30.415 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 15:59:30.457 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 15:59:30.460 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:59:30.468 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 54.5936ms
+2025-07-09 15:59:30.515 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:59:30.536 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:59:30.567 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 52.2393ms
+2025-07-09 15:59:30.586 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:59:30.595 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 15:59:30.611 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:59:30.616 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 20.8972ms
+2025-07-09 15:59:30.631 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:59:30.634 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:59:30.637 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:59:30.660 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:59:30.930 -04:00 [ERR] An error occurred using the connection to database '' on server ''.
+2025-07-09 15:59:30.941 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-07-09 15:59:30.952 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:59:30.984 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 312.0979ms
+2025-07-09 15:59:30.986 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:59:30.991 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 360.5799ms
+2025-07-09 15:59:32.237 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 15:59:32.245 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:59:32.249 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 12.6359ms
+2025-07-09 15:59:32.254 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 15:59:32.258 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 15:59:32.262 -04:00 [INF] CORS policy execution successful.
+2025-07-09 15:59:32.263 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:59:32.267 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 15:59:32.336 -04:00 [ERR] An error occurred using the connection to database '' on server ''.
+2025-07-09 15:59:32.342 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidOperationException: The ConnectionString property has not been initialized.
+   at Microsoft.Data.SqlClient.SqlConnection.PermissionDemand()
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.InternalOpenAsync(CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-07-09 15:59:32.356 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 15:59:32.360 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 86.4991ms
+2025-07-09 15:59:32.365 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 15:59:32.369 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 110.9888ms
+2025-07-09 16:00:45.744 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:00:45.779 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:00:45.781 -04:00 [WRN] No store type was specified for the decimal property 'Tract' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:00:46.196 -04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-09 16:00:46.246 -04:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-07-09 16:00:46.251 -04:00 [INF] Database initialized successfully
+2025-07-09 16:00:46.257 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 16:00:46.270 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 16:00:46.318 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 16:00:46.323 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 16:00:46.327 -04:00 [INF] Hosting environment: Development
+2025-07-09 16:00:46.328 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 16:00:53.306 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:00:53.346 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 16:00:53.350 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:00:53.356 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 51.1562ms
+2025-07-09 16:00:53.372 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:00:53.388 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:00:53.412 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 39.9578ms
+2025-07-09 16:00:53.430 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:00:53.439 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 16:00:53.443 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:00:53.444 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 4.5485ms
+2025-07-09 16:00:53.448 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:00:53.455 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:00:53.458 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:00:53.480 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:00:53.759 -04:00 [ERR] Failed executing DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[ElectionId], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:00:53.778 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7ade2d3f-4dbd-48a9-91ea-e29923e68b79
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7ade2d3f-4dbd-48a9-91ea-e29923e68b79
+Error Number:207,State:1,Class:16
+2025-07-09 16:00:53.793 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:00:53.820 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 330.0156ms
+2025-07-09 16:00:53.827 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:00:53.837 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 389.547ms
+2025-07-09 16:00:55.007 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:00:55.017 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:00:55.025 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 17.6239ms
+2025-07-09 16:00:55.068 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:00:55.078 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:00:55.088 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:00:55.092 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:00:55.097 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:00:55.165 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[ElectionId], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:00:55.171 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7ade2d3f-4dbd-48a9-91ea-e29923e68b79
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7ade2d3f-4dbd-48a9-91ea-e29923e68b79
+Error Number:207,State:1,Class:16
+2025-07-09 16:00:55.188 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:00:55.195 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 90.9617ms
+2025-07-09 16:00:55.201 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:00:55.205 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 127.5663ms
+2025-07-09 16:01:15.251 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - null null
+2025-07-09 16:01:15.251 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - null null
+2025-07-09 16:01:15.269 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:15.274 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:15.278 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - 204 null null 27.0931ms
+2025-07-09 16:01:15.280 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - 204 null null 28.5948ms
+2025-07-09 16:01:15.319 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - application/json null
+2025-07-09 16:01:15.322 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:15.324 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - 404 0 null 4.7635ms
+2025-07-09 16:01:15.331 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/Warehouse/shipments, Response status code: 404
+2025-07-09 16:01:15.334 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - application/json null
+2025-07-09 16:01:15.337 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:15.338 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - 404 0 null 4.3014ms
+2025-07-09 16:01:15.344 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/Warehouse/shipments, Response status code: 404
+2025-07-09 16:01:16.661 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/shipments/completed - null null
+2025-07-09 16:01:16.661 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/shipments/completed - null null
+2025-07-09 16:01:16.665 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:16.668 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:16.670 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/shipments/completed - 204 null null 8.8329ms
+2025-07-09 16:01:16.671 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/shipments/completed - 204 null null 9.2898ms
+2025-07-09 16:01:16.684 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/shipments/completed - application/json null
+2025-07-09 16:01:16.692 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:16.694 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/shipments/completed - 404 0 null 9.6588ms
+2025-07-09 16:01:16.701 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/shipments/completed, Response status code: 404
+2025-07-09 16:01:16.706 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/shipments/completed - application/json null
+2025-07-09 16:01:16.712 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:16.715 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/shipments/completed - 404 0 null 8.943ms
+2025-07-09 16:01:16.769 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/shipments/completed, Response status code: 404
+2025-07-09 16:01:19.765 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - null null
+2025-07-09 16:01:19.768 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - null null
+2025-07-09 16:01:19.806 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:19.834 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:19.837 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - 204 null null 72.9276ms
+2025-07-09 16:01:19.850 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - 204 null null 81.5917ms
+2025-07-09 16:01:19.880 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - application/json null
+2025-07-09 16:01:19.888 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:19.892 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - 404 0 null 12.125ms
+2025-07-09 16:01:19.901 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/maintenancequeue, Response status code: 404
+2025-07-09 16:01:19.905 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - application/json null
+2025-07-09 16:01:19.931 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:19.934 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - 404 0 null 28.7301ms
+2025-07-09 16:01:19.945 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/maintenancequeue, Response status code: 404
+2025-07-09 16:01:23.476 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - null null
+2025-07-09 16:01:23.477 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - null null
+2025-07-09 16:01:23.483 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:23.508 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:23.516 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - 204 null null 39.7472ms
+2025-07-09 16:01:23.520 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - 204 null null 43.0099ms
+2025-07-09 16:01:23.579 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - application/json null
+2025-07-09 16:01:23.601 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:23.646 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-09 16:01:23.675 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-09 16:01:23.681 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 101.2745ms
+2025-07-09 16:01:23.701 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - application/json null
+2025-07-09 16:01:23.729 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:23.735 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-09 16:01:23.750 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-09 16:01:23.766 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 64.9722ms
+2025-07-09 16:01:29.491 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - null null
+2025-07-09 16:01:29.491 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - null null
+2025-07-09 16:01:29.501 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:29.512 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - 204 null null 21.5514ms
+2025-07-09 16:01:29.510 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:29.529 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - application/json null
+2025-07-09 16:01:29.535 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/maintenancequeue?status=0 - 204 null null 43.5866ms
+2025-07-09 16:01:29.554 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:29.576 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - 404 0 null 46.3223ms
+2025-07-09 16:01:29.601 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/maintenancequeue, Response status code: 404
+2025-07-09 16:01:29.611 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - application/json null
+2025-07-09 16:01:29.625 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:29.627 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - 404 0 null 16.482ms
+2025-07-09 16:01:29.655 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/maintenancequeue, Response status code: 404
+2025-07-09 16:01:32.100 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - application/json null
+2025-07-09 16:01:32.132 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:32.150 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - 404 0 null 50.0081ms
+2025-07-09 16:01:32.243 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/maintenancequeue, Response status code: 404
+2025-07-09 16:01:32.284 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - application/json null
+2025-07-09 16:01:32.341 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:01:32.355 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/maintenancequeue?status=0 - 404 0 null 71.107ms
+2025-07-09 16:01:32.383 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/maintenancequeue, Response status code: 404
+2025-07-09 16:02:33.744 -04:00 [ERR] An error occurred while initializing the database
+System.InvalidOperationException: 'Asset.ElectionId' and 'Asset.FacilityId' are both mapped to column 'LocationID' in 'Assets', but the properties are contained within the same hierarchy. All properties on an entity type must be mapped to unique different columns.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedColumnsCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedColumnsCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Program.<Main>$(String[] args) in C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi\Program.cs:line 155
+2025-07-09 16:02:33.828 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 16:02:33.847 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 16:02:33.899 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 16:02:33.904 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 16:02:33.906 -04:00 [INF] Hosting environment: Development
+2025-07-09 16:02:33.908 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 16:03:55.021 -04:00 [ERR] An error occurred while initializing the database
+System.InvalidOperationException: 'Asset.Location' and 'Asset.RfidTag' are both mapped to column 'Notes' in 'Assets', but the properties are contained within the same hierarchy. All properties on an entity type must be mapped to unique different columns.
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedColumnsCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.ValidateSharedColumnsCompatibility(IReadOnlyList`1 mappedTypes, StoreObjectIdentifier& storeObject, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.ValidateSharedTableCompatibility(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.RelationalModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal.SqlServerModelValidator.Validate(IModel model, IDiagnosticsLogger`1 logger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelRuntimeInitializer.Initialize(IModel model, Boolean designTime, IDiagnosticsLogger`1 validationLogger)
+   at Microsoft.EntityFrameworkCore.Infrastructure.ModelSource.GetModel(DbContext context, ModelCreationDependencies modelCreationDependencies, Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.CreateModel(Boolean designTime)
+   at Microsoft.EntityFrameworkCore.Internal.DbContextServices.get_Model()
+   at Microsoft.EntityFrameworkCore.Infrastructure.EntityFrameworkServicesBuilder.<>c.<TryAddCoreServices>b__8_4(IServiceProvider p)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitCache(ServiceCallSite callSite, RuntimeResolverContext context, ServiceProviderEngineScope serviceProviderEngine, RuntimeResolverLock lockType)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitScopeCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.DynamicServiceProviderEngine.<>c__DisplayClass2_0.<RealizeService>b__0(ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at Microsoft.EntityFrameworkCore.DbContext.get_DbContextDependencies()
+   at Microsoft.EntityFrameworkCore.DbContext.get_ContextServices()
+   at Microsoft.EntityFrameworkCore.DbContext.get_InternalServiceProvider()
+   at Microsoft.EntityFrameworkCore.DbContext.Microsoft.EntityFrameworkCore.Infrastructure.IInfrastructure<System.IServiceProvider>.get_Instance()
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService(IInfrastructure`1 accessor, Type serviceType)
+   at Microsoft.EntityFrameworkCore.Infrastructure.Internal.InfrastructureExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.AccessorExtensions.GetService[TService](IInfrastructure`1 accessor)
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.get_Dependencies()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.EnsureCreated()
+   at Program.<Main>$(String[] args) in C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi\Program.cs:line 155
+2025-07-09 16:03:55.077 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 16:03:55.094 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 16:03:55.152 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 16:03:55.156 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 16:03:55.157 -04:00 [INF] Hosting environment: Development
+2025-07-09 16:03:55.158 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 16:04:43.393 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:04:43.436 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:04:43.438 -04:00 [WRN] No store type was specified for the decimal property 'Tract' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:04:43.813 -04:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-09 16:04:43.836 -04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-07-09 16:04:43.840 -04:00 [INF] Database initialized successfully
+2025-07-09 16:04:43.846 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 16:04:43.859 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 16:04:43.915 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 16:04:43.919 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 16:04:43.921 -04:00 [INF] Hosting environment: Development
+2025-07-09 16:04:43.924 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 16:05:24.310 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - null null
+2025-07-09 16:05:24.310 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - null null
+2025-07-09 16:05:24.347 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 16:05:24.353 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:24.353 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:24.361 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - 204 null null 52.0837ms
+2025-07-09 16:05:24.361 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - 204 null null 52.1367ms
+2025-07-09 16:05:24.376 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - application/json null
+2025-07-09 16:05:24.396 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:24.423 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-09 16:05:24.429 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-09 16:05:24.434 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 58.2497ms
+2025-07-09 16:05:24.445 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - application/json null
+2025-07-09 16:05:24.457 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:24.466 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-09 16:05:24.471 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-09 16:05:24.476 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 30.3973ms
+2025-07-09 16:05:26.391 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:05:26.391 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:05:26.402 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:26.420 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:26.425 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 33.9698ms
+2025-07-09 16:05:26.430 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 37.9265ms
+2025-07-09 16:05:26.451 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:05:26.484 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:26.493 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 40.7394ms
+2025-07-09 16:05:26.496 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 16:05:26.521 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:05:26.532 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:26.540 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:05:26.542 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 45.594ms
+2025-07-09 16:05:26.557 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:26.581 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:05:26.584 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 43.9807ms
+2025-07-09 16:05:26.596 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:26.609 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:05:26.617 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:05:26.700 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:05:27.672 -04:00 [ERR] Failed executing DbCommand (46ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AssetID], [a].[Type], [a].[Model], [a].[LocationID], [a].[CreatedDate], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[Type], [a].[SerialNumber]
+2025-07-09 16:05:27.748 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+2025-07-09 16:05:27.845 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:05:27.957 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:05:27.970 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:05:27.971 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 1243.2885ms
+2025-07-09 16:05:27.978 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:05:27.982 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:05:27.984 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:05:28.016 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 1434.7454ms
+2025-07-09 16:05:28.239 -04:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AssetID], [a].[Type], [a].[Model], [a].[LocationID], [a].[CreatedDate], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[Type], [a].[SerialNumber]
+2025-07-09 16:05:28.255 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+2025-07-09 16:05:28.353 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:05:28.363 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 361.3676ms
+2025-07-09 16:05:28.369 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:05:28.378 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 420.5533ms
+2025-07-09 16:07:21.994 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:07:22.003 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:22.006 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 11.218ms
+2025-07-09 16:07:22.022 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:07:22.035 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:22.039 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 17.7393ms
+2025-07-09 16:07:22.051 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:07:22.056 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 16:07:22.057 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:22.058 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 2.4524ms
+2025-07-09 16:07:22.061 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:07:22.063 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:22.064 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:22.065 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:07:22.075 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AssetID], [a].[Type], [a].[Model], [a].[LocationID], [a].[CreatedDate], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[Type], [a].[SerialNumber]
+2025-07-09 16:07:22.079 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+2025-07-09 16:07:22.090 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:07:22.092 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 25.5259ms
+2025-07-09 16:07:22.094 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:22.095 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 34.0542ms
+2025-07-09 16:07:22.782 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:07:22.794 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:22.796 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 14.4262ms
+2025-07-09 16:07:22.809 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:07:22.821 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:07:22.834 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:22.838 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:22.844 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:07:22.856 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AssetID], [a].[Type], [a].[Model], [a].[LocationID], [a].[CreatedDate], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[Type], [a].[SerialNumber]
+2025-07-09 16:07:22.869 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+2025-07-09 16:07:22.888 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:07:22.890 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 38.8688ms
+2025-07-09 16:07:22.892 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:22.894 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 73.1941ms
+2025-07-09 16:07:23.200 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:07:23.203 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:23.204 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 3.6525ms
+2025-07-09 16:07:23.206 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:07:23.208 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:07:23.210 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:23.211 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:23.212 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:07:23.215 -04:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AssetID], [a].[Type], [a].[Model], [a].[LocationID], [a].[CreatedDate], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[Type], [a].[SerialNumber]
+2025-07-09 16:07:23.221 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+2025-07-09 16:07:23.226 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:07:23.228 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 14.5979ms
+2025-07-09 16:07:23.229 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:23.230 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 22.1821ms
+2025-07-09 16:07:23.415 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:07:23.430 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:23.432 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 16.5227ms
+2025-07-09 16:07:23.440 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:07:23.443 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:07:23.451 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:07:23.453 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:23.458 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:07:23.465 -04:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[AssetID], [a].[Type], [a].[Model], [a].[LocationID], [a].[CreatedDate], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[Type], [a].[SerialNumber]
+2025-07-09 16:07:23.471 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'AssetID'.
+Invalid column name 'Type'.
+Invalid column name 'Model'.
+Invalid column name 'LocationID'.
+Invalid column name 'Type'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:fed7623c-639d-4f30-9408-a0b533c68be6
+Error Number:207,State:1,Class:16
+2025-07-09 16:07:23.486 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:07:23.491 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 29.6514ms
+2025-07-09 16:07:23.496 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:07:23.499 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 500 null application/json; charset=utf-8 56.1511ms
+2025-07-09 16:09:17.511 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:09:17.545 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:09:17.547 -04:00 [WRN] No store type was specified for the decimal property 'Tract' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-09 16:09:17.857 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-09 16:09:17.879 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-07-09 16:09:17.883 -04:00 [INF] Database initialized successfully
+2025-07-09 16:09:17.887 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-09 16:09:17.899 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-09 16:09:17.975 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-09 16:09:17.978 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-09 16:09:17.981 -04:00 [INF] Hosting environment: Development
+2025-07-09 16:09:17.982 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-09 16:09:39.646 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-09 16:09:39.678 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-09 16:09:39.696 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:09:39.713 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:09:39.960 -04:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:09:39.985 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-09 16:09:40.028 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 310.817ms
+2025-07-09 16:09:40.034 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:09:40.042 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 396.9762ms
+2025-07-09 16:09:54.154 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:09:54.170 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:09:54.180 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 25.8222ms
+2025-07-09 16:09:54.196 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:09:54.212 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:09:54.220 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 23.2825ms
+2025-07-09 16:09:54.236 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:09:54.245 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 16:09:54.258 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:09:54.262 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 16.2341ms
+2025-07-09 16:09:54.267 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:09:54.269 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:09:54.273 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:09:54.275 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:09:54.369 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:09:54.379 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-09 16:09:54.386 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 105.3388ms
+2025-07-09 16:09:54.389 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:09:54.391 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 123.7148ms
+2025-07-09 16:10:06.333 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets?status= - null null
+2025-07-09 16:10:06.340 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:10:06.343 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:10:06.396 -04:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:10:06.403 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-09 16:10:06.405 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 60.3303ms
+2025-07-09 16:10:06.407 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:10:06.409 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets?status= - 200 null application/json; charset=utf-8 76.5525ms
+2025-07-09 16:11:02.173 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-09 16:11:02.176 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:11:02.178 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:11:02.184 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:11:02.242 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-09 16:11:02.252 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 71.2754ms
+2025-07-09 16:11:02.254 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:11:02.256 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 83.1646ms
+2025-07-09 16:11:41.532 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - null null
+2025-07-09 16:11:41.532 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - null null
+2025-07-09 16:11:41.541 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:41.548 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - 204 null null 15.6234ms
+2025-07-09 16:11:41.546 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:41.559 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - application/json null
+2025-07-09 16:11:41.563 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/facilities - 204 null null 30.2117ms
+2025-07-09 16:11:41.568 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:41.597 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-09 16:11:41.613 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-09 16:11:41.617 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 58.3124ms
+2025-07-09 16:11:41.627 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - application/json null
+2025-07-09 16:11:41.634 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:41.640 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-09 16:11:41.647 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-09 16:11:41.651 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 23.2343ms
+2025-07-09 16:11:43.946 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/elections - null null
+2025-07-09 16:11:43.946 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/elections - null null
+2025-07-09 16:11:43.952 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:43.958 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:43.961 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/elections - 204 null null 14.7765ms
+2025-07-09 16:11:43.970 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - application/json null
+2025-07-09 16:11:43.962 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/elections - 204 null null 16.0594ms
+2025-07-09 16:11:43.979 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:43.987 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-09 16:11:44.007 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-07-09 16:11:44.068 -04:00 [ERR] Failed executing DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-07-09 16:11:44.113 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:8f9b7c64-ffe1-4f48-84e6-0e5df2e9d2ba
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:8f9b7c64-ffe1-4f48-84e6-0e5df2e9d2ba
+Error Number:207,State:1,Class:16
+2025-07-09 16:11:44.150 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:11:44.164 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 147.7185ms
+2025-07-09 16:11:44.167 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - application/json null
+2025-07-09 16:11:44.169 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-09 16:11:44.180 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:44.183 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 213.0068ms
+2025-07-09 16:11:44.186 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-09 16:11:44.201 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-07-09 16:11:44.214 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-07-09 16:11:44.227 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:8f9b7c64-ffe1-4f48-84e6-0e5df2e9d2ba
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:8f9b7c64-ffe1-4f48-84e6-0e5df2e9d2ba
+Error Number:207,State:1,Class:16
+2025-07-09 16:11:44.259 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-09 16:11:44.263 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 53.9416ms
+2025-07-09 16:11:44.269 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-09 16:11:44.275 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 108.8683ms
+2025-07-09 16:11:45.359 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:11:45.359 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - null null
+2025-07-09 16:11:45.364 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.370 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 11.5827ms
+2025-07-09 16:11:45.367 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.383 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/inventory/dashboard? - 204 null null 24.1714ms
+2025-07-09 16:11:45.381 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:11:45.402 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.406 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 25.1569ms
+2025-07-09 16:11:45.410 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-09 16:11:45.424 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:11:45.439 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.453 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - application/json null
+2025-07-09 16:11:45.468 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.457 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 47.434ms
+2025-07-09 16:11:45.475 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/inventory/dashboard? - 404 0 null 21.9718ms
+2025-07-09 16:11:45.485 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:11:45.493 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/inventory/dashboard, Response status code: 404
+2025-07-09 16:11:45.506 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.512 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:11:45.514 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:11:45.524 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:11:45.541 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-09 16:11:45.549 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 29.6968ms
+2025-07-09 16:11:45.553 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - application/json null
+2025-07-09 16:11:45.560 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:11:45.566 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 81.4773ms
+2025-07-09 16:11:45.564 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:45.579 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:11:45.582 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-09 16:11:45.596 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[FacilityId], [a].[Location], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Status] = 1
+ORDER BY [a].[AssetType], [a].[SerialNumber]
+2025-07-09 16:11:45.608 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-09 16:11:45.618 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 26.3189ms
+2025-07-09 16:11:45.625 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-09 16:11:45.633 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 79.7992ms
+2025-07-09 16:11:49.656 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - null null
+2025-07-09 16:11:49.656 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - null null
+2025-07-09 16:11:49.663 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:49.680 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:49.684 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - 204 null null 27.9809ms
+2025-07-09 16:11:49.687 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/Warehouse/shipments?status=Ready - 204 null null 30.9573ms
+2025-07-09 16:11:49.709 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - application/json null
+2025-07-09 16:11:49.720 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:49.730 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - 404 0 null 21.2985ms
+2025-07-09 16:11:49.739 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/Warehouse/shipments, Response status code: 404
+2025-07-09 16:11:49.766 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - application/json null
+2025-07-09 16:11:49.773 -04:00 [INF] CORS policy execution successful.
+2025-07-09 16:11:49.779 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/Warehouse/shipments?status=Ready - 404 0 null 12.8521ms
+2025-07-09 16:11:49.792 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/api/Warehouse/shipments, Response status code: 404
+2025-07-09 16:20:35.093 -04:00 [INF] Application is shutting down...
