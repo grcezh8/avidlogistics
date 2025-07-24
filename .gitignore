@@ -12,3 +12,4 @@ obj/
 # Others
 *.log
 *.tmp
+frontend/node_modules/
