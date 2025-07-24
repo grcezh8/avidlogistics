@@ -1,7 +1,24 @@
 {
+  "name": "avid-logistics",
+  "version": "1.0.0",
+  "description": "AVID Logistics - Election Asset Management System",
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "test": "cd frontend && npm test",
+    "install-frontend": "cd frontend && npm install",
+    "dev": "cd frontend && npm start"
+  },
   "dependencies": {
     "axios": "^1.10.0",
     "lucide-react": "^0.511.0",
     "react-router-dom": "^7.7.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grcezh8/avidlogistics.git"
+  },
+  "author": "",
+  "license": "ISC"
 }
