@@ -4,28 +4,28 @@ export default function QuickStatsGrid({ stats }) {
   const getIcon = (label) => {
     const icons = {
       'Total Assets': (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
         </svg>
       ),
       'In Storage': (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h1.586a1 1 0 01.707.293l1.414 1.414a1 1 0 00.707.293H15a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
         </svg>
       ),
       'Assigned': (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
       'Out for Delivery': (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
         </svg>
       )
     };
     return icons[label] || (
-      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
       </svg>
     );
@@ -62,7 +62,7 @@ export default function QuickStatsGrid({ stats }) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 slide-up">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 fade-in">
       <StatCard 
         label="Total Assets" 
         value={stats.totalAssets} 
@@ -92,20 +92,20 @@ export default function QuickStatsGrid({ stats }) {
 }
 
 const StatCard = ({ label, value, icon, colors }) => (
-  <div className="modern-stat-card">
-    <div className="flex items-center justify-between mb-4">
-      <div className={`p-3 rounded-lg ${colors.bg}`}>
+  <div className="clean-stat-card">
+    <div className="flex items-center justify-between mb-3">
+      <div className={`p-2 rounded ${colors.bg}`}>
         <div className={colors.icon}>
           {icon}
         </div>
       </div>
       <div className="text-right">
-        <div className={`modern-stat-number ${colors.number}`}>
+        <div className={`clean-stat-number ${colors.number}`}>
           {value || 0}
         </div>
       </div>
     </div>
-    <div className="modern-stat-label">
+    <div className="clean-stat-label">
       {label}
     </div>
     <div className="mt-2 flex items-center text-xs text-gray-500">

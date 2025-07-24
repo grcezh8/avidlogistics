@@ -51,7 +51,7 @@ export default function WarehouseDashboardPage() {
       <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns']} />
       <div className="flex-1 flex flex-col">
         <TopBar title="Warehouse Staff Dashboard" />
-        <main className="flex-1 p-6 space-y-6 fade-in">
+        <main className="flex-1 p-4 space-y-4 fade-in">
           <NotificationsPanel alerts={alerts} />
           <QuickStatsGrid stats={stats} />
           <PackingJobsList jobs={packingJobs} />
