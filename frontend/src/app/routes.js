@@ -1,8 +1,12 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import LoginPage from '../pages/LoginPage';
 import WarehouseDashboardPage from '../features/dashboard/WarehouseDashboardPage';
+import InventoryPage from '../features/inventory/InventoryPage';
+import ManifestsPage from '../features/manifests/ManifestsPage';
+import DeliveriesPage from '../features/deliveries/DeliveriesPage';
+import AlertsPage from '../features/alerts/AlertsPage';
 
 export default function AppRoutes() {
   const { user, loading } = useAuth();
@@ -33,7 +37,17 @@ export default function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="*" element={<WarehouseDashboardPage />} />
+      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+      <Route path="/dashboard" element={<WarehouseDashboardPage />} />
+      <Route path="/inventory" element={<InventoryPage />} />
+      <Route path="/manifests" element={<ManifestsPage />} />
+      <Route path="/deliveries" element={<DeliveriesPage />} />
+      <Route path="/alerts" element={<AlertsPage />} />
+      {/* Existing routes that might be implemented later */}
+      <Route path="/packing" element={<WarehouseDashboardPage />} />
+      <Route path="/returns" element={<WarehouseDashboardPage />} />
+      {/* Catch all route */}
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
   );
 }
