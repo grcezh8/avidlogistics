@@ -117,5 +117,22 @@ namespace AVIDLogistics.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        public async Task<List<Asset>> GetAssetsAsync(string? status, int? facilityId)
+        {
+            var query = _context.Assets.AsQueryable();
+
+            if (!string.IsNullOrEmpty(status) && Enum.TryParse<AssetStatus>(status, true, out var assetStatus))
+            {
+                query = query.Where(a => a.Status == assetStatus);
+            }
+
+            if (facilityId.HasValue)
+            {
+                query = query.Where(a => a.FacilityId == facilityId.Value);
+            }
+
+            return await query.ToListAsync();
+        }
     }
 }

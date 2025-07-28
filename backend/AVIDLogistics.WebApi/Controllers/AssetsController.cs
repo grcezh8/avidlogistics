@@ -21,21 +21,11 @@ namespace AVIDLogistics.WebApi.Controllers
         /// Get all assets
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> GetAssets([FromQuery] string? status = null)
+        public async Task<IActionResult> GetAssets([FromQuery] string? status = null, [FromQuery] int? facilityId = null)
         {
             try
             {
-                IEnumerable<Asset> assets;
-                
-                if (!string.IsNullOrEmpty(status) && Enum.TryParse<AssetStatus>(status, out var assetStatus))
-                {
-                    assets = await _assetRepository.GetByStatusAsync(assetStatus);
-                }
-                else
-                {
-                    assets = await _assetRepository.GetAvailableAssetsAsync();
-                }
-                
+                var assets = await _assetRepository.GetAssetsAsync(status, facilityId);
                 return Ok(assets);
             }
             catch (Exception ex)
