@@ -98,14 +98,14 @@ export default function InventoryPage() {
             </div>
           </div>
 
-          {/* Inventory Table */}
+          {/* Assets Table */}
           <div className="bg-white shadow rounded-lg overflow-hidden">
             {loading ? (
               <div className="p-8 text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
                   <Package className="h-8 w-8 text-gray-400 animate-pulse" />
                 </div>
-                <p className="text-gray-500">Loading inventory...</p>
+                <p className="text-gray-500">Loading assets...</p>
               </div>
             ) : (
               <div className="overflow-x-auto">
@@ -113,16 +113,19 @@ export default function InventoryPage() {
                   <thead className="bg-gray-50">
                     <tr>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Item Name
+                        Serial Number
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Category
+                        Asset Type
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Quantity
+                        Barcode
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Status
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Condition
                       </th>
                       <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Location
@@ -133,27 +136,30 @@ export default function InventoryPage() {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
-                    {filteredInventory.map((item) => (
-                      <tr key={item.id} className="hover:bg-gray-50">
+                    {filteredInventory.map((asset) => (
+                      <tr key={asset.id} className="hover:bg-gray-50">
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="flex items-center">
                             <Package className="h-5 w-5 text-gray-400 mr-3" />
-                            <div className="text-sm font-medium text-gray-900">{item.name}</div>
+                            <div className="text-sm font-medium text-gray-900">{asset.serialNumber || asset.name}</div>
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.category}
+                          {asset.assetType || asset.category}
                         </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                          {item.quantity}
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          {asset.barcode || '-'}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadge(item.status)}`}>
-                            {item.status}
+                          <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadge(asset.status)}`}>
+                            {asset.status}
                           </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                          {item.location}
+                          {asset.condition || 'Good'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          {asset.location || `Facility ${asset.facilityId || ''}`}
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <button className="text-blue-600 hover:text-blue-900 mr-3">Edit</button>
