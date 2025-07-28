@@ -2,31 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { Package, Search, Filter, Plus } from 'lucide-react';
 import Sidebar from '../../components/Sidebar';
 import TopBar from '../../components/TopBar';
-import { getInventoryStatusReport } from '../reports/reportService';
+import { getAssets } from '../assets/assetsService';
+import { getFacilities } from '../facilities/facilitiesService';
 
 export default function InventoryPage() {
+  const [assets, setAssets] = useState([]);
   const [inventory, setInventory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
 
   useEffect(() => {
-    loadInventory();
-  }, []);
+    loadAssets();
+  }, [filterStatus]);
 
-  const loadInventory = async () => {
+  const loadAssets = async () => {
     try {
       setLoading(true);
-      const response = await getInventoryStatusReport();
-      // Mock inventory data for now
-      const mockInventory = [
-        { id: 1, name: 'Voting Machine', category: 'Equipment', quantity: 150, status: 'Available', location: 'Warehouse A' },
-        { id: 2, name: 'Ballot Scanner', category: 'Equipment', quantity: 75, status: 'In Use', location: 'Warehouse B' },
-        { id: 3, name: 'Privacy Screen', category: 'Supplies', quantity: 200, status: 'Available', location: 'Warehouse A' },
-        { id: 4, name: 'Ballot Box', category: 'Equipment', quantity: 100, status: 'Maintenance', location: 'Maintenance Center' },
-        { id: 5, name: 'Voting Booth', category: 'Equipment', quantity: 80, status: 'Available', location: 'Warehouse C' },
-      ];
-      setInventory(mockInventory);
+      const facilitiesRes = await getFacilities();
+      setFacilities(facilitiesRes.data || []);
+      const assetsRes = await getAssets(filterStatus === 'all' ? '' : filterStatus);
+      setAssets(assetsRes.data || []);
     } catch (error) {
       console.error('Error loading inventory:', error);
     } finally {
@@ -34,12 +30,21 @@ export default function InventoryPage() {
     }
   };
 
-  const filteredInventory = inventory.filter(item => {
-    const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         item.category.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredAssets = assets.filter(asset => {
+    const matchesSearch = asset.serialNumber.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    asset.assetType.toLowerCase().includes(searchTerm.toLowerCase()) || asset.barcode?.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesFilter = filterStatus === 'all' || item.status === filterStatus;
     return matchesSearch && matchesFilter;
   });
+
+  const getFacilityName = (facilityId) => {
+    const facility = facilities.find(f => f.id === facilityId);
+    return facility ? facility.name : `Facility${facilityId}`;
+  };
+
+  const formatAssetType = (type) => {
+    return type.replace(/([A-Z])/g, ' $1').trim();
+  };
 
   const getStatusBadge = (status) => {
     const badges = {
@@ -92,7 +97,7 @@ export default function InventoryPage() {
                 </select>
                 <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2">
                   <Plus className="h-5 w-5" />
-                  Add Item
+                  Add Asset
                 </button>
               </div>
             </div>
