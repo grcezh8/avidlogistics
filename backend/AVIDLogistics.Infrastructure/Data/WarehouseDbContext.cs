@@ -29,31 +29,49 @@ namespace AVIDLogistics.Infrastructure.Data
         public DbSet<Report> Reports { get; set; }
         public DbSet<Alert> Alerts { get; set; }
 
+        // Chain of Custody entities
+        public DbSet<Signature> Signatures { get; set; }
+        public DbSet<CoCFormStatus> CoCFormStatuses { get; set; }
+
         // Legacy entities for compatibility
         public DbSet<Kit> Kits { get; set; }
+        public DbSet<AssetKit> AssetKits { get; set; }
         public DbSet<DeliveryManifest> DeliveryManifests { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configure Asset entity to map to actual database table structure
+            // Asset entity configuration to match ACTUAL database schema
             modelBuilder.Entity<Asset>(entity =>
             {
                 entity.ToTable("Assets");
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Id).HasColumnName("Id");
-                entity.Property(e => e.SerialNumber).IsRequired().HasMaxLength(100).HasColumnName("SerialNumber");
-                entity.Property(e => e.AssetType).IsRequired().HasMaxLength(50).HasColumnName("AssetType");
-                entity.Property(e => e.Barcode).HasMaxLength(100).HasColumnName("Barcode");
-                entity.Property(e => e.RfidTag).HasMaxLength(100).HasColumnName("RfidTag");
-                entity.Property(e => e.Location).HasMaxLength(200).HasColumnName("Location");
-                entity.Property(e => e.Status).HasColumnName("Status");
-                entity.Property(e => e.Condition).HasColumnName("Condition");
-                entity.Property(e => e.FacilityId).HasColumnName("FacilityId");
-                entity.Ignore(e => e.ElectionId); // Ignore ElectionId since it doesn't exist in database
-                entity.Property(e => e.RegisteredDate).HasColumnName("RegisteredDate");
+                
+                // Map to actual database columns
+                entity.Property(e => e.Id).HasColumnName("Id"); // Explicitly map to Id column
+                entity.Property(e => e.SerialNumber).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.AssetType).IsRequired().HasMaxLength(100); // Updated to match migration
+                entity.Property(e => e.Barcode).HasMaxLength(50);
+                entity.Property(e => e.RfidTag).HasMaxLength(50);
+                entity.Property(e => e.Location).HasMaxLength(200); // Updated to match migration
+                entity.Property(e => e.Status).HasConversion<int>();
+                entity.Property(e => e.Condition).HasConversion<int>();
+                entity.Property(e => e.RegisteredDate);
+                entity.Property(e => e.FacilityId);
+                entity.Property(e => e.CreatedDate);
+                entity.Property(e => e.ModifiedDate);
+                
                 entity.HasIndex(e => e.SerialNumber).IsUnique();
+                
+                // Apply filtered unique indexes for nullable columns
+                entity.HasIndex(e => e.Barcode).IsUnique().HasFilter("[Barcode] IS NOT NULL");
+                entity.HasIndex(e => e.RfidTag).IsUnique().HasFilter("[RfidTag] IS NOT NULL");
+                
+                // Configure the many-to-many relationship through AssetKit
+                entity.HasMany(e => e.AssetKits)
+                      .WithOne(ak => ak.Asset)
+                      .HasForeignKey(ak => ak.AssetId);
             });
 
             // Configure Election entity
@@ -88,6 +106,9 @@ namespace AVIDLogistics.Infrastructure.Data
             {
                 entity.HasKey(e => e.ManifestItemId);
                 entity.Property(e => e.SealNumber).HasMaxLength(50);
+                entity.Property(e => e.IsPacked).IsRequired();
+                entity.Property(e => e.PackedBy);
+                entity.Property(e => e.PackedDate);
             });
 
             // Configure ChainOfCustodyEvent entity
@@ -136,7 +157,9 @@ namespace AVIDLogistics.Infrastructure.Data
                 entity.HasKey(e => e.FacilityId);
                 entity.Property(e => e.Name).IsRequired().HasMaxLength(200);
                 entity.Property(e => e.Address).IsRequired().HasMaxLength(500);
-                entity.Property(e => e.ContactInfo).HasMaxLength(500);
+                entity.Property(e => e.ContactPerson).HasMaxLength(100);
+                entity.Property(e => e.ContactPhone).HasMaxLength(50);
+                entity.Property(e => e.ContactEmail).HasMaxLength(255);
                 entity.HasIndex(e => e.Name).IsUnique();
             });
 
@@ -146,7 +169,138 @@ namespace AVIDLogistics.Infrastructure.Data
                 entity.HasKey(e => e.PollSiteId);
                 entity.Property(e => e.SiteNumber).IsRequired().HasMaxLength(50);
                 entity.Property(e => e.FacilityName).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.HouseNumber).HasMaxLength(50);
+                entity.Property(e => e.StreetName).HasMaxLength(200);
+                entity.Property(e => e.City).HasMaxLength(100);
+                entity.Property(e => e.State).HasMaxLength(50);
+                entity.Property(e => e.ZipCode).HasMaxLength(20);
+                entity.Property(e => e.MAddress1).HasMaxLength(200);
+                entity.Property(e => e.MCity).HasMaxLength(100);
+                entity.Property(e => e.MState).HasMaxLength(50);
+                entity.Property(e => e.MZipCode).HasMaxLength(20);
                 entity.HasIndex(e => e.SiteNumber).IsUnique();
+            });
+
+            // Configure BDELRequest entity
+            modelBuilder.Entity<BDELRequest>(entity =>
+            {
+                entity.HasKey(e => e.RequestId);
+                entity.Property(e => e.RequestNumber).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Notes).HasMaxLength(1000);
+                entity.HasIndex(e => e.RequestNumber).IsUnique();
+            });
+
+            // Configure BDELRequestItem entity
+            modelBuilder.Entity<BDELRequestItem>(entity =>
+            {
+                entity.HasKey(e => e.ItemId);
+                entity.Property(e => e.ItemDescription).IsRequired().HasMaxLength(500);
+            });
+
+            // Configure ElectionEvent entity
+            modelBuilder.Entity<ElectionEvent>(entity =>
+            {
+                entity.HasKey(e => e.EventId);
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.EventType).IsRequired().HasMaxLength(100);
+            });
+
+            // Configure PoliticalDistrict entity
+            modelBuilder.Entity<PoliticalDistrict>(entity =>
+            {
+                entity.HasKey(e => e.DistrictId);
+                entity.Property(e => e.DistrictKey).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Description).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.DistrictType).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Abbreviation).HasMaxLength(10);
+                entity.HasIndex(e => e.DistrictKey).IsUnique();
+            });
+
+            // Configure AuditSession entity
+            modelBuilder.Entity<AuditSession>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.SessionNumber).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Location).IsRequired().HasMaxLength(200);
+                entity.HasIndex(e => e.SessionNumber).IsUnique();
+            });
+
+            // Configure Kit entity
+            modelBuilder.Entity<Kit>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id).HasColumnName("KitID"); // Map to actual database column
+                entity.Property(e => e.Name).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.Type).HasColumnName("KitType").HasConversion<int>();
+                entity.Property(e => e.Status).HasConversion<int>();
+                entity.Property(e => e.PollSiteId).HasColumnName("PollSiteID");
+                entity.Property(e => e.CreatedDate);
+                
+                // Configure the many-to-many relationship through AssetKit
+                entity.HasMany(e => e.AssetKits)
+                      .WithOne(ak => ak.Kit)
+                      .HasForeignKey(ak => ak.KitId);
+            });
+
+            // Configure AssetKit junction entity
+            modelBuilder.Entity<AssetKit>(entity =>
+            {
+                entity.HasKey(ak => new { ak.AssetId, ak.KitId });
+                
+                entity.Property(ak => ak.AssignedDate).IsRequired();
+                entity.Property(ak => ak.AssignedBy).IsRequired();
+                
+                // Configure relationships
+                entity.HasOne(ak => ak.Asset)
+                      .WithMany(a => a.AssetKits)
+                      .HasForeignKey(ak => ak.AssetId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                      
+                entity.HasOne(ak => ak.Kit)
+                      .WithMany(k => k.AssetKits)
+                      .HasForeignKey(ak => ak.KitId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                      
+                // Indexes for performance
+                entity.HasIndex(ak => ak.KitId);
+                entity.HasIndex(ak => ak.AssignedDate);
+            });
+
+            // Configure Signature entity
+            modelBuilder.Entity<Signature>(entity =>
+            {
+                entity.HasKey(e => e.SignatureId);
+                entity.Property(e => e.SignedBy).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.SignatureImageUrl).HasMaxLength(500);
+                entity.Property(e => e.SignatureType).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.IpAddress).HasMaxLength(45);
+                entity.Property(e => e.UserAgent).HasMaxLength(500);
+                entity.Property(e => e.IsValid).IsRequired();
+                
+                entity.HasOne(e => e.ChainOfCustodyEvent)
+                      .WithMany()
+                      .HasForeignKey(e => e.ChainOfCustodyEventId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
+
+            // Configure CoCFormStatus entity
+            modelBuilder.Entity<CoCFormStatus>(entity =>
+            {
+                entity.HasKey(e => e.CoCFormStatusId);
+                entity.Property(e => e.FormUrl).IsRequired().HasMaxLength(500);
+                entity.Property(e => e.Status).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.RequiredSignatures).IsRequired();
+                entity.Property(e => e.CompletedSignatures).IsRequired();
+                entity.Property(e => e.AccessCount).IsRequired();
+                
+                entity.HasOne(e => e.Manifest)
+                      .WithMany()
+                      .HasForeignKey(e => e.ManifestId)
+                      .OnDelete(DeleteBehavior.Cascade);
+                      
+                entity.HasIndex(e => e.FormUrl).IsUnique();
+                entity.HasIndex(e => e.ManifestId).IsUnique();
+                entity.HasIndex(e => e.Status);
             });
 
             // Configure other entities as needed...

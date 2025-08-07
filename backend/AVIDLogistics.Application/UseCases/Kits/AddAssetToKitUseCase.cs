@@ -27,7 +27,7 @@ public class AddAssetToKitUseCase
         if (asset.Status != AssetStatus.Available)
             throw new InvalidAssetStateException($"Asset {assetId} is not available");
 
-        kit.AddAsset(assetId);
+        kit.AddAsset(assetId, 1); // TODO: Get actual user ID
         asset.AssignToKit(kitId);
 
         await _kitRepository.UpdateAsync(kit);

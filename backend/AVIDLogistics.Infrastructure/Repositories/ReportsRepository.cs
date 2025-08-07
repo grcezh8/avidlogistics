@@ -25,10 +25,10 @@ namespace AVIDLogistics.Infrastructure.Repositories
                 f.Name,
                 _context.Assets.Count(a => a.FacilityId == f.FacilityId),
                 _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.Available),
-                _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.Assigned),
-                _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.InTransit),
-                _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.Deployed),
-                _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.InMaintenance)
+                _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.Pending),
+                0, // InTransit - now part of Pending
+                _context.Assets.Count(a => a.FacilityId == f.FacilityId && a.Status == AssetStatus.Unavailable),
+                0  // InMaintenance - now part of Unavailable
     ));
 
 

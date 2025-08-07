@@ -15,6 +15,9 @@ namespace AVIDLogistics.Domain.Entities
         public int CreatedBy { get; private set; }
         public DateTime CreatedDate { get; private set; }
 
+        // Parameterless constructor for Entity Framework
+        protected ElectionEvent() { }
+
         public ElectionEvent(string name, DateTime eventDate, string eventType, int mapId, int createdBy)
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));

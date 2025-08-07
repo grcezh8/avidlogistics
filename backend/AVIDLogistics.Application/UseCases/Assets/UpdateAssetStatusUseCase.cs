@@ -14,7 +14,7 @@ public class UpdateAssetStatusUseCase
         _notificationGateway = notificationGateway;
     }
 
-    public async Task ExecuteAsync(int assetId, AssetStatus newStatus, string location = null)
+    public async Task ExecuteAsync(int assetId, AssetStatus newStatus, string? location = null)
     {
         var asset = await _assetRepository.GetByIdAsync(assetId);
         if (asset == null)

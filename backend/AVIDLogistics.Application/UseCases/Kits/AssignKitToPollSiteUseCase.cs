@@ -38,10 +38,13 @@ public class AssignKitToPollSiteUseCase
 
         // Get all assets in kit
         var assets = new List<Asset>();
-        foreach (var assetId in kit.AssetIds)
+        foreach (var assetId in kit.GetAssetIds())
         {
             var asset = await _assetRepository.GetByIdAsync(assetId);
-            assets.Add(asset);
+            if (asset != null)
+            {
+                assets.Add(asset);
+            }
         }
 
         // Assign kit to poll site

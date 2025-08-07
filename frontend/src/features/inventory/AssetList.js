@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, RefreshCw, Package, AlertCircle, Truck, Wrench, MapPin, CheckCircle, XCircle, Clock } from 'lucide-react';
-import apiService from '../../services/apiClient';
+import apiClient from '../../services/apiClient';
 
 const AssetList = ({ refreshTrigger }) => {
   const [assets, setAssets] = useState([]);
@@ -42,18 +42,11 @@ const AssetList = ({ refreshTrigger }) => {
     setError(null);
     
     try {
-      // Try inventory dashboard first, fallback to assets endpoint
-      let data;
-      try {
-        data = await apiService.getInventoryDashboard();
-      } catch (inventoryError) {
-        console.warn('Inventory dashboard not available, trying assets endpoint:', inventoryError.message);
-        // Fallback to assets endpoint
-        data = await apiService.getAvailableAssets();
-      }
-      setAssets(data);
+      // Get all assets from the API
+      const response = await apiClient.get('/assets');
+      setAssets(response.data || []);
     } catch (err) {
-      setError(err.message);
+      setError(err.response?.data?.message || err.message);
       console.error('Failed to load assets:', err);
     } finally {
       setIsLoading(false);
@@ -96,13 +89,13 @@ const AssetList = ({ refreshTrigger }) => {
       console.log(`Updating asset ${assetId} to status ${newStatus}`);
       
       // Send the status as integer to match backend enum
-      await apiService.updateAssetStatus(assetId, parseInt(newStatus));
+      await apiClient.put(`/assets/${assetId}/status`, { status: parseInt(newStatus) });
       console.log(`Successfully updated asset ${assetId} to status ${newStatus}`);
       
       await loadAssets(); // Refresh the list
     } catch (err) {
       console.error('Status update failed:', err);
-      setError(`Failed to update asset status: ${err.message}`);
+      setError(`Failed to update asset status: ${err.response?.data?.message || err.message}`);
       
       // Refresh the list anyway to show current state
       await loadAssets();

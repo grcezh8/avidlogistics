@@ -5,22 +5,22 @@ namespace AVIDLogistics.Domain.Entities
     public class PollSite
     {
         public int PollSiteId { get; private set; }
-        public string SiteNumber { get; private set; }
-        public string FacilityName { get; private set; }
+        public string SiteNumber { get; private set; } = string.Empty;
+        public string FacilityName { get; private set; } = string.Empty;
         public int BuildingTypeId { get; private set; }
         public int FacilityStatusId { get; private set; }
         public int FacilityAccessibilityId { get; private set; }
-        public string HouseNumber { get; private set; }
-        public string StreetName { get; private set; }
-        public string City { get; private set; }
-        public string State { get; private set; }
-        public string ZipCode { get; private set; }
+        public string HouseNumber { get; private set; } = string.Empty;
+        public string StreetName { get; private set; } = string.Empty;
+        public string City { get; private set; } = string.Empty;
+        public string State { get; private set; } = string.Empty;
+        public string ZipCode { get; private set; } = string.Empty;
         public int CountyId { get; private set; }
         public int PolicePrecinctId { get; private set; }
-        public string MAddress1 { get; private set; }
-        public string MCity { get; private set; }
-        public string MState { get; private set; }
-        public string MZipCode { get; private set; }
+        public string MAddress1 { get; private set; } = string.Empty;
+        public string MCity { get; private set; } = string.Empty;
+        public string MState { get; private set; } = string.Empty;
+        public string MZipCode { get; private set; } = string.Empty;
         public decimal? Latitude { get; private set; }
         public decimal? Longitude { get; private set; }
         public bool IsActive { get; private set; }
@@ -28,6 +28,11 @@ namespace AVIDLogistics.Domain.Entities
         public DateTime CreatedDate { get; private set; }
         public int? ModifiedBy { get; private set; }
         public DateTime? ModifiedDate { get; private set; }
+
+        // Parameterless constructor for EF Core
+        private PollSite()
+        {
+        }
 
         public PollSite(string siteNumber, string facilityName, int buildingTypeId,
             int facilityStatusId, int facilityAccessibilityId, string houseNumber,

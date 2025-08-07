@@ -7,10 +7,15 @@ namespace AVIDLogistics.Domain.Entities
         public int ManifestItemId { get; private set; }
         public int ManifestId { get; private set; }
         public int AssetId { get; private set; }
-        public string SealNumber { get; private set; }
+        public string SealNumber { get; private set; } = string.Empty;
         public bool IsPacked { get; private set; }
         public int? PackedBy { get; private set; }
         public DateTime? PackedDate { get; private set; }
+
+        // Parameterless constructor for EF Core
+        private ManifestItem()
+        {
+        }
 
         public ManifestItem(int manifestId, int assetId, string sealNumber)
         {

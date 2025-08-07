@@ -3,7 +3,6 @@ import Sidebar from '../../components/Sidebar';
 import TopBar from '../../components/TopBar';
 import NotificationsPanel from '../../components/NotificationsPanel';
 import PackingJobsList from '../../components/PackingJobsList';
-import QuickStatsGrid from '../../components/QuickStatsGrid';
 import ElectionPanel from '../../components/ElectionPanel';
 import TasksPanel from '../../components/TasksPanel';
 
@@ -12,21 +11,16 @@ import {
 } from '../../features/auth/authService';
 import {
   getMaintenanceAlerts,
-  getMissingSealsAlerts,
-  getOverdueReturnsAlerts
+  getMissingSealsAlerts
 } from '../../features/alerts/alertsService';
 import {
   getManifests
 } from '../../features/manifests/manifestService';
-import {
-  getInventoryStatusReport
-} from '../../features/reports/reportService';
 
 export default function WarehouseDashboardPage() {
   const [user, setUser] = useState({});
   const [alerts, setAlerts] = useState([]);
   const [packingJobs, setPackingJobs] = useState([]);
-  const [stats, setStats] = useState({});
   const [selectedElection, setSelectedElection] = useState(null);
   const [tasks, setTasks] = useState([]);
 
@@ -46,25 +40,20 @@ export default function WarehouseDashboardPage() {
       setUser(userRes.data);
 
       // Load all types of alerts
-      const [maintenanceRes, sealsRes, returnsRes] = await Promise.all([
+      const [maintenanceRes, sealsRes] = await Promise.all([
         getMaintenanceAlerts(),
-        getMissingSealsAlerts(),
-        getOverdueReturnsAlerts()
+        getMissingSealsAlerts()
       ]);
 
       // Combine and format alerts
       const allAlerts = [
         ...(maintenanceRes.data || []).map(a => ({ ...a, type: 'maintenance', severity: 'high' })),
-        ...(sealsRes.data || []).map(a => ({ ...a, type: 'delivery', severity: 'medium' })),
-        ...(returnsRes.data || []).map(a => ({ ...a, type: 'task', severity: 'low' }))
+        ...(sealsRes.data || []).map(a => ({ ...a, type: 'delivery', severity: 'medium' }))
       ];
       setAlerts(allAlerts);
 
       const manifestsRes = await getManifests('Created');
       setPackingJobs(manifestsRes.data);
-
-      const statsRes = await getInventoryStatusReport();
-      setStats(statsRes.data);
     } catch (err) {
       console.error(err);
     }
@@ -99,7 +88,7 @@ export default function WarehouseDashboardPage() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns', 'Manifests', 'Deliveries', 'Alerts']} />
+      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Custody']} />
       <div className="flex-1 flex flex-col">
         <TopBar title="Warehouse Dashboard" />
         <main className="flex-1 p-4 fade-in">
@@ -113,11 +102,6 @@ export default function WarehouseDashboardPage() {
             <div className="lg:col-span-2">
               <NotificationsPanel alerts={alerts} />
             </div>
-          </div>
-
-          {/* Stats Grid */}
-          <div className="mb-4">
-            <QuickStatsGrid stats={stats} />
           </div>
 
           {/* Tasks and Packing Jobs Grid */}

@@ -41,7 +41,7 @@ public class PackingService
             if (asset == null)
                 throw new AssetNotFoundException($"Asset {item.AssetId} not found");
 
-            if (asset.Status != AssetStatus.Available && asset.Status != AssetStatus.Assigned)
+            if (asset.Status != AssetStatus.Available && asset.Status != AssetStatus.Pending)
                 throw new InvalidAssetStateException($"Asset {item.AssetId} is not available for packing");
         }
     }

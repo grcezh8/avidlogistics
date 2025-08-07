@@ -68,5 +68,5 @@ namespace AVIDLogistics.Infrastructure.Repositories
                 await _context.SaveChangesAsync();
             }
         }
-}
+    }
 }

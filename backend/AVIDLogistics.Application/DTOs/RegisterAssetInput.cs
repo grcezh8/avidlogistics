@@ -3,7 +3,10 @@ namespace AVIDLogistics.Application.DTOs
     public record RegisterAssetInput(
         string SerialNumber,
         string AssetType,
-        string Barcode,
-        string RfidTag
+        string? Barcode = null,
+        string? RfidTag = null,
+        string? Condition = null,
+        string? Location = null,
+        int Quantity = 1
     );
 }

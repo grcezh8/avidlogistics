@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Plus, Package, AlertCircle, CheckCircle } from 'lucide-react';
-// import consolidatedApiService from '../services/consolidatedApi';
-import apiService from '../../services/apiClient'; // Keep for fallback
+import apiClient from '../../services/apiClient';
 
 const AssetRegistrationForm = ({ onAssetRegistered }) => {
   const [formData, setFormData] = useState({
-    itemId: '',
-    sku: '',
+    serialNumber: '',
+    assetType: '',
     barcode: '',
-    facilityId: 1,
-    reorderLevel: '',
-    maxStockLevel: '',
-    storageLocation: '',
-    notes: '',
-    initialQuantity: 1,
-    registeredBy: 1
+    rfidTag: ''
   });
 
   const [facilities, setFacilities] = useState([]);
@@ -28,15 +21,12 @@ const AssetRegistrationForm = ({ onAssetRegistered }) => {
 
   const loadFacilities = async () => {
     try {
-      const response = await apiService.request('/facilities');
-      setFacilities(response);
+      const response = await apiClient.get('/facilities');
+      setFacilities(response.data || []);
     } catch (err) {
-      console.warn('Facilities API not available, using mock data:', err.message);
-      setFacilities([
-        { Id: 1, FacilityName: 'Main Warehouse' },
-        { Id: 2, FacilityName: 'East Warehouse' },
-        { Id: 3, FacilityName: 'South Distribution Center' }
-      ]);
+      console.warn('Facilities API not available:', err.message);
+      // For now, we'll just have empty facilities
+      setFacilities([]);
     }
   };
 
@@ -55,63 +45,40 @@ const AssetRegistrationForm = ({ onAssetRegistered }) => {
     setSuccess(null);
 
     // Validation
-    if (!formData.itemId.trim()) {
-      setError('Item ID is required');
+    if (!formData.serialNumber.trim()) {
+      setError('Serial number is required');
       setLoading(false);
       return;
     }
 
-    if (!formData.initialQuantity || formData.initialQuantity < 0) {
-      setError('Initial quantity must be a positive number');
+    if (!formData.assetType.trim()) {
+      setError('Asset type is required');
       setLoading(false);
       return;
     }
 
     try {
-      // Prepare data for API
-      const assetData = {
-        ItemId: formData.itemId,
-        SKU: formData.sku || null,
-        Barcode: formData.barcode || null,
-        FacilityId: parseInt(formData.facilityId),
-        ReorderLevel: parseInt(formData.reorderLevel) || 0,
-        MaxStockLevel: parseInt(formData.maxStockLevel) || 100,
-        StorageLocation: formData.storageLocation || null,
-        Notes: formData.notes || null,
-        InitialQuantity: parseInt(formData.initialQuantity),
-        RegisteredBy: formData.registeredBy
-      };
+      // Create the asset using apiClient directly
+      const response = await apiClient.post('/assets', formData);
 
-      // Use legacy API directly since consolidated API is not available
-      const response = await apiService.request('/warehouse/assets/register', {
-        method: 'POST',
-        body: JSON.stringify(assetData)
-      });
-
-      setSuccess(`Asset "${formData.itemId}" registered successfully with ${formData.initialQuantity} units in inventory!`);
+      setSuccess(`Asset "${formData.serialNumber}" registered successfully!`);
       
       // Reset form
       setFormData({
-        itemId: '',
-        sku: '',
+        serialNumber: '',
+        assetType: '',
         barcode: '',
-        facilityId: 1,
-        reorderLevel: '',
-        maxStockLevel: '',
-        storageLocation: '',
-        notes: '',
-        initialQuantity: 1,
-        registeredBy: 1
+        rfidTag: ''
       });
 
       // Notify parent component
       if (onAssetRegistered) {
-        onAssetRegistered(response);
+        onAssetRegistered(response.data);
       }
 
     } catch (error) {
       console.error('Asset registration failed:', error);
-      setError(`Failed to register asset: ${error.message}`);
+      setError(`Failed to register asset: ${error.response?.data?.message || error.message}`);
     } finally {
       setLoading(false);
     }
@@ -144,52 +111,42 @@ const AssetRegistrationForm = ({ onAssetRegistered }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Item ID *
+                Serial Number *
               </label>
               <input
                 type="text"
-                name="itemId"
-                value={formData.itemId}
+                name="serialNumber"
+                value={formData.serialNumber}
                 onChange={handleInputChange}
                 required
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter item ID"
+                placeholder="Enter serial number"
               />
             </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Initial Quantity *
+                Asset Type *
               </label>
-              <input
-                type="number"
-                name="initialQuantity"
-                value={formData.initialQuantity}
+              <select
+                name="assetType"
+                value={formData.assetType}
                 onChange={handleInputChange}
                 required
-                min="0"
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter initial quantity"
-              />
+              >
+                <option value="">Select asset type</option>
+                <option value="Ballot Box">Ballot Box</option>
+                <option value="Voting Machine">Voting Machine</option>
+                <option value="Poll Book">Poll Book</option>
+                <option value="Seal">Seal</option>
+                <option value="Backup Battery">Backup Battery</option>
+              </select>
             </div>
           </div>
 
           {/* Identification */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                SKU
-              </label>
-              <input
-                type="text"
-                name="sku"
-                value={formData.sku}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Enter SKU"
-              />
-            </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
                 Barcode
@@ -203,89 +160,20 @@ const AssetRegistrationForm = ({ onAssetRegistered }) => {
                 placeholder="Enter barcode"
               />
             </div>
-          </div>
-
-          {/* Location and Facility */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Facility
-              </label>
-              <select
-                name="facilityId"
-                value={formData.facilityId}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              >
-                {facilities.map(facility => (
-                  <option key={facility.Id} value={facility.Id}>
-                    {facility.FacilityName}
-                  </option>
-                ))}
-              </select>
-            </div>
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
-                Storage Location
+                RFID Tag
               </label>
               <input
                 type="text"
-                name="storageLocation"
-                value={formData.storageLocation}
+                name="rfidTag"
+                value={formData.rfidTag}
                 onChange={handleInputChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="e.g., A1-B2-C3"
+                placeholder="Enter RFID tag"
               />
             </div>
-          </div>
-
-          {/* Stock Levels */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Reorder Level
-              </label>
-              <input
-                type="number"
-                name="reorderLevel"
-                value={formData.reorderLevel}
-                onChange={handleInputChange}
-                min="0"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Minimum stock level"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                Maximum Stock Level
-              </label>
-              <input
-                type="number"
-                name="maxStockLevel"
-                value={formData.maxStockLevel}
-                onChange={handleInputChange}
-                min="0"
-                className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                placeholder="Maximum stock level"
-              />
-            </div>
-          </div>
-
-          {/* Notes */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
-              Notes
-            </label>
-            <textarea
-              name="notes"
-              value={formData.notes}
-              onChange={handleInputChange}
-              rows={3}
-              className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              placeholder="Additional notes about the asset"
-            />
           </div>
 
           {/* Submit Button */}

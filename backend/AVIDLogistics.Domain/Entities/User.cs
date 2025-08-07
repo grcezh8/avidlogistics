@@ -15,6 +15,8 @@ namespace AVIDLogistics.Domain.Entities
         public DateTime? LastLoginDate { get; private set; }
         public string PasswordHash { get; set; }
 
+        // Parameterless constructor for Entity Framework
+        protected User() { }
 
         public User(string userName, string email, string firstName, string lastName, string role)
         {

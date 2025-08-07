@@ -5,7 +5,6 @@ import TopBar from '../../components/TopBar';
 import { 
   getMaintenanceAlerts, 
   getMissingSealsAlerts, 
-  getOverdueReturnsAlerts,
   getUnresolvedDiscrepanciesAlerts 
 } from './alertsService';
 import { getFacilities } from '../facilities/facilityService';
@@ -28,10 +27,9 @@ export default function AlertsPage() {
       setLoading(true);
       
       // Load all alert types
-      const [maintenanceRes, sealsRes, returnsRes, discrepanciesRes] = await Promise.all([
+      const [maintenanceRes, sealsRes, discrepanciesRes] = await Promise.all([
         getMaintenanceAlerts(),
         getMissingSealsAlerts(),
-        getOverdueReturnsAlerts(),
         getUnresolvedDiscrepanciesAlerts()
       ]);
 
@@ -55,16 +53,6 @@ export default function AlertsPage() {
           title: 'Missing Seals Alert',
           message: a.message || `Seal missing for manifest ${a.manifestId}`,
           facility: a.facility || 'Distribution Center',
-          timestamp: a.timestamp || new Date().toISOString()
-        })),
-        ...(returnsRes.data || []).map(a => ({ 
-          ...a, 
-          id: `return-${a.id || Math.random()}`,
-          type: 'task', 
-          severity: 'medium',
-          title: 'Overdue Return',
-          message: a.message || `Equipment overdue from ${a.location}`,
-          facility: a.facility || 'Various',
           timestamp: a.timestamp || new Date().toISOString()
         })),
         ...(discrepanciesRes.data || []).map(a => ({ 
@@ -202,7 +190,7 @@ export default function AlertsPage() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns', 'Manifests', 'Deliveries', 'Alerts']} />
+      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Deliveries', 'Alerts', 'Custody']} />
       <div className="flex-1 flex flex-col">
         <TopBar title="Alerts & Notifications" />
         <main className="flex-1 p-6">

@@ -13,7 +13,7 @@ public class CreatePoliticalDistrictUseCase
     }
 
     public async Task<int> ExecuteAsync(string districtKey, string description, string districtType,
-        string abbreviation = null, int? parentDistrictId = null)
+        string? abbreviation = null, int? parentDistrictId = null)
     {
         if (string.IsNullOrWhiteSpace(districtKey))
             throw new ArgumentException("District key is required");

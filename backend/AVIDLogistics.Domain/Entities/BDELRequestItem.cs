@@ -10,6 +10,9 @@ namespace AVIDLogistics.Domain.Entities
         public string ItemDescription { get; private set; }
         public int Quantity { get; private set; }
 
+        // Parameterless constructor for Entity Framework
+        protected BDELRequestItem() { }
+
         public BDELRequestItem(int requestId, int edid, string itemDescription, int quantity)
         {
             RequestId = requestId;

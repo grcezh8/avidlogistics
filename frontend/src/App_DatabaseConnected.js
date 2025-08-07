@@ -312,7 +312,6 @@ const WarehouseStaffDashboard = ({ user, onLogout }) => {
     { id: 'register', label: 'Register Assets', icon: Plus },
     { id: 'inventory', label: 'Inventory', icon: Box },
     { id: 'packing', label: 'Packing Lists', icon: ClipboardList },
-    { id: 'returns', label: 'Process Returns', icon: RefreshCw },
     { id: 'reports', label: 'Reports', icon: FileText }
   ];
 
@@ -398,7 +397,6 @@ const WarehouseStaffDashboard = ({ user, onLogout }) => {
           {activeView === 'register' && <AssetRegistrationView assetTypes={assetTypes} locations={locations} onAssetCreated={() => window.location.reload()} />}
           {activeView === 'inventory' && <InventoryView assets={assets} statusDefinitions={statusDefinitions} />}
           {activeView === 'packing' && <PackingListsView />}
-          {activeView === 'returns' && <ReturnsProcessingView />}
           {activeView === 'reports' && <WarehouseReportsView />}
         </div>
       </main>
@@ -449,10 +447,6 @@ const WarehouseDashboardView = ({ stats }) => {
           <button className="p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50">
             <Package className="h-8 w-8 text-gray-600 mx-auto mb-2" />
             <p className="text-sm">Pack Kit</p>
-          </button>
-          <button className="p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50">
-            <RefreshCw className="h-8 w-8 text-gray-600 mx-auto mb-2" />
-            <p className="text-sm">Process Return</p>
           </button>
           <button className="p-4 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 hover:bg-blue-50">
             <FileText className="h-8 w-8 text-gray-600 mx-auto mb-2" />
@@ -735,18 +729,6 @@ const PackingListsView = () => (
   </div>
 );
 
-const ReturnsProcessingView = () => (
-  <div className="bg-white rounded-lg shadow p-6">
-    <h3 className="text-lg font-medium mb-4">Process Returns</h3>
-    <div className="text-center py-12">
-      <Scan className="h-16 w-16 text-gray-400 mx-auto mb-4" />
-      <p className="text-gray-600 mb-4">Scan returned asset</p>
-      <button className="px-6 py-3 bg-blue-600 text-white rounded-lg">
-        Start Scanning
-      </button>
-    </div>
-  </div>
-);
 
 const WarehouseReportsView = () => {
   const reportTypes = [

@@ -1,7 +1,7 @@
-using Microsoft.EntityFrameworkCore;
-using AVIDLogistics.Domain.Entities;
 using AVIDLogistics.Application.Interfaces;
+using AVIDLogistics.Domain.Entities;
 using AVIDLogistics.Infrastructure.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace AVIDLogistics.Infrastructure.Repositories
 {
@@ -14,34 +14,6 @@ namespace AVIDLogistics.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<ScannedForm> GetByIdAsync(int scannedFormId)
-        {
-            return await _context.ScannedForms.FindAsync(scannedFormId);
-        }
-
-        public async Task<List<ScannedForm>> GetAllAsync()
-        {
-            return await _context.ScannedForms
-                .OrderByDescending(sf => sf.UploadedDate)
-                .ToListAsync();
-        }
-
-        public async Task<List<ScannedForm>> GetByElectionIdAsync(int electionId)
-        {
-            return await _context.ScannedForms
-                .Where(sf => sf.ElectionId == electionId)
-                .OrderByDescending(sf => sf.UploadedDate)
-                .ToListAsync();
-        }
-
-        public async Task<List<ScannedForm>> GetByAssetIdAsync(int assetId)
-        {
-            return await _context.ScannedForms
-                .Where(sf => sf.AssetId == assetId)
-                .OrderByDescending(sf => sf.UploadedDate)
-                .ToListAsync();
-        }
-
         public async Task<int> SaveAsync(ScannedForm scannedForm)
         {
             _context.ScannedForms.Add(scannedForm);
@@ -49,10 +21,34 @@ namespace AVIDLogistics.Infrastructure.Repositories
             return scannedForm.ScannedFormId;
         }
 
-        public async Task AddAsync(ScannedForm scannedForm)
+        public async Task<ScannedForm?> GetByIdAsync(int scannedFormId)
         {
-            _context.ScannedForms.Add(scannedForm);
-            await _context.SaveChangesAsync();
+            return await _context.ScannedForms
+                .FirstOrDefaultAsync(sf => sf.ScannedFormId == scannedFormId);
+        }
+
+        public async Task<IEnumerable<ScannedForm>> GetByElectionIdAsync(int electionId)
+        {
+            return await _context.ScannedForms
+                .Where(sf => sf.ElectionId == electionId)
+                .OrderByDescending(sf => sf.UploadedDate)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<ScannedForm>> GetByAssetIdAsync(int assetId)
+        {
+            return await _context.ScannedForms
+                .Where(sf => sf.AssetId == assetId)
+                .OrderByDescending(sf => sf.UploadedDate)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<ScannedForm>> GetByFormTypeAsync(string formType)
+        {
+            return await _context.ScannedForms
+                .Where(sf => sf.FormType == formType)
+                .OrderByDescending(sf => sf.UploadedDate)
+                .ToListAsync();
         }
 
         public async Task UpdateAsync(ScannedForm scannedForm)
@@ -63,10 +59,10 @@ namespace AVIDLogistics.Infrastructure.Repositories
 
         public async Task DeleteAsync(int scannedFormId)
         {
-            var form = await _context.ScannedForms.FindAsync(scannedFormId);
-            if (form != null)
+            var scannedForm = await GetByIdAsync(scannedFormId);
+            if (scannedForm != null)
             {
-                _context.ScannedForms.Remove(form);
+                _context.ScannedForms.Remove(scannedForm);
                 await _context.SaveChangesAsync();
             }
         }

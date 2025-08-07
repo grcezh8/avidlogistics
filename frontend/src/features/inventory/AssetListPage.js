@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Filter, Scan, Package, MapPin, Shield, Eye, Edit, AlertCircle } from 'lucide-react';
+import apiClient from '../../services/apiClient';
 
 const WarehouseInventory = () => {
   const [assets, setAssets] = useState([]);
@@ -30,22 +31,30 @@ const WarehouseInventory = () => {
       setLoading(true);
       
       // Fetch assets
-      const assetsResponse = await fetch('/api/assets');
-      const assetsData = await assetsResponse.json();
+      const assetsResponse = await apiClient.get('/assets');
+      const assetsData = assetsResponse.data || [];
       setAssets(assetsData);
 
-      // Fetch elections
-      const electionsResponse = await fetch('/api/elections');
-      const electionsData = await electionsResponse.json();
-      setElections(electionsData);
+      // Fetch elections - may not exist yet
+      try {
+        const electionsResponse = await apiClient.get('/elections');
+        setElections(electionsResponse.data || []);
+      } catch (err) {
+        console.warn('Elections API not available:', err);
+        setElections([]);
+      }
 
-      // Fetch locations
-      const locationsResponse = await fetch('/api/locations');
-      const locationsData = await locationsResponse.json();
-      setLocations(locationsData);
+      // Fetch locations/facilities
+      try {
+        const locationsResponse = await apiClient.get('/facilities');
+        setLocations(locationsResponse.data || []);
+      } catch (err) {
+        console.warn('Facilities API not available:', err);
+        setLocations([]);
+      }
 
       // Extract unique asset types
-      const types = [...new Set(assetsData.map(asset => asset.type))];
+      const types = [...new Set(assetsData.map(asset => asset.assetType))];
       setAssetTypes(types);
 
     } catch (error) {
@@ -61,15 +70,15 @@ const WarehouseInventory = () => {
     // Search filter
     if (searchTerm) {
       filtered = filtered.filter(asset =>
-        asset.serialNumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        asset.type.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (asset.model && asset.model.toLowerCase().includes(searchTerm.toLowerCase()))
+        asset.serialNumber?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        asset.assetType?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        asset.barcode?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
     // Type filter
     if (filters.type) {
-      filtered = filtered.filter(asset => asset.type === filters.type);
+      filtered = filtered.filter(asset => asset.assetType === filters.type);
     }
 
     // Status filter
@@ -79,7 +88,7 @@ const WarehouseInventory = () => {
 
     // Location filter
     if (filters.location) {
-      filtered = filtered.filter(asset => asset.locationID === parseInt(filters.location));
+      filtered = filtered.filter(asset => asset.facilityId === parseInt(filters.location));
     }
 
     setFilteredAssets(filtered);
@@ -94,14 +103,30 @@ const WarehouseInventory = () => {
   };
 
   const getStatusColor = (status) => {
+    // Map backend status enum values to colors
     const colors = {
-      'In Storage': 'green',
-      'Assigned': 'blue',
-      'Out for Delivery': 'orange',
-      'Delivered': 'purple',
-      'In Maintenance': 'red'
+      0: 'gray',    // Unregistered
+      1: 'green',   // Available
+      2: 'blue',    // Assigned
+      3: 'orange',  // In Transit
+      4: 'purple',  // Deployed
+      5: 'red',     // In Maintenance
+      6: 'gray'     // Out of Service
     };
     return colors[status] || 'gray';
+  };
+
+  const getStatusName = (status) => {
+    const statusMap = {
+      0: 'Unregistered',
+      1: 'Available',
+      2: 'Assigned',
+      3: 'In Transit',
+      4: 'Deployed',
+      5: 'In Maintenance',
+      6: 'Out of Service'
+    };
+    return statusMap[status] || 'Unknown';
   };
 
   const AssetCard = ({ asset }) => (
@@ -112,15 +137,15 @@ const WarehouseInventory = () => {
             <Package className="h-5 w-5 text-gray-500 mr-2" />
             <h3 className="text-lg font-semibold text-gray-900">{asset.serialNumber}</h3>
           </div>
-          <p className="text-sm text-gray-600 mb-1">{asset.type} {asset.model && `- ${asset.model}`}</p>
+          <p className="text-sm text-gray-600 mb-1">{asset.assetType}</p>
           <div className="flex items-center text-sm text-gray-500 mb-2">
             <MapPin className="h-4 w-4 mr-1" />
-            <span>{asset.locationName || 'Unknown Location'}</span>
+            <span>{asset.location || 'Warehouse'}</span>
           </div>
         </div>
         <div className="flex flex-col items-end">
           <span className={`px-3 py-1 rounded-full text-xs font-medium bg-${getStatusColor(asset.status)}-100 text-${getStatusColor(asset.status)}-800`}>
-            {asset.status}
+            {getStatusName(asset.status)}
           </span>
         </div>
       </div>
@@ -128,14 +153,14 @@ const WarehouseInventory = () => {
       <div className="flex justify-between items-center pt-3 border-t border-gray-100">
         <div className="flex space-x-2">
           <button
-            onClick={() => window.location.href = `/warehouse/asset/${asset.assetID}`}
+            onClick={() => window.location.href = `/warehouse/asset/${asset.id}`}
             className="flex items-center px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600"
           >
             <Eye className="h-4 w-4 mr-1" />
             View
           </button>
           <button
-            onClick={() => window.location.href = `/warehouse/asset/${asset.assetID}/edit`}
+            onClick={() => window.location.href = `/warehouse/asset/${asset.id}/edit`}
             className="flex items-center px-3 py-1 bg-gray-500 text-white text-sm rounded hover:bg-gray-600"
           >
             <Edit className="h-4 w-4 mr-1" />
@@ -177,11 +202,12 @@ const WarehouseInventory = () => {
             className="w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"
           >
             <option value="">All Statuses</option>
-            <option value="In Storage">In Storage</option>
-            <option value="Assigned">Assigned</option>
-            <option value="Out for Delivery">Out for Delivery</option>
-            <option value="Delivered">Delivered</option>
-            <option value="In Maintenance">In Maintenance</option>
+            <option value="1">Available</option>
+            <option value="2">Assigned</option>
+            <option value="3">In Transit</option>
+            <option value="4">Deployed</option>
+            <option value="5">In Maintenance</option>
+            <option value="6">Out of Service</option>
           </select>
         </div>
         
@@ -194,8 +220,8 @@ const WarehouseInventory = () => {
           >
             <option value="">All Locations</option>
             {locations.map(location => (
-              <option key={location.locationID} value={location.locationID}>
-                {location.name}
+              <option key={location.id} value={location.id}>
+                {location.facilityName || location.name}
               </option>
             ))}
           </select>
@@ -239,7 +265,7 @@ const WarehouseInventory = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
             <input
               type="text"
-              placeholder="Search by serial number, type, or model..."
+              placeholder="Search by serial number, type, or barcode..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg"
@@ -280,7 +306,7 @@ const WarehouseInventory = () => {
       {filteredAssets.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredAssets.map((asset) => (
-            <AssetCard key={asset.assetID} asset={asset} />
+            <AssetCard key={asset.id} asset={asset} />
           ))}
         </div>
       ) : (
@@ -298,14 +324,14 @@ const WarehouseInventory = () => {
 
       {/* Quick Stats */}
       <div className="mt-8 grid grid-cols-2 md:grid-cols-5 gap-4">
-        {['In Storage', 'Assigned', 'Out for Delivery', 'Delivered', 'In Maintenance'].map(status => {
-          const count = assets.filter(asset => asset.status === status).length;
+        {[1, 2, 3, 4, 5, 6].map(statusCode => {
+          const count = assets.filter(asset => asset.status === statusCode).length;
           return (
-            <div key={status} className="bg-white rounded-lg shadow-md p-4 text-center">
-              <div className={`text-2xl font-bold text-${getStatusColor(status)}-600 mb-1`}>
+            <div key={statusCode} className="bg-white rounded-lg shadow-md p-4 text-center">
+              <div className={`text-2xl font-bold text-${getStatusColor(statusCode)}-600 mb-1`}>
                 {count}
               </div>
-              <div className="text-sm text-gray-600">{status}</div>
+              <div className="text-sm text-gray-600">{getStatusName(statusCode)}</div>
             </div>
           );
         })}

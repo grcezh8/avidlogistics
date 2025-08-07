@@ -22,6 +22,9 @@ namespace AVIDLogistics.Domain.Entities
         public IReadOnlyList<AuditScanRecord> ScanRecords => _scanRecords.AsReadOnly();
         public IReadOnlyList<DiscrepancyRecord> Discrepancies => _discrepancies.AsReadOnly();
 
+        // Parameterless constructor for Entity Framework
+        protected AuditSession() { }
+
         public AuditSession(int auditorId, string location)
         {
             AuditorId = auditorId;

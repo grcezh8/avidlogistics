@@ -23,6 +23,9 @@ namespace AVIDLogistics.Domain.Entities
         public DateTime? DecisionDate { get; private set; }
         public IReadOnlyList<BDELRequestItem> Items => _items.AsReadOnly();
 
+        // Parameterless constructor for Entity Framework
+        protected BDELRequest() { }
+
         public BDELRequest(int? eventId, int? mapId, int? fromFacilityId,
             int? toFacilityId, int? bdelReasonId, int requestedBy, string notes)
         {

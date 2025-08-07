@@ -4,6 +4,7 @@ import Sidebar from '../../components/Sidebar';
 import TopBar from '../../components/TopBar';
 import { getManifests, getManifestById } from './manifestService';
 import { getElections } from '../elections/electionsService';
+import { generateManifestCoCForm } from '../chainofcustody/chainOfCustodyService';
 
 export default function ManifestsPage() {
   const [manifests, setManifests] = useState([]);
@@ -12,10 +13,26 @@ export default function ManifestsPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
   const [filterElection, setFilterElection] = useState('all');
+  const [generatingCoC, setGeneratingCoC] = useState({});
 
   useEffect(() => {
     loadData();
   }, []);
+
+  const handleGenerateCoC = async (manifestId) => {
+    setGeneratingCoC(prev => ({ ...prev, [manifestId]: true }));
+    try {
+      const response = await generateManifestCoCForm(manifestId);
+      alert(`CoC form generated successfully! URL: ${response.data.formUrl}`);
+      // Optionally open the form in a new tab
+      window.open(response.data.formUrl, '_blank');
+    } catch (error) {
+      console.error('Error generating CoC form:', error);
+      alert('Failed to generate CoC form: ' + (error.response?.data?.message || error.message));
+    } finally {
+      setGeneratingCoC(prev => ({ ...prev, [manifestId]: false }));
+    }
+  };
 
   const loadData = async () => {
     try {
@@ -106,7 +123,7 @@ export default function ManifestsPage() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns', 'Manifests', 'Deliveries', 'Alerts']} />
+      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Manifests', 'Deliveries', 'Alerts','Custody']} />
       <div className="flex-1 flex flex-col">
         <TopBar title="Manifests Management" />
         <main className="flex-1 p-6">
@@ -271,7 +288,14 @@ export default function ManifestsPage() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                           <button className="text-blue-600 hover:text-blue-900 mr-3">View</button>
-                          <button className="text-blue-600 hover:text-blue-900">Track</button>
+                          <button className="text-blue-600 hover:text-blue-900 mr-3">Track</button>
+                          <button 
+                            onClick={() => handleGenerateCoC(manifest.id)}
+                            disabled={generatingCoC[manifest.id]}
+                            className="text-green-600 hover:text-green-900 disabled:opacity-50"
+                          >
+                            {generatingCoC[manifest.id] ? 'Generating...' : 'Generate CoC'}
+                          </button>
                         </td>
                       </tr>
                     ))}

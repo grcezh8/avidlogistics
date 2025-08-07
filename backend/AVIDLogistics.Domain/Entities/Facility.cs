@@ -7,36 +7,65 @@ namespace AVIDLogistics.Domain.Entities
         public int FacilityId { get; private set; }
         public string Name { get; private set; }
         public string Address { get; private set; }
-        public string ContactInfo { get; private set; }
+        public string County { get; private set; }
+        public string ContactPerson { get; private set; }
+        public string ContactPhone { get; private set; }
+        public string ContactEmail { get; private set; }
+        public string FacilityType { get; private set; }
         public bool IsActive { get; private set; }
-        public int CreatedBy { get; private set; }
         public DateTime CreatedDate { get; private set; }
-        public int? ModifiedBy { get; private set; }
-        public DateTime? ModifiedDate { get; private set; }
+        public DateTime ModifiedDate { get; private set; }
 
-        public Facility(string name, string address, string contactInfo, int createdBy)
+        // Parameterless constructor for EF Core
+        private Facility()
         {
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            Address = address ?? throw new ArgumentNullException(nameof(address));
-            ContactInfo = contactInfo ?? throw new ArgumentNullException(nameof(contactInfo));
-            CreatedBy = createdBy;
-            CreatedDate = DateTime.UtcNow;
-            IsActive = true;
         }
 
-        public void UpdateInfo(string name, string address, string contactInfo, int modifiedBy)
+        public Facility(
+            string name,
+            string address = null,
+            string county = null,
+            string contactPerson = null,
+            string contactPhone = null,
+            string contactEmail = null,
+            string facilityType = "Warehouse")
         {
             Name = name ?? throw new ArgumentNullException(nameof(name));
-            Address = address ?? throw new ArgumentNullException(nameof(address));
-            ContactInfo = contactInfo ?? throw new ArgumentNullException(nameof(contactInfo));
-            ModifiedBy = modifiedBy;
+            Address = address;
+            County = county;
+            ContactPerson = contactPerson;
+            ContactPhone = contactPhone;
+            ContactEmail = contactEmail;
+            FacilityType = facilityType ?? "Warehouse";
+            IsActive = true;
+            CreatedDate = DateTime.UtcNow;
             ModifiedDate = DateTime.UtcNow;
         }
 
-        public void Deactivate(int modifiedBy)
+        public void UpdateContactInfo(string contactPerson, string contactPhone, string contactEmail)
+        {
+            ContactPerson = contactPerson;
+            ContactPhone = contactPhone;
+            ContactEmail = contactEmail;
+            ModifiedDate = DateTime.UtcNow;
+        }
+
+        public void UpdateAddress(string address, string county)
+        {
+            Address = address;
+            County = county;
+            ModifiedDate = DateTime.UtcNow;
+        }
+
+        public void Deactivate()
         {
             IsActive = false;
-            ModifiedBy = modifiedBy;
+            ModifiedDate = DateTime.UtcNow;
+        }
+
+        public void Activate()
+        {
+            IsActive = true;
             ModifiedDate = DateTime.UtcNow;
         }
     }

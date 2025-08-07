@@ -1,0 +1,707 @@
+2025-07-31 16:06:42.720 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-31 16:06:42.775 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-31 16:06:43.125 -04:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-31 16:06:43.145 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-07-31 16:06:43.150 -04:00 [INF] Database initialized successfully
+2025-07-31 16:06:43.156 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-31 16:06:43.169 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-31 16:06:43.235 -04:00 [ERR] Hosting failed to start
+System.IO.IOException: Failed to bind to address http://127.0.0.1:5166: address already in use.
+ ---> Microsoft.AspNetCore.Connections.AddressInUseException: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+ ---> System.Net.Sockets.SocketException (10048): Only one usage of each socket address (protocol/network address/port) is normally permitted.
+   at System.Net.Sockets.Socket.UpdateStatusAfterSocketErrorAndThrowException(SocketError error, Boolean disconnectOnFailure, String callerName)
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.LocalhostListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.AddressesStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__14_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2025-07-31 16:08:53.646 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-31 16:08:53.681 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-07-31 16:08:54.044 -04:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-07-31 16:08:54.111 -04:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-07-31 16:08:54.117 -04:00 [INF] Database initialized successfully
+2025-07-31 16:08:54.123 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-07-31 16:08:54.136 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-07-31 16:08:54.191 -04:00 [INF] Now listening on: http://localhost:5166
+2025-07-31 16:08:54.195 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-07-31 16:08:54.197 -04:00 [INF] Hosting environment: Development
+2025-07-31 16:08:54.199 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-07-31 16:10:04.209 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-31 16:10:04.214 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-07-31 16:10:04.248 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:10:04.260 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:10:04.382 -04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-07-31 16:10:04.427 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-31 16:10:04.458 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 194.1854ms
+2025-07-31 16:10:04.461 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:10:04.465 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 256.3955ms
+2025-07-31 16:10:16.282 -04:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5166/api/assets/3/condition - application/json 21
+2025-07-31 16:10:16.291 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.UpdateAssetCondition (AVIDLogistics.WebApi)'
+2025-07-31 16:10:16.301 -04:00 [INF] Route matched with {action = "UpdateAssetCondition", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateAssetCondition(Int32, AVIDLogistics.WebApi.Controllers.UpdateConditionDto) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:10:16.473 -04:00 [INF] Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-07-31 16:10:16.572 -04:00 [INF] Executed DbCommand (22ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-07-31 16:10:16.586 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType5`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:10:16.590 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.UpdateAssetCondition (AVIDLogistics.WebApi) in 285.5266ms
+2025-07-31 16:10:16.591 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.UpdateAssetCondition (AVIDLogistics.WebApi)'
+2025-07-31 16:10:16.592 -04:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5166/api/assets/3/condition - 200 null application/json; charset=utf-8 309.5583ms
+2025-07-31 16:10:26.481 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets/3 - null null
+2025-07-31 16:10:26.487 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAsset (AVIDLogistics.WebApi)'
+2025-07-31 16:10:26.494 -04:00 [INF] Route matched with {action = "GetAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAsset(Int32) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:10:26.505 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-07-31 16:10:26.509 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Domain.Entities.Asset'.
+2025-07-31 16:10:26.510 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAsset (AVIDLogistics.WebApi) in 12.6573ms
+2025-07-31 16:10:26.513 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAsset (AVIDLogistics.WebApi)'
+2025-07-31 16:10:26.514 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets/3 - 200 null application/json; charset=utf-8 33.7099ms
+2025-07-31 16:10:51.814 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-07-31 16:10:51.819 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:10:51.826 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-31 16:10:51.829 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:10:51.831 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 17.7381ms
+2025-07-31 16:10:51.834 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-31 16:10:51.834 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-07-31 16:10:51.836 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:10:51.837 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:10:51.838 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:10:51.839 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:10:51.839 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-31 16:10:51.841 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:10:51.842 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-07-31 16:10:51.842 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 8.1603ms
+2025-07-31 16:10:51.847 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-31 16:10:51.849 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 8.4425ms
+2025-07-31 16:10:51.850 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-31 16:10:51.850 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:10:51.851 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:10:51.852 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 18.4372ms
+2025-07-31 16:10:51.853 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:10:51.856 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:10:51.861 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-07-31 16:10:51.864 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-31 16:10:51.865 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 6.6488ms
+2025-07-31 16:10:51.866 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:10:51.867 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 17.5127ms
+2025-07-31 16:10:52.122 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/logo192.png - null null
+2025-07-31 16:10:52.126 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/logo192.png - 404 0 null 3.891ms
+2025-07-31 16:10:52.129 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/logo192.png, Response status code: 404
+2025-07-31 16:10:57.684 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-07-31 16:10:57.686 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:10:57.690 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-31 16:10:57.694 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:10:57.698 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 13.8156ms
+2025-07-31 16:11:13.262 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/assets - null null
+2025-07-31 16:11:13.279 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:13.284 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/assets - 204 null null 21.9992ms
+2025-07-31 16:11:13.290 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/assets - application/json 141
+2025-07-31 16:11:13.294 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:13.295 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.CreateAsset (AVIDLogistics.WebApi)'
+2025-07-31 16:11:13.299 -04:00 [INF] Route matched with {action = "CreateAsset", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateAsset(AVIDLogistics.WebApi.Controllers.CreateAssetDto) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:11:13.333 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__serialNumber_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Assets] AS [a]
+        WHERE [a].[SerialNumber] = @__serialNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-31 16:11:13.340 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__serialNumber_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Assets] AS [a]
+        WHERE [a].[SerialNumber] = @__serialNumber_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2025-07-31 16:11:13.377 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 50), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 100), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Assets] ([AssetType], [Barcode], [Condition], [CreatedDate], [FacilityId], [Location], [ModifiedDate], [RegisteredDate], [RfidTag], [SerialNumber], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+2025-07-31 16:11:13.390 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-07-31 16:11:13.426 -04:00 [INF] Executing CreatedAtActionResult, writing value of type '<>f__AnonymousType2`10[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:11:13.440 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.CreateAsset (AVIDLogistics.WebApi) in 138.5614ms
+2025-07-31 16:11:13.442 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.CreateAsset (AVIDLogistics.WebApi)'
+2025-07-31 16:11:13.444 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/assets - 201 null application/json; charset=utf-8 153.5763ms
+2025-07-31 16:11:13.449 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-07-31 16:11:13.453 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:13.454 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-31 16:11:13.454 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:13.456 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 6.759ms
+2025-07-31 16:11:13.460 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-31 16:11:13.462 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:13.463 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:11:13.465 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:11:13.470 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-07-31 16:11:13.474 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-31 16:11:13.476 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 7.2242ms
+2025-07-31 16:11:13.478 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:11:13.480 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 19.4556ms
+2025-07-31 16:11:26.078 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/auth/profile - null null
+2025-07-31 16:11:26.078 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-07-31 16:11:26.093 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.098 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.100 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.102 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.110 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller AVIDLogistics.WebApi.Controllers.AuthController (AVIDLogistics.WebApi).
+2025-07-31 16:11:26.112 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-07-31 16:11:26.116 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:11:26.121 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi) in 7.5627ms
+2025-07-31 16:11:26.127 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.127 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/auth/profile - null null
+2025-07-31 16:11:26.130 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/auth/profile - 200 null application/json; charset=utf-8 51.9819ms
+2025-07-31 16:11:26.134 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/overdue-returns - null null
+2025-07-31 16:11:26.134 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/missing-seals - null null
+2025-07-31 16:11:26.138 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.144 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/maintenance-needed - null null
+2025-07-31 16:11:26.148 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.152 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.152 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.152 -04:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-07-31 16:11:26.157 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.161 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-07-31 16:11:26.161 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller AVIDLogistics.WebApi.Controllers.AuthController (AVIDLogistics.WebApi).
+2025-07-31 16:11:26.162 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-07-31 16:11:26.170 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:26.166 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:26.169 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:11:26.165 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-07-31 16:11:26.172 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/missing-seals - 401 0 null 37.3207ms
+2025-07-31 16:11:26.174 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/overdue-returns - 401 0 null 40.092ms
+2025-07-31 16:11:26.176 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:22df691d-d4a5-40a2-a6f0-90e579f98081
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:22df691d-d4a5-40a2-a6f0-90e579f98081
+Error Number:207,State:1,Class:16
+2025-07-31 16:11:26.177 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi) in 8.3337ms
+2025-07-31 16:11:26.178 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:26.196 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:11:26.196 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.198 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/maintenance-needed - 401 0 null 53.8938ms
+2025-07-31 16:11:26.200 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 82.9952ms
+2025-07-31 16:11:26.201 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/auth/profile - 200 null application/json; charset=utf-8 73.9751ms
+2025-07-31 16:11:26.203 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/overdue-returns - null null
+2025-07-31 16:11:26.203 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/missing-seals - null null
+2025-07-31 16:11:26.205 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/maintenance-needed - null null
+2025-07-31 16:11:26.206 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.210 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-07-31 16:11:26.212 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.215 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.217 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.218 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 139.9328ms
+2025-07-31 16:11:26.221 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:11:26.222 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-07-31 16:11:26.223 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-07-31 16:11:26.224 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-07-31 16:11:26.228 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.229 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:26.230 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:26.232 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:11:26.233 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-07-31 16:11:26.234 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/overdue-returns - 401 0 null 31.2686ms
+2025-07-31 16:11:26.235 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/missing-seals - 401 0 null 32.5863ms
+2025-07-31 16:11:26.237 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/maintenance-needed - 401 0 null 32.0315ms
+2025-07-31 16:11:26.242 -04:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-07-31 16:11:26.251 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:22df691d-d4a5-40a2-a6f0-90e579f98081
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:22df691d-d4a5-40a2-a6f0-90e579f98081
+Error Number:207,State:1,Class:16
+2025-07-31 16:11:26.260 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:11:26.262 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 23.0812ms
+2025-07-31 16:11:26.264 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:11:26.265 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 55.1718ms
+2025-07-31 16:17:05.935 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests - null null
+2025-07-31 16:17:05.935 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-07-31 16:17:05.943 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:17:05.947 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:17:05.948 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:17:05.949 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:17:05.953 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-07-31 16:17:05.958 -04:00 [INF] Route matched with {action = "GetManifests", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifests(System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-07-31 16:17:06.050 -04:00 [ERR] Failed executing DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-07-31 16:17:06.057 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-07-31 16:17:06.060 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b49e5019-6c1d-45a1-b1a1-1667a95ae2b4
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b49e5019-6c1d-45a1-b1a1-1667a95ae2b4
+Error Number:207,State:1,Class:16
+2025-07-31 16:17:06.063 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b331db3e-0381-4187-a7f8-74686a2c6324
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b331db3e-0381-4187-a7f8-74686a2c6324
+Error Number:208,State:1,Class:16
+2025-07-31 16:17:06.076 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:17:06.082 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:17:06.082 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 123.9753ms
+2025-07-31 16:17:06.085 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi) in 123.3813ms
+2025-07-31 16:17:06.085 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-07-31 16:17:06.088 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests - null null
+2025-07-31 16:17:06.088 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:17:06.091 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:17:06.093 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:17:06.095 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:17:06.096 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 160.8575ms
+2025-07-31 16:17:06.097 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests - 500 null application/json; charset=utf-8 162.0904ms
+2025-07-31 16:17:06.098 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:17:06.100 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:17:06.110 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-07-31 16:17:06.111 -04:00 [INF] Route matched with {action = "GetManifests", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifests(System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-07-31 16:17:06.115 -04:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-07-31 16:17:06.118 -04:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-07-31 16:17:06.119 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b331db3e-0381-4187-a7f8-74686a2c6324
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b331db3e-0381-4187-a7f8-74686a2c6324
+Error Number:207,State:1,Class:16
+2025-07-31 16:17:06.122 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b49e5019-6c1d-45a1-b1a1-1667a95ae2b4
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:b49e5019-6c1d-45a1-b1a1-1667a95ae2b4
+Error Number:208,State:1,Class:16
+2025-07-31 16:17:06.129 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:17:06.136 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:17:06.137 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 23.9855ms
+2025-07-31 16:17:06.138 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi) in 23.3824ms
+2025-07-31 16:17:06.140 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-07-31 16:17:06.141 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:17:06.142 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 56.8235ms
+2025-07-31 16:17:06.143 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests - 500 null application/json; charset=utf-8 54.8886ms
+2025-07-31 16:38:36.188 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-07-31 16:38:36.208 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:38:36.212 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-31 16:38:36.218 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:38:36.223 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 34.3899ms
+2025-07-31 16:38:36.233 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-31 16:38:36.237 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-07-31 16:38:36.241 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:38:36.243 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:38:36.244 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:38:36.244 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-07-31 16:38:36.245 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:38:36.246 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-07-31 16:38:36.251 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 14.1431ms
+2025-07-31 16:38:36.376 -04:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-07-31 16:38:36.383 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-31 16:38:36.390 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 140.1229ms
+2025-07-31 16:38:36.392 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-07-31 16:38:36.394 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:38:36.401 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:38:36.405 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 172.3182ms
+2025-07-31 16:38:36.407 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:38:36.422 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-07-31 16:38:36.429 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-07-31 16:38:36.430 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-07-31 16:38:36.434 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 8.159ms
+2025-07-31 16:38:36.437 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-07-31 16:38:36.445 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 52.1849ms
+2025-07-31 16:38:37.222 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests?status=ReadyForPacking - null null
+2025-07-31 16:38:37.235 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:38:37.239 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:38:37.242 -04:00 [INF] Route matched with {action = "GetManifests", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifests(System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-07-31 16:38:37.262 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-07-31 16:38:37.270 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4d24c867-9e3d-4d10-af67-9ef2f4410183
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4d24c867-9e3d-4d10-af67-9ef2f4410183
+Error Number:208,State:1,Class:16
+2025-07-31 16:38:37.287 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:38:37.290 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi) in 44.8268ms
+2025-07-31 16:38:37.292 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests?status=ReadyForPacking - null null
+2025-07-31 16:38:37.295 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:38:37.299 -04:00 [INF] CORS policy execution successful.
+2025-07-31 16:38:37.302 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests?status=ReadyForPacking - 500 null application/json; charset=utf-8 79.6137ms
+2025-07-31 16:38:37.304 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:38:37.313 -04:00 [INF] Route matched with {action = "GetManifests", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifests(System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-07-31 16:38:37.320 -04:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-07-31 16:38:37.323 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4d24c867-9e3d-4d10-af67-9ef2f4410183
+Error Number:208,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid object name 'Manifests'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4d24c867-9e3d-4d10-af67-9ef2f4410183
+Error Number:208,State:1,Class:16
+2025-07-31 16:38:37.328 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-07-31 16:38:37.330 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi) in 16.3232ms
+2025-07-31 16:38:37.332 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-07-31 16:38:37.336 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests?status=ReadyForPacking - 500 null application/json; charset=utf-8 44.1419ms

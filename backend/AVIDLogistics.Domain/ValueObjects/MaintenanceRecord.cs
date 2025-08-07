@@ -10,6 +10,9 @@ namespace AVIDLogistics.Domain.ValueObjects
         public string WorkDescription { get; private set; }
         public string PartsUsed { get; private set; }
 
+        // Parameterless constructor for EF Core
+        private MaintenanceRecord() { }
+
         public MaintenanceRecord(int technicianId, string workDescription, string partsUsed = null)
         {
             Date = DateTime.UtcNow;

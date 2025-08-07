@@ -143,7 +143,7 @@ export default function DeliveriesPage() {
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns', 'Manifests', 'Deliveries', 'Alerts']} />
+      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Manifests', 'Deliveries', 'Alerts','Custody']} />
       <div className="flex-1 flex flex-col">
         <TopBar title="Deliveries Tracking" />
         <main className="flex-1 p-6">

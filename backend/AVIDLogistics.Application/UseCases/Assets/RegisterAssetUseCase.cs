@@ -40,9 +40,17 @@ public class RegisterAssetUseCase
             // Generate barcode if not provided
             var barcode = _barcodeGenerator.GenerateBarcode();
 
-
             // Register the asset
             asset.Register(barcode, input.RfidTag);
+
+            // Parse and set condition if provided
+            if (!string.IsNullOrWhiteSpace(input.Condition))
+            {
+                if (Enum.TryParse<AssetCondition>(input.Condition, true, out var condition) && condition != AssetCondition.New)
+                {
+                    asset.UpdateCondition(condition);
+                }
+            }
 
             // Save to repository
             await _assetRepository.AddAsync(asset);

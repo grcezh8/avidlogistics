@@ -67,15 +67,39 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("Auditor", policy => policy.RequireRole("Admin", "Auditor"));
 });
 
+
+
 // Register Infrastructure repositories
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.AssetRepository>();
+builder.Services.AddScoped<IAssetRepository, AVIDLogistics.Infrastructure.Repositories.AssetRepository>();
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ElectionRepository>();
+builder.Services.AddScoped<IElectionRepository, AVIDLogistics.Infrastructure.Repositories.ElectionRepository>();
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.SealRepository>();
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ManifestRepository>();
+builder.Services.AddScoped<IManifestRepository, AVIDLogistics.Infrastructure.Repositories.ManifestRepository>();
+builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ManifestItemRepository>();
+builder.Services.AddScoped<IManifestItemRepository, AVIDLogistics.Infrastructure.Repositories.ManifestItemRepository>();
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ChainOfCustodyRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ScannedFormRepository>();
+builder.Services.AddScoped<IChainOfCustodyRepository, AVIDLogistics.Infrastructure.Repositories.ChainOfCustodyRepository>();
+builder.Services.AddScoped<IScannedFormRepository, AVIDLogistics.Infrastructure.Repositories.ScannedFormRepository>();
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ActivityRepository>();
 builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.FacilityRepository>();
+builder.Services.AddScoped<IFacilityRepository, AVIDLogistics.Infrastructure.Repositories.FacilityRepository>();
+builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.KitRepository>();
+builder.Services.AddScoped<IKitRepository, AVIDLogistics.Infrastructure.Repositories.KitRepository>();
+builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.PollSiteRepository>();
+builder.Services.AddScoped<IPollSiteRepository, AVIDLogistics.Infrastructure.Repositories.PollSiteRepository>();
+builder.Services.AddScoped<INotificationGateway, AVIDLogistics.Infrastructure.Services.NotificationGateway>();
+
+// Register new CoC repositories
+builder.Services.AddScoped<ISignatureRepository, AVIDLogistics.Infrastructure.Repositories.SignatureRepository>();
+builder.Services.AddScoped<ICoCFormStatusRepository, AVIDLogistics.Infrastructure.Repositories.CoCFormStatusRepository>();
+
+// Register Application services
+builder.Services.AddScoped<AVIDLogistics.Application.Services.ManifestService>();
+builder.Services.AddScoped<AVIDLogistics.Application.Services.CoCFormGenerationService>();
+builder.Services.AddScoped<AVIDLogistics.Application.Services.CoCNotificationService>();
+builder.Services.AddScoped<AVIDLogistics.Application.UseCases.ChainOfCustody.ScannedFormService>();
 
 // Add CORS for frontend
 builder.Services.AddCors(options =>
@@ -93,9 +117,9 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo 
-    { 
-        Title = "AVID Logistics Warehouse Management API", 
+    c.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "AVID Logistics Warehouse Management API",
         Version = "v1",
         Description = "Election-centric warehouse management system for tracking assets, chain of custody, and manifests"
     });
@@ -124,6 +148,8 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+// Remove hardcoded port configuration to use launch settings
 
 // Add health checks
 builder.Services.AddHealthChecks()

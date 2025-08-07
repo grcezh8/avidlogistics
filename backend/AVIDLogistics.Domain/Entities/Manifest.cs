@@ -11,7 +11,7 @@ namespace AVIDLogistics.Domain.Entities
         private readonly List<ManifestItem> _items = new();
 
         public int ManifestId { get; private set; }
-        public string ManifestNumber { get; private set; }
+        public string ManifestNumber { get; private set; } = string.Empty;
         public int ElectionId { get; private set; }
         public int FromFacilityId { get; private set; }
         public int ToPollSiteId { get; private set; }
@@ -20,6 +20,11 @@ namespace AVIDLogistics.Domain.Entities
         public DateTime CreatedDate { get; private set; }
         public DateTime? PackedDate { get; private set; }
         public IReadOnlyList<ManifestItem> Items => _items.AsReadOnly();
+
+        // Parameterless constructor for EF Core
+        private Manifest()
+        {
+        }
 
         public Manifest(int electionId, int fromFacilityId, int toPollSiteId, int createdBy)
         {

@@ -6,12 +6,9 @@ export const getMaintenanceAlerts = () =>
 export const getMissingSealsAlerts = () =>
   apiClient.get('/alerts/missing-seals');
 
-export const getOverdueReturnsAlerts = () =>
-  apiClient.get('/alerts/overdue-returns');
 
 export const getUnresolvedDiscrepanciesAlerts = () =>
   apiClient.get('/alerts/unresolved-discrepancies');
 
 export const processAlerts = (alerts) =>
   apiClient.post('/alerts/process', alerts);
-

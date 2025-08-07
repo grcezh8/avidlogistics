@@ -1,0 +1,82 @@
+2025-08-05 14:35:47.482 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:35:47.523 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:35:47.693 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:35:47.694 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:37:00.977 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:37:01.010 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:37:01.356 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 14:37:01.376 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-08-05 14:37:01.381 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 14:37:01.385 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-08-05 14:37:01.412 -04:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-08-05 14:37:01.426 -04:00 [INF] Applying migration '20250805183548_AddChainOfCustodyTables'.
+2025-08-05 14:37:01.505 -04:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Activities] (
+    [ActivityId] int NOT NULL IDENTITY,
+    [ActivityType] nvarchar(100) NOT NULL,
+    [Description] nvarchar(1000) NOT NULL,
+    [UserId] int NOT NULL,
+    [Timestamp] datetime2 NOT NULL,
+    [ElectionId] int NULL,
+    [AssetId] int NULL,
+    [FacilityId] int NULL,
+    CONSTRAINT [PK_Activities] PRIMARY KEY ([ActivityId])
+);
+2025-08-05 14:37:01.513 -04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Alerts] (
+    [Id] int NOT NULL IDENTITY,
+    [Message] nvarchar(max) NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [IsResolved] bit NOT NULL,
+    CONSTRAINT [PK_Alerts] PRIMARY KEY ([Id])
+);
+2025-08-05 14:37:01.522 -04:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Assets] (
+    [Id] int NOT NULL IDENTITY,
+    [SerialNumber] nvarchar(100) NOT NULL,
+    [AssetType] nvarchar(100) NOT NULL,
+    [Barcode] nvarchar(50) NULL,
+    [RfidTag] nvarchar(50) NULL,
+    [Status] int NOT NULL,
+    [Condition] int NOT NULL,
+    [Location] nvarchar(200) NULL,
+    [FacilityId] int NULL,
+    [RegisteredDate] datetime2 NOT NULL,
+    [CreatedDate] datetime2 NULL,
+    [ModifiedDate] datetime2 NULL,
+    CONSTRAINT [PK_Assets] PRIMARY KEY ([Id])
+);
+2025-08-05 14:37:13.804 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:37:13.836 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-05 14:37:14.169 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-05 14:37:14.229 -04:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-05 14:37:14.233 -04:00 [INF] Database initialized successfully
+2025-08-05 14:37:14.238 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-08-05 14:37:14.249 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-05 14:37:14.289 -04:00 [INF] Now listening on: http://localhost:5166
+2025-08-05 14:37:14.294 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-05 14:37:14.295 -04:00 [INF] Hosting environment: Development
+2025-08-05 14:37:14.296 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi

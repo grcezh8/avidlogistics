@@ -16,5 +16,14 @@ export const getAssetsByFacility = (facilityId, status) => {
   const query = new URLSearchParams();
   if (facilityId) query.append('facilityId', facilityId);
   if (status) query.append('status', status);
-  return apiClient.get('/assets?${query.toString()}');
-}
+  return apiClient.get(`/assets?${query.toString()}`);
+};
+
+export const updateAssetStatus = (assetId, status) =>
+  apiClient.put(`/assets/${assetId}/status`, { status });
+
+export const getAvailableAssets = () =>
+  apiClient.get('/assets?status=Available');
+
+export const getInventoryDashboard = () =>
+  apiClient.get('/assets');

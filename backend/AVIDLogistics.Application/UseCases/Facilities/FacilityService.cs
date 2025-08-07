@@ -19,7 +19,7 @@ public class FacilityService
         if (await _facilityRepository.ExistsAsync(input.Name))
             throw new InvalidOperationException("Facility with this name already exists");
 
-        var facility = new Facility(input.Name, input.Address, input.ContactInfo, createdBy);
+        var facility = new Facility(input.Name, input.Address);
         var facilityId = await _facilityRepository.SaveAsync(facility);
 
         await _notificationGateway.NotifyWarehouseAsync($"New facility created: {input.Name}");
@@ -32,7 +32,7 @@ public class FacilityService
         if (facility == null)
             throw new FacilityNotFoundException($"Facility {input.FacilityId} not found");
 
-        facility.UpdateInfo(input.Name, input.Address, input.ContactInfo, modifiedBy);
+        facility.UpdateAddress(input.Address, null);
         await _facilityRepository.UpdateAsync(facility);
     }
 
@@ -52,7 +52,7 @@ public class FacilityService
         if (facility == null)
             throw new FacilityNotFoundException($"Facility {facilityId} not found");
 
-        facility.Deactivate(modifiedBy);
+        facility.Deactivate();
         await _facilityRepository.UpdateAsync(facility);
     }
 }

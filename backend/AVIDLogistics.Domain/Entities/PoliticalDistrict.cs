@@ -13,6 +13,9 @@ namespace AVIDLogistics.Domain.Entities
         public bool IsActive { get; private set; }
         public DateTime CreatedDate { get; private set; }
 
+        // Parameterless constructor for Entity Framework
+        protected PoliticalDistrict() { }
+
         public PoliticalDistrict(string districtKey, string description, string districtType,
             string abbreviation = null, int? parentDistrictId = null)
         {

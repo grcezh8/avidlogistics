@@ -37,11 +37,17 @@ namespace AVIDLogistics.Application.UseCases.Delivery
             foreach (var kitId in manifest.KitIds)
             {
                 var kit = await _kitRepository.GetByIdAsync(kitId);
-                foreach (var assetId in kit.AssetIds)
+                if (kit != null)
                 {
-                    var asset = await _assetRepository.GetByIdAsync(assetId);
-                    asset.ConfirmDelivery(input.Location);
-                    await _assetRepository.UpdateAsync(asset);
+                    foreach (var assetId in kit.GetAssetIds())
+                    {
+                        var asset = await _assetRepository.GetByIdAsync(assetId);
+                        if (asset != null)
+                        {
+                            asset.ConfirmDelivery(input.Location);
+                            await _assetRepository.UpdateAsync(asset);
+                        }
+                    }
                 }
             }
 

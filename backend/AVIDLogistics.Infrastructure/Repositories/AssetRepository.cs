@@ -18,22 +18,44 @@ namespace AVIDLogistics.Infrastructure.Repositories
         public async Task<Asset> GetByIdAsync(int id)
         {
             return await _context.Assets
-                .Include(a => a.MaintenanceHistory)
                 .FirstOrDefaultAsync(a => a.Id == id);
         }
 
-        public async Task<Asset> GetByBarcodeAsync(string barcode)
+        public async Task<IEnumerable<Asset>> GetAllAsync()
         {
             return await _context.Assets
-                .Include(a => a.MaintenanceHistory)
-                .FirstOrDefaultAsync(a => a.Barcode == barcode);
+                .ToListAsync();
+        }
+
+        public async Task<int> SaveAsync(Asset asset)
+        {
+            _context.Assets.Add(asset);
+            await _context.SaveChangesAsync();
+            return asset.Id;
+        }
+
+        public async Task UpdateAsync(Asset asset)
+        {
+            _context.Assets.Update(asset);
+            await _context.SaveChangesAsync();
         }
 
         public async Task<Asset> GetBySerialNumberAsync(string serialNumber)
         {
             return await _context.Assets
-                .Include(a => a.MaintenanceHistory)
                 .FirstOrDefaultAsync(a => a.SerialNumber == serialNumber);
+        }
+
+        public async Task<Asset> GetByBarcodeAsync(string barcode)
+        {
+            return await _context.Assets
+                .FirstOrDefaultAsync(a => a.Barcode == barcode);
+        }
+
+        public async Task<Asset> GetByRfidTagAsync(string rfidTag)
+        {
+            return await _context.Assets
+                .FirstOrDefaultAsync(a => a.RfidTag == rfidTag);
         }
 
         public async Task<List<Asset>> GetByStatusAsync(AssetStatus status)
@@ -62,44 +84,10 @@ namespace AVIDLogistics.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<int> SaveAsync(Asset asset)
-        {
-            _context.Assets.Add(asset);
-            await _context.SaveChangesAsync();
-            return asset.Id;
-        }
-
-        public async Task UpdateAsync(Asset asset)
-        {
-            _context.Assets.Update(asset);
-            await _context.SaveChangesAsync();
-        }
-
         public async Task<bool> ExistsAsync(string serialNumber)
         {
             return await _context.Assets
                 .AnyAsync(a => a.SerialNumber == serialNumber);
-        }
-
-        public async Task UpdatePackingStatusAsync(int assetId, string status)
-        {
-            var asset = await _context.Assets.FindAsync(assetId);
-            if (asset != null)
-            {
-                // Update packing status logic here
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        public async Task<string> GetPackingStatusAsync(int assetId)
-        {
-            var asset = await _context.Assets.FindAsync(assetId);
-            return asset?.Status.ToString() ?? "Unknown";
-        }
-
-        public async Task<IEnumerable<Asset>> GetAllAsync()
-        {
-            return await _context.Assets.ToListAsync();
         }
 
         public async Task AddAsync(Asset asset)
@@ -133,6 +121,22 @@ namespace AVIDLogistics.Infrastructure.Repositories
             }
 
             return await query.ToListAsync();
+        }
+
+        public async Task UpdatePackingStatusAsync(int assetId, string status)
+        {
+            var asset = await _context.Assets.FindAsync(assetId);
+            if (asset != null)
+            {
+                // Update packing status logic here
+                await _context.SaveChangesAsync();
+            }
+        }
+
+        public async Task<string> GetPackingStatusAsync(int assetId)
+        {
+            var asset = await _context.Assets.FindAsync(assetId);
+            return asset?.Status.ToString() ?? "Unknown";
         }
     }
 }

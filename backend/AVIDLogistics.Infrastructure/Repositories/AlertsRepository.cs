@@ -52,7 +52,7 @@ namespace AVIDLogistics.Infrastructure.Repositories
             // Create alerts for missing seals
             var missingSeals = from mi in _context.ManifestItems
                               join a in _context.Assets on mi.AssetId equals a.Id
-                              where a.Status == AssetStatus.Assigned &&
+                              where a.Status == AssetStatus.Pending &&
                                     (mi.SealNumber == null || mi.SealNumber == "")
                               select new Alert
                               {
@@ -67,7 +67,7 @@ namespace AVIDLogistics.Infrastructure.Repositories
         public async Task<List<Alert>> GetOverdueReturnsAsync()
         {
             var overdueReturns = from a in _context.Assets
-                                where a.Status == AssetStatus.Deployed
+                                where a.Status == AssetStatus.Unavailable
                                 select new Alert
                                 {
                                     Message = $"Asset {a.SerialNumber} is overdue for return",

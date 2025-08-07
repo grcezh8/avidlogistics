@@ -26,6 +26,9 @@ namespace AVIDLogistics.Application.UseCases.Kits
         // Create kit
         var kit = new Kit(input.Name, kitType);
 
+        // Save kit first to get its ID
+        await _kitRepository.AddAsync(kit);
+
         // Add assets to kit
         foreach (var assetId in input.AssetIds)
         {
@@ -36,14 +39,14 @@ namespace AVIDLogistics.Application.UseCases.Kits
             if (asset.Status != AssetStatus.Available)
                 throw new InvalidAssetStateException($"Asset {assetId} is not available");
 
-            kit.AddAsset(assetId);
+            kit.AddAsset(assetId, 1); // TODO: Get actual user ID
             asset.AssignToKit(kit.Id);
             await _assetRepository.UpdateAsync(asset);
         }
 
-        // Save kit
-        await _kitRepository.AddAsync(kit);
-        return 1; // TODO: Return actual ID from repository
+        // Update kit with asset relationships
+        await _kitRepository.UpdateAsync(kit);
+        return kit.Id;
     }
 }
 }

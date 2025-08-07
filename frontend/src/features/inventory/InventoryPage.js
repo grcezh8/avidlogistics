@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Package, Search, Filter, Plus } from 'lucide-react';
 import Sidebar from '../../components/Sidebar';
 import TopBar from '../../components/TopBar';
-import { getAssets } from '../assets/assetsService';
-import { getFacilities } from '../facilities/facilitiesService';
+import AssetRegistrationModal from '../../components/AssetRegistrationModal';
+import apiClient from '../../services/apiClient';
 
 export default function InventoryPage() {
   const [assets, setAssets] = useState([]);
+  const [facilities, setFacilities] = useState([]); // ✅ defined properly
   const [inventory, setInventory] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     loadAssets();
@@ -19,9 +21,18 @@ export default function InventoryPage() {
   const loadAssets = async () => {
     try {
       setLoading(true);
-      const facilitiesRes = await getFacilities();
-      setFacilities(facilitiesRes.data || []);
-      const assetsRes = await getAssets(filterStatus === 'all' ? '' : filterStatus);
+      
+      // Load facilities
+      try {
+        const facilitiesRes = await apiClient.get('/facilities');
+        setFacilities(facilitiesRes.data || []);
+      } catch (err) {
+        console.warn('Facilities API not available:', err);
+      }
+      
+      // Load assets with optional status filter
+      const params = filterStatus !== 'all' ? { status: filterStatus } : {};
+      const assetsRes = await apiClient.get('/assets', { params });
       setAssets(assetsRes.data || []);
     } catch (error) {
       console.error('Error loading inventory:', error);
@@ -30,16 +41,31 @@ export default function InventoryPage() {
     }
   };
 
-  const filteredAssets = assets.filter(asset => {
-    const matchesSearch = asset.serialNumber.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    asset.assetType.toLowerCase().includes(searchTerm.toLowerCase()) || asset.barcode?.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesFilter = filterStatus === 'all' || item.status === filterStatus;
+  const filteredInventory = assets.filter(asset => {
+    const matchesSearch =
+      asset.serialNumber?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      asset.assetType?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      asset.barcode?.toLowerCase().includes(searchTerm.toLowerCase());
+
+    // Handle both string and numeric status filtering
+    let matchesFilter = filterStatus === 'all';
+    if (!matchesFilter) {
+      // Map numeric filter values to string status values
+      const statusMapping = {
+        '0': 'Available',
+        '1': 'Pending', 
+        '2': 'Unavailable'
+      };
+      const expectedStatus = statusMapping[filterStatus];
+      matchesFilter = asset.status === expectedStatus || asset.status === parseInt(filterStatus);
+    }
+
     return matchesSearch && matchesFilter;
   });
 
   const getFacilityName = (facilityId) => {
     const facility = facilities.find(f => f.id === facilityId);
-    return facility ? facility.name : `Facility${facilityId}`;
+    return facility ? facility.name : `Facility ${facilityId}`;
   };
 
   const formatAssetType = (type) => {
@@ -47,18 +73,51 @@ export default function InventoryPage() {
   };
 
   const getStatusBadge = (status) => {
-    const badges = {
-      'Available': 'bg-green-100 text-green-800',
-      'In Use': 'bg-blue-100 text-blue-800',
-      'Maintenance': 'bg-yellow-100 text-yellow-800',
-      'Reserved': 'bg-purple-100 text-purple-800'
+    // Handle both string and numeric status values
+    const statusMap = {
+      // Numeric values (from database)
+      0: { name: 'Available', color: 'bg-green-100 text-green-800' },
+      1: { name: 'Pending', color: 'bg-yellow-100 text-yellow-800' },
+      2: { name: 'Unavailable', color: 'bg-red-100 text-red-800' },
+      // String values (from API serialization)
+      'Available': { name: 'Available', color: 'bg-green-100 text-green-800' },
+      'Pending': { name: 'Pending', color: 'bg-yellow-100 text-yellow-800' },
+      'Unavailable': { name: 'Unavailable', color: 'bg-red-100 text-red-800' }
     };
-    return badges[status] || 'bg-gray-100 text-gray-800';
+    return statusMap[status]?.color || 'bg-gray-100 text-gray-800';
+  };
+
+  const getStatusName = (status) => {
+    // Handle both string and numeric status values
+    const statusMap = {
+      // Numeric values (from database)
+      0: 'Available',
+      1: 'Pending',
+      2: 'Unavailable',
+      // String values (from API serialization)
+      'Available': 'Available',
+      'Pending': 'Pending',
+      'Unavailable': 'Unavailable'
+    };
+    return statusMap[status] || 'Available'; // Default to Available instead of Unknown
+  };
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleAssetRegistered = (newAsset) => {
+    // Refresh the assets list to include the new asset
+    loadAssets();
   };
 
   return (
     <div className="flex min-h-screen bg-gray-50">
-      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Returns', 'Manifests', 'Deliveries', 'Alerts']} />
+      <Sidebar links={['Dashboard', 'Inventory', 'Packing', 'Custody']} />
       <div className="flex-1 flex flex-col">
         <TopBar title="Inventory Management" />
         <main className="flex-1 p-6">
@@ -90,12 +149,14 @@ export default function InventoryPage() {
                   className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="all">All Status</option>
-                  <option value="Available">Available</option>
-                  <option value="In Use">In Use</option>
-                  <option value="Maintenance">Maintenance</option>
-                  <option value="Reserved">Reserved</option>
+                  <option value="0">Available</option>
+                  <option value="1">Pending</option>
+                  <option value="2">Unavailable</option>
                 </select>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2">
+                <button 
+                  onClick={handleOpenModal}
+                  className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
+                >
                   <Plus className="h-5 w-5" />
                   Add Asset
                 </button>
@@ -157,7 +218,7 @@ export default function InventoryPage() {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusBadge(asset.status)}`}>
-                            {asset.status}
+                            {getStatusName(asset.status)}
                           </span>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -179,6 +240,13 @@ export default function InventoryPage() {
           </div>
         </main>
       </div>
+
+      {/* Asset Registration Modal */}
+      <AssetRegistrationModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onAssetRegistered={handleAssetRegistered}
+      />
     </div>
   );
 }

@@ -15,9 +15,17 @@ namespace AVIDLogistics.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Kit> GetByIdAsync(int id)
+        public async Task<Kit?> GetByIdAsync(int id)
         {
             return await _context.Kits.FindAsync(id);
+        }
+
+        public async Task<Kit?> GetByIdWithAssetsAsync(int id)
+        {
+            return await _context.Kits
+                .Include(k => k.AssetKits)
+                    .ThenInclude(ak => ak.Asset)
+                .FirstOrDefaultAsync(k => k.Id == id);
         }
 
         public async Task<List<Kit>> GetByPollSiteIdAsync(int pollSiteId)
@@ -27,9 +35,18 @@ namespace AVIDLogistics.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<List<Kit>> GetByStatusAsync(KitStatus status)
+        public async Task<IEnumerable<Kit>> GetByStatusAsync(KitStatus status)
         {
             return await _context.Kits
+                .Where(k => k.Status == status)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Kit>> GetByStatusWithAssetsAsync(KitStatus status)
+        {
+            return await _context.Kits
+                .Include(k => k.AssetKits)
+                    .ThenInclude(ak => ak.Asset)
                 .Where(k => k.Status == status)
                 .ToListAsync();
         }

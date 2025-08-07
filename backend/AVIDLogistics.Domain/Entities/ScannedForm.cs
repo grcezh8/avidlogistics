@@ -13,6 +13,7 @@ namespace AVIDLogistics.Domain.Entities
         public string FilePath { get; private set; }
         public DateTime UploadedDate { get; private set; }
         public int UploadedBy { get; private set; }
+        public string? Description { get; set; }
 
         public ScannedForm(int electionId, int assetId, string formType, string filePath, int uploadedBy)
         {

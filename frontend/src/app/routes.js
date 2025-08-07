@@ -5,8 +5,10 @@ import LoginPage from '../pages/LoginPage';
 import WarehouseDashboardPage from '../features/dashboard/WarehouseDashboardPage';
 import InventoryPage from '../features/inventory/InventoryPage';
 import ManifestsPage from '../features/manifests/ManifestsPage';
+import PackingManifestPage from '../features/manifest/PackingManifestPage';
 import DeliveriesPage from '../features/deliveries/DeliveriesPage';
 import AlertsPage from '../features/alerts/AlertsPage';
+import ChainOfCustodyPage from '../features/chainofcustody/ChainOfCustodyPage';
 
 export default function AppRoutes() {
   const { user, loading } = useAuth();
@@ -43,9 +45,9 @@ export default function AppRoutes() {
       <Route path="/manifests" element={<ManifestsPage />} />
       <Route path="/deliveries" element={<DeliveriesPage />} />
       <Route path="/alerts" element={<AlertsPage />} />
+      <Route path="/custody" element={<ChainOfCustodyPage />} />
       {/* Existing routes that might be implemented later */}
-      <Route path="/packing" element={<WarehouseDashboardPage />} />
-      <Route path="/returns" element={<WarehouseDashboardPage />} />
+      <Route path="/packing" element={<PackingManifestPage />} />
       {/* Catch all route */}
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
     </Routes>
