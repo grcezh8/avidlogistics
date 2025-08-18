@@ -74,6 +74,14 @@ export default function QRScannerScreen({ navigation }: Props) {
             Load Manifest
           </Button>
           
+          <Button
+            mode="outlined"
+            onPress={() => navigation.navigate('Packing')}
+            style={styles.button}
+          >
+            Packing
+          </Button>
+          
           <Text variant="bodySmall" style={styles.note}>
             Note: QR scanner will be available in a future update. For now, you can test with manifest IDs like 1, 2, or 3.
           </Text>

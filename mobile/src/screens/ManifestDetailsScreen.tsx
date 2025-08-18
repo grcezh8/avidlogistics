@@ -46,6 +46,45 @@ export default function ManifestDetailsScreen({ navigation, route }: Props) {
     navigation.navigate('SignatureCapture', { manifestId, assetId });
   };
 
+  const handleFinishPacking = async () => {
+    try {
+      Alert.alert(
+        'Finish Packing',
+        'Are you sure you want to finish packing this manifest? This will create a kit and move the manifest to packed status.',
+        [
+          {
+            text: 'Cancel',
+            style: 'cancel',
+          },
+          {
+            text: 'Finish Packing',
+            style: 'default',
+            onPress: async () => {
+              try {
+                await ManifestService.finishPacking(manifestId);
+                Alert.alert('Success', 'Manifest packing completed successfully!', [
+                  {
+                    text: 'OK',
+                    onPress: () => {
+                      // Navigate back or refresh the data
+                      navigation.goBack();
+                    },
+                  },
+                ]);
+              } catch (error) {
+                console.error('Error finishing packing:', error);
+                Alert.alert('Error', 'Failed to finish packing. Please try again.');
+              }
+            },
+          },
+        ]
+      );
+    } catch (error) {
+      console.error('Error in handleFinishPacking:', error);
+      Alert.alert('Error', 'An unexpected error occurred.');
+    }
+  };
+
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
       case 'completed':
@@ -200,6 +239,31 @@ export default function ManifestDetailsScreen({ navigation, route }: Props) {
         </Card>
       ))}
 
+      {/* Finish Packing Button */}
+      {manifest.status.toLowerCase() === 'readyforpacking' || manifest.status.toLowerCase() === 'partiallypacked' ? (
+        <Card style={styles.finishPackingCard}>
+          <Card.Content>
+            <View style={styles.finishPackingContainer}>
+              <Text variant="bodyMedium" style={styles.progressText}>
+                Progress: {manifest.packedCount} of {manifest.itemCount} items packed
+              </Text>
+              <Button
+                mode="contained"
+                onPress={handleFinishPacking}
+                disabled={manifest.packedCount !== manifest.itemCount}
+                style={[
+                  styles.finishPackingButton,
+                  manifest.packedCount === manifest.itemCount ? styles.finishPackingButtonEnabled : styles.finishPackingButtonDisabled
+                ]}
+                icon="package-variant-closed"
+              >
+                Finish Packing
+              </Button>
+            </View>
+          </Card.Content>
+        </Card>
+      ) : null}
+
       <View style={styles.bottomPadding} />
     </ScrollView>
   );
@@ -296,5 +360,26 @@ const styles = StyleSheet.create({
   },
   bottomPadding: {
     height: 32,
+  },
+  finishPackingCard: {
+    marginBottom: 16,
+    backgroundColor: COLORS.surface,
+  },
+  finishPackingContainer: {
+    alignItems: 'center',
+  },
+  progressText: {
+    color: COLORS.textSecondary,
+    marginBottom: 16,
+    textAlign: 'center',
+  },
+  finishPackingButton: {
+    minWidth: 200,
+  },
+  finishPackingButtonEnabled: {
+    backgroundColor: COLORS.success,
+  },
+  finishPackingButtonDisabled: {
+    backgroundColor: COLORS.textSecondary,
   },
 });

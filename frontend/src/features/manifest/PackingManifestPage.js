@@ -85,6 +85,10 @@ export default function PackingManifestPage() {
       await loadManifestsList();
       setSelectedManifestId(null);
       setSelectedManifest(null);
+      
+      // Load packed kits and switch to packed kits tab to show the newly created kit
+      await loadPackedKits();
+      setActiveTab('packed-kits');
     } catch (error) {
       console.error('Error finishing packing:', error);
     }
@@ -127,7 +131,7 @@ export default function PackingManifestPage() {
 
   const handleTabChange = (tab) => {
     setActiveTab(tab);
-    if (tab === 'packed-kits' && packedKits.length === 0) {
+    if (tab === 'packed-kits') {
       loadPackedKits();
     }
   };

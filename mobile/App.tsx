@@ -6,12 +6,14 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
 import QRScannerScreen from './src/screens/QRScannerScreen';
+import PackingScreen from './src/screens/PackingScreen';
 import ManifestDetailsScreen from './src/screens/ManifestDetailsScreen';
 import SignatureCaptureScreen from './src/screens/SignatureCaptureScreen';
 import { COLORS } from './src/constants/colors';
 
 export type RootStackParamList = {
   QRScanner: undefined;
+  Packing: undefined;
   ManifestDetails: { manifestId: number };
   SignatureCapture: { manifestId: number; assetId: number };
 };
@@ -59,6 +61,13 @@ export default function App() {
                 headerStyle: {
                   backgroundColor: COLORS.primary,
                 },
+              }}
+            />
+            <Stack.Screen
+              name="Packing"
+              component={PackingScreen}
+              options={{
+                title: 'Packing Manifests',
               }}
             />
             <Stack.Screen

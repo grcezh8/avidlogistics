@@ -231,8 +231,8 @@ namespace AVIDLogistics.Infrastructure.Data
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Id).HasColumnName("KitID"); // Map to actual database column
                 entity.Property(e => e.Name).IsRequired().HasMaxLength(200);
-                entity.Property(e => e.Type).HasColumnName("KitType").HasConversion<int>();
-                entity.Property(e => e.Status).HasConversion<int>();
+                entity.Property(e => e.Type).HasColumnName("KitType").HasConversion<string>();
+                entity.Property(e => e.Status).HasConversion<string>();
                 entity.Property(e => e.PollSiteId).HasColumnName("PollSiteID");
                 entity.Property(e => e.CreatedDate);
                 
@@ -301,6 +301,32 @@ namespace AVIDLogistics.Infrastructure.Data
                 entity.HasIndex(e => e.FormUrl).IsUnique();
                 entity.HasIndex(e => e.ManifestId).IsUnique();
                 entity.HasIndex(e => e.Status);
+            });
+
+            // Configure Alert entity
+            modelBuilder.Entity<Alert>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Title).IsRequired().HasMaxLength(200);
+                entity.Property(e => e.Message).IsRequired().HasMaxLength(1000);
+                entity.Property(e => e.AlertType).IsRequired().HasConversion<string>().HasMaxLength(50);
+                entity.Property(e => e.Severity).IsRequired().HasConversion<string>().HasMaxLength(20);
+                entity.Property(e => e.Status).IsRequired().HasConversion<string>().HasMaxLength(20);
+                entity.Property(e => e.CreatedAt).IsRequired();
+                entity.Property(e => e.UpdatedAt).IsRequired();
+                entity.Property(e => e.ResolvedAt);
+                entity.Property(e => e.ResolvedBy).HasMaxLength(100);
+                entity.Property(e => e.RelatedEntityId);
+                entity.Property(e => e.RelatedEntityType).HasMaxLength(50);
+                entity.Property(e => e.ExpiresAt);
+                entity.Property(e => e.Priority).IsRequired();
+                entity.Property(e => e.AdditionalData);
+                
+                // Indexes for performance
+                entity.HasIndex(e => new { e.Status, e.CreatedAt });
+                entity.HasIndex(e => new { e.AlertType, e.Severity });
+                entity.HasIndex(e => new { e.RelatedEntityType, e.RelatedEntityId });
+                entity.HasIndex(e => new { e.Priority, e.CreatedAt });
             });
 
             // Configure other entities as needed...

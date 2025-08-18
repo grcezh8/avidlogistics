@@ -1,89 +1,58 @@
 import React, { useEffect, useState } from 'react';
 import Sidebar from '../../components/Sidebar';
 import TopBar from '../../components/TopBar';
-import NotificationsPanel from '../../components/NotificationsPanel';
-import PackingJobsList from '../../components/PackingJobsList';
 import ElectionPanel from '../../components/ElectionPanel';
-import TasksPanel from '../../components/TasksPanel';
+import EnhancedNotificationsPanel from '../../components/EnhancedNotificationsPanel';
 
 import {
   getProfile
 } from '../../features/auth/authService';
 import {
-  getMaintenanceAlerts,
-  getMissingSealsAlerts
+  getActiveAlerts
 } from '../../features/alerts/alertsService';
-import {
-  getManifests
-} from '../../features/manifests/manifestService';
 
 export default function WarehouseDashboardPage() {
   const [user, setUser] = useState({});
   const [alerts, setAlerts] = useState([]);
-  const [packingJobs, setPackingJobs] = useState([]);
   const [selectedElection, setSelectedElection] = useState(null);
-  const [tasks, setTasks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadDashboardData();
+    // Set up auto-refresh for alerts every 30 seconds
+    const interval = setInterval(loadAlerts, 30000);
+    return () => clearInterval(interval);
   }, []);
-
-  useEffect(() => {
-    if (selectedElection) {
-      loadElectionSpecificData(selectedElection.id);
-    }
-  }, [selectedElection]);
 
   const loadDashboardData = async () => {
     try {
+      setLoading(true);
       const userRes = await getProfile();
       setUser(userRes.data);
-
-      // Load all types of alerts
-      const [maintenanceRes, sealsRes] = await Promise.all([
-        getMaintenanceAlerts(),
-        getMissingSealsAlerts()
-      ]);
-
-      // Combine and format alerts
-      const allAlerts = [
-        ...(maintenanceRes.data || []).map(a => ({ ...a, type: 'maintenance', severity: 'high' })),
-        ...(sealsRes.data || []).map(a => ({ ...a, type: 'delivery', severity: 'medium' }))
-      ];
-      setAlerts(allAlerts);
-
-      const manifestsRes = await getManifests('Created');
-      setPackingJobs(manifestsRes.data);
+      await loadAlerts();
     } catch (err) {
-      console.error(err);
+      console.error('Error loading dashboard data:', err);
+    } finally {
+      setLoading(false);
     }
   };
 
-  const loadElectionSpecificData = async (electionId) => {
+  const loadAlerts = async () => {
     try {
-      // Load election-specific manifests and tasks
-      const manifestsRes = await getManifests(`?electionId=${electionId}`);
-      
-      // Transform manifests into tasks
-      const manifestTasks = (manifestsRes.data || []).map(manifest => ({
-        id: manifest.id,
-        type: 'manifest',
-        title: `Manifest #${manifest.manifestNumber || manifest.id}`,
-        description: `${manifest.status} - ${manifest.itemCount || 0} items`,
-        priority: manifest.status === 'Created' ? 'high' : 'normal',
-        timestamp: manifest.updatedAt || manifest.createdAt,
-        facility: manifest.fromFacility?.name || 'Unknown',
-        action: manifest.status === 'Created' ? 'Review' : 'View'
-      }));
-
-      setTasks(manifestTasks);
+      const alertsRes = await getActiveAlerts();
+      setAlerts(alertsRes.data || []);
     } catch (err) {
-      console.error('Error loading election data:', err);
+      console.error('Error loading alerts:', err);
     }
   };
 
   const handleElectionChange = (election) => {
     setSelectedElection(election);
+  };
+
+  const handleAlertAction = async (alertId, action) => {
+    // Refresh alerts after any action
+    await loadAlerts();
   };
 
   return (
@@ -92,22 +61,50 @@ export default function WarehouseDashboardPage() {
       <div className="flex-1 flex flex-col">
         <TopBar title="Warehouse Dashboard" />
         <main className="flex-1 p-4 fade-in">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
-            {/* Election Panel - spans 1 column */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 h-full">
+            {/* Election Panel - Fixed Left Sidebar */}
             <div className="lg:col-span-1">
-              <ElectionPanel onElectionChange={handleElectionChange} />
+              <div className="sticky top-4">
+                <ElectionPanel onElectionChange={handleElectionChange} />
+                
+                {/* Election Summary Stats */}
+                {selectedElection && (
+                  <div className="mt-6 bg-white shadow rounded p-4">
+                    <h3 className="text-lg font-semibold mb-3">Election Summary</h3>
+                    <div className="space-y-3">
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Active Alerts</span>
+                        <span className="font-medium text-red-600">
+                          {alerts.filter(a => a.severity === 'Critical' || a.severity === 'High').length}
+                        </span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Total Alerts</span>
+                        <span className="font-medium">{alerts.length}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Poll Sites</span>
+                        <span className="font-medium">{selectedElection.totalFacilities || 0}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-gray-600">Manifests</span>
+                        <span className="font-medium">{selectedElection.activeManifests || 0}</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
             
-            {/* Notifications Panel - spans 2 columns */}
-            <div className="lg:col-span-2">
-              <NotificationsPanel alerts={alerts} />
+            {/* Enhanced Notifications and Alerts Panel - Right Side */}
+            <div className="lg:col-span-3">
+              <EnhancedNotificationsPanel 
+                alerts={alerts} 
+                loading={loading}
+                onAlertAction={handleAlertAction}
+                onRefresh={loadAlerts}
+              />
             </div>
-          </div>
-
-          {/* Tasks and Packing Jobs Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-            <TasksPanel tasks={tasks} />
-            <PackingJobsList jobs={packingJobs} />
           </div>
         </main>
       </div>

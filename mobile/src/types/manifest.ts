@@ -24,3 +24,14 @@ export interface ManifestItemDto {
   packedDate?: string;
   packedBy?: number;
 }
+
+export interface ManifestSummaryDto {
+  manifestId: number;
+  manifestNumber: string;
+  electionId: number;
+  fromFacilityId: number;
+  toPollSiteId: number;
+  status: string;
+  itemCount: number;
+  packedCount: number;
+}

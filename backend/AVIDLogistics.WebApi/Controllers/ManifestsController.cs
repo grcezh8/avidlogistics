@@ -3,6 +3,7 @@ using AVIDLogistics.Domain.Entities;
 using AVIDLogistics.Application.Interfaces;
 using AVIDLogistics.Application.DTOs;
 using AVIDLogistics.Domain.Enums;
+using AVIDLogistics.Domain.Exceptions;
 
 namespace AVIDLogistics.WebApi.Controllers
 {
@@ -10,11 +11,11 @@ namespace AVIDLogistics.WebApi.Controllers
     [Route("api/[controller]")]
     public class ManifestsController : ControllerBase
     {
-        private readonly AVIDLogistics.Application.Services.ManifestService _manifestService;
+        private readonly IManifestService _manifestService;
         private readonly IManifestRepository _manifestRepo;
         private readonly IPollSiteRepository _pollSiteRepo;
 
-        public ManifestsController(AVIDLogistics.Application.Services.ManifestService manifestService, IManifestRepository manifestRepo, IPollSiteRepository pollSiteRepo)
+        public ManifestsController(IManifestService manifestService, IManifestRepository manifestRepo, IPollSiteRepository pollSiteRepo)
         {
             _manifestService = manifestService;
             _manifestRepo = manifestRepo;
@@ -284,13 +285,32 @@ namespace AVIDLogistics.WebApi.Controllers
                 await _manifestService.FinishPackingAsync(id, packedBy);
                 return Ok(new { message = "Packing completed successfully" });
             }
-            catch (KeyNotFoundException ex)
+            catch (ManifestNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
             }
+            catch (AssetNotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Handle business logic errors (like already packed manifests) with 400 Bad Request
+                return BadRequest(new { message = ex.Message });
+            }
+            catch (InvalidManifestStateException ex)
+            {
+                // Handle manifest state errors with 400 Bad Request
+                return BadRequest(new { message = ex.Message });
+            }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = ex.Message });
+                // Log the full exception for debugging
+                Console.WriteLine($"Error finishing packing for manifest {id}: {ex}");
+                return StatusCode(500, new { 
+                    message = "An unexpected error occurred while finishing packing",
+                    details = ex.Message 
+                });
             }
         }
 

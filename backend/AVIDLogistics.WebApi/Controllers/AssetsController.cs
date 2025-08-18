@@ -26,6 +26,19 @@ namespace AVIDLogistics.WebApi.Controllers
             try
             {
                 var assets = await _assetRepository.GetAllAsync();
+                
+                // Filter by status if provided
+                if (!string.IsNullOrEmpty(status) && Enum.TryParse<AssetStatus>(status, true, out var parsedStatus))
+                {
+                    assets = assets.Where(a => a.Status == parsedStatus);
+                }
+                
+                // Filter by facility if provided
+                if (facilityId.HasValue)
+                {
+                    assets = assets.Where(a => a.FacilityId == facilityId.Value);
+                }
+                
                 return Ok(assets);
             }
             catch (Exception ex)

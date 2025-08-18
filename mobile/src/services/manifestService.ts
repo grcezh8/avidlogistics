@@ -1,8 +1,18 @@
 import { apiClient } from './api';
 import { API_ENDPOINTS } from '../constants/api';
-import { ManifestWithDetailsDto } from '../types/manifest';
+import { ManifestWithDetailsDto, ManifestSummaryDto } from '../types/manifest';
 
 export class ManifestService {
+  static async getAllManifests(): Promise<ManifestSummaryDto[]> {
+    try {
+      const response = await apiClient.get(API_ENDPOINTS.MANIFESTS.GET_ALL);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching manifests:', error);
+      throw new Error('Failed to fetch manifests');
+    }
+  }
+
   static async getManifestDetails(manifestId: number): Promise<ManifestWithDetailsDto> {
     try {
       const response = await apiClient.get(API_ENDPOINTS.MANIFESTS.GET_DETAILS(manifestId));
@@ -20,6 +30,16 @@ export class ManifestService {
     } catch (error) {
       console.error('Error fetching manifest:', error);
       throw new Error('Failed to fetch manifest');
+    }
+  }
+
+  static async finishPacking(manifestId: number): Promise<any> {
+    try {
+      const response = await apiClient.post(API_ENDPOINTS.MANIFESTS.FINISH_PACKING(manifestId));
+      return response.data;
+    } catch (error) {
+      console.error('Error finishing packing:', error);
+      throw new Error('Failed to finish packing');
     }
   }
 

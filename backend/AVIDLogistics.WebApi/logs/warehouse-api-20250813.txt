@@ -1,0 +1,1514 @@
+2025-08-13 14:49:46.263 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-13 14:49:46.296 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-13 14:49:46.722 -04:00 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-13 14:49:46.789 -04:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-13 14:49:46.794 -04:00 [INF] Database initialized successfully
+2025-08-13 14:49:46.800 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-08-13 14:49:46.819 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-13 14:49:46.943 -04:00 [INF] Now listening on: http://localhost:5166
+2025-08-13 14:49:46.947 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-13 14:49:46.949 -04:00 [INF] Hosting environment: Development
+2025-08-13 14:49:46.950 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-08-13 14:49:52.366 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-08-13 14:49:52.366 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/favicon.ico - null null
+2025-08-13 14:49:52.366 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/auth/profile - null null
+2025-08-13 14:49:52.371 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-08-13 14:49:52.391 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:49:52.391 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:49:52.423 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.423 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.427 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/favicon.ico - 404 0 null 62.3655ms
+2025-08-13 14:49:52.433 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/favicon.ico - null null
+2025-08-13 14:49:52.438 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/favicon.ico, Response status code: 404
+2025-08-13 14:49:52.441 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller AVIDLogistics.WebApi.Controllers.AuthController (AVIDLogistics.WebApi).
+2025-08-13 14:49:52.441 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-08-13 14:49:52.442 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/favicon.ico - 404 0 null 8.446ms
+2025-08-13 14:49:52.449 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 14:49:52.449 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/favicon.ico, Response status code: 404
+2025-08-13 14:49:52.470 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi) in 23.2207ms
+2025-08-13 14:49:52.470 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/auth/profile - null null
+2025-08-13 14:49:52.471 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.477 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:49:52.478 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/auth/profile - 200 null application/json; charset=utf-8 112.8854ms
+2025-08-13 14:49:52.479 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.483 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 14:49:52.484 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller AVIDLogistics.WebApi.Controllers.AuthController (AVIDLogistics.WebApi).
+2025-08-13 14:49:52.487 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:49:52.491 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 14:49:52.493 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi) in 3.6914ms
+2025-08-13 14:49:52.495 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.496 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 14:49:52.497 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/auth/profile - 200 null application/json; charset=utf-8 27.558ms
+2025-08-13 14:49:52.501 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 14:49:52.503 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 20.0796ms
+2025-08-13 14:49:52.507 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 14:49:52.513 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:49:52.515 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 14:49:52.517 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 14:49:52.518 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 10.8619ms
+2025-08-13 14:49:52.647 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/logo192.png - null null
+2025-08-13 14:49:52.651 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/logo192.png - 404 0 null 4.4188ms
+2025-08-13 14:49:52.654 -04:00 [ERR] Failed executing DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-08-13 14:49:52.655 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/logo192.png, Response status code: 404
+2025-08-13 14:49:52.669 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d581863e-c3fe-41ca-b984-c57ed892cffc
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d581863e-c3fe-41ca-b984-c57ed892cffc
+Error Number:207,State:1,Class:16
+2025-08-13 14:49:52.679 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 14:49:52.682 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 236.1298ms
+2025-08-13 14:49:52.683 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-08-13 14:49:52.684 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.685 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:49:52.687 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.688 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-08-13 14:49:52.689 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 324.4977ms
+2025-08-13 14:49:52.733 -04:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-08-13 14:49:52.737 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d581863e-c3fe-41ca-b984-c57ed892cffc
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:d581863e-c3fe-41ca-b984-c57ed892cffc
+Error Number:207,State:1,Class:16
+2025-08-13 14:49:52.743 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 14:49:52.744 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 54.4552ms
+2025-08-13 14:49:52.746 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 14:49:52.747 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 63.9716ms
+2025-08-13 14:50:07.911 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-08-13 14:50:07.918 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:07.926 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-08-13 14:50:07.929 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 14:50:07.931 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 20.0276ms
+2025-08-13 14:50:07.935 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-08-13 14:50:07.936 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/facilities - null null
+2025-08-13 14:50:07.939 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:07.941 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:07.942 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:07.943 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-08-13 14:50:07.945 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 14:50:07.948 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/facilities - 401 0 null 11.7588ms
+2025-08-13 14:50:07.957 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:07.989 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-08-13 14:50:08.074 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:08.120 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 160.8888ms
+2025-08-13 14:50:08.122 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:08.123 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-08-13 14:50:08.124 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 189.2776ms
+2025-08-13 14:50:08.127 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:08.132 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:08.133 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:08.139 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-08-13 14:50:08.144 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:08.146 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 10.0987ms
+2025-08-13 14:50:08.147 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:08.149 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 26.2856ms
+2025-08-13 14:50:08.909 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 14:50:08.915 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:08.918 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:08.940 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:09.034 -04:00 [INF] Executed DbCommand (28ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 14:50:09.040 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:09.047 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 103.6749ms
+2025-08-13 14:50:09.048 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 14:50:09.048 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:09.052 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 142.4625ms
+2025-08-13 14:50:09.052 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:09.063 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:09.065 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:09.071 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 14:50:09.075 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:09.076 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 8.3145ms
+2025-08-13 14:50:09.077 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:09.079 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 30.8072ms
+2025-08-13 14:50:10.204 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/chainofcustody - null null
+2025-08-13 14:50:10.212 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:10.216 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ChainOfCustodyController.GetChainOfCustodyEvents (AVIDLogistics.WebApi)'
+2025-08-13 14:50:10.223 -04:00 [INF] Route matched with {action = "GetChainOfCustodyEvents", controller = "ChainOfCustody"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetChainOfCustodyEvents(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.ChainOfCustodyController (AVIDLogistics.WebApi).
+2025-08-13 14:50:10.230 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.ChainOfCustodyEvent, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:10.237 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ChainOfCustodyController.GetChainOfCustodyEvents (AVIDLogistics.WebApi) in 9.4693ms
+2025-08-13 14:50:10.238 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ChainOfCustodyController.GetChainOfCustodyEvents (AVIDLogistics.WebApi)'
+2025-08-13 14:50:10.239 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/chainofcustody - null null
+2025-08-13 14:50:10.241 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/chainofcustody - 200 null application/json; charset=utf-8 36.3414ms
+2025-08-13 14:50:10.246 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:10.250 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ChainOfCustodyController.GetChainOfCustodyEvents (AVIDLogistics.WebApi)'
+2025-08-13 14:50:10.252 -04:00 [INF] Route matched with {action = "GetChainOfCustodyEvents", controller = "ChainOfCustody"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetChainOfCustodyEvents(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.ChainOfCustodyController (AVIDLogistics.WebApi).
+2025-08-13 14:50:10.256 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.ChainOfCustodyEvent, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:10.259 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ChainOfCustodyController.GetChainOfCustodyEvents (AVIDLogistics.WebApi) in 5.1122ms
+2025-08-13 14:50:10.261 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ChainOfCustodyController.GetChainOfCustodyEvents (AVIDLogistics.WebApi)'
+2025-08-13 14:50:10.263 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/chainofcustody - 200 null application/json; charset=utf-8 23.8507ms
+2025-08-13 14:50:31.330 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 14:50:31.339 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:31.341 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:31.345 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:31.363 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 14:50:31.366 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:31.369 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 16.2693ms
+2025-08-13 14:50:31.370 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:31.371 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 14:50:31.375 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 44.3215ms
+2025-08-13 14:50:31.382 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:31.386 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:31.387 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:31.391 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 14:50:31.394 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:31.396 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 6.7619ms
+2025-08-13 14:50:31.397 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:31.399 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 28.3547ms
+2025-08-13 14:50:33.164 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/pollsites - null null
+2025-08-13 14:50:33.164 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets?status=Available - null null
+2025-08-13 14:50:33.169 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:33.175 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:33.180 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.PollSitesController.GetPollSites (AVIDLogistics.WebApi)'
+2025-08-13 14:50:33.183 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:33.192 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:33.194 -04:00 [INF] Route matched with {action = "GetPollSites", controller = "PollSites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPollSites() on controller AVIDLogistics.WebApi.Controllers.PollSitesController (AVIDLogistics.WebApi).
+2025-08-13 14:50:33.204 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-08-13 14:50:33.206 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType17`6[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-13 14:50:33.216 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:33.219 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.PollSitesController.GetPollSites (AVIDLogistics.WebApi) in 13.8408ms
+2025-08-13 14:50:33.220 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 20.3142ms
+2025-08-13 14:50:33.221 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.PollSitesController.GetPollSites (AVIDLogistics.WebApi)'
+2025-08-13 14:50:33.222 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:33.223 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/pollsites - 200 null application/json; charset=utf-8 59.69ms
+2025-08-13 14:50:33.224 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets?status=Available - 200 null application/json; charset=utf-8 60.8094ms
+2025-08-13 14:50:41.649 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/create-with-assets - null null
+2025-08-13 14:50:41.654 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:41.656 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/create-with-assets - 204 null null 6.216ms
+2025-08-13 14:50:41.670 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - application/json 69
+2025-08-13 14:50:41.675 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:41.676 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:41.680 -04:00 [INF] Route matched with {action = "CreateManifestWithAssets", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateManifestWithAssets(AVIDLogistics.Application.DTOs.CreateManifestWithAssetsInput) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:41.714 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:41.720 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:41.836 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 200), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kits] ([CreatedDate], [Name], [PollSiteID], [Status], [KitType])
+OUTPUT INSERTED.[KitID]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-13 14:50:41.908 -04:00 [INF] Executed DbCommand (28ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p13='?' (DbType = Int32), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p19='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 200), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AssetKits] ([AssetId], [KitId], [AssignedBy], [AssignedDate])
+VALUES (@p0, @p1, @p2, @p3),
+(@p4, @p5, @p6, @p7);
+UPDATE [Assets] SET [ModifiedDate] = @p8, [Status] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+UPDATE [Assets] SET [ModifiedDate] = @p11, [Status] = @p12
+OUTPUT 1
+WHERE [Id] = @p13;
+UPDATE [Kits] SET [CreatedDate] = @p14, [Name] = @p15, [PollSiteID] = @p16, [Status] = @p17, [KitType] = @p18
+OUTPUT 1
+WHERE [KitID] = @p19;
+2025-08-13 14:50:41.969 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 100), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Manifests] ([CreatedBy], [CreatedDate], [ElectionId], [FromFacilityId], [ManifestNumber], [PackedDate], [Status], [ToPollSiteId])
+OUTPUT INSERTED.[ManifestId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2025-08-13 14:50:42.002 -04:00 [INF] Executed DbCommand (24ms) [Parameters=[@p8='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 50), @p14='?' (DbType = Int32), @p15='?' (DbType = Boolean), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = DateTime2), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [ManifestItems] USING (
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, 0),
+(@p14, @p15, @p16, @p17, @p18, @p19, 1)) AS i ([AssetId], [IsPacked], [ManifestId], [PackedBy], [PackedDate], [SealNumber], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([AssetId], [IsPacked], [ManifestId], [PackedBy], [PackedDate], [SealNumber])
+VALUES (i.[AssetId], i.[IsPacked], i.[ManifestId], i.[PackedBy], i.[PackedDate], i.[SealNumber])
+OUTPUT INSERTED.[ManifestItemId], i._Position;
+2025-08-13 14:50:42.028 -04:00 [INF] Executed DbCommand (12ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-08-13 14:50:42.034 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-08-13 14:50:42.053 -04:00 [INF] Executed DbCommand (7ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:42.058 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:42.062 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:42.066 -04:00 [INF] Executing CreatedAtActionResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 14:50:42.082 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi) in 399.2363ms
+2025-08-13 14:50:42.084 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 14:50:42.085 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - 201 null application/json; charset=utf-8 414.7447ms
+2025-08-13 14:50:42.088 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 14:50:42.090 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:42.091 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:42.092 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:42.095 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 14:50:42.100 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:42.102 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:42.105 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:42.107 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:42.108 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 14.7569ms
+2025-08-13 14:50:42.108 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:42.110 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 21.7612ms
+2025-08-13 14:50:43.560 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/7/details - null null
+2025-08-13 14:50:43.564 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:43.565 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:43.573 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:43.579 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:43.582 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:43.586 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:43.588 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 14:50:43.589 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 13.3002ms
+2025-08-13 14:50:43.590 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:43.591 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/7/details - 200 null application/json; charset=utf-8 31.8085ms
+2025-08-13 14:50:44.542 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/kits/packed - null null
+2025-08-13 14:50:44.546 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:44.549 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.KitsController.GetPackedKits (AVIDLogistics.WebApi)'
+2025-08-13 14:50:44.553 -04:00 [INF] Route matched with {action = "GetPackedKits", controller = "Kits"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPackedKits() on controller AVIDLogistics.WebApi.Controllers.KitsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:44.562 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[KitID], [k].[CreatedDate], [k].[Name], [k].[PollSiteID], [k].[Status], [k].[KitType]
+FROM [Kits] AS [k]
+WHERE [k].[Status] = @__status_0
+2025-08-13 14:50:44.565 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.KitSummaryDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 14:50:44.569 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.KitsController.GetPackedKits (AVIDLogistics.WebApi) in 14.4691ms
+2025-08-13 14:50:44.570 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.KitsController.GetPackedKits (AVIDLogistics.WebApi)'
+2025-08-13 14:50:44.572 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/kits/packed - 200 null application/json; charset=utf-8 30.2895ms
+2025-08-13 14:50:46.821 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/7/items/23/pack - null null
+2025-08-13 14:50:46.829 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:46.831 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/7/items/23/pack - 204 null null 9.5191ms
+2025-08-13 14:50:46.836 -04:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5166/api/manifests/7/items/23/pack - null 0
+2025-08-13 14:50:46.839 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:46.840 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 14:50:46.843 -04:00 [INF] Route matched with {action = "PackItem", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PackItem(Int32, Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:46.847 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:46.864 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 100), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ManifestItems] SET [IsPacked] = @p0, [PackedBy] = @p1, [PackedDate] = @p2
+OUTPUT 1
+WHERE [ManifestItemId] = @p3;
+UPDATE [Manifests] SET [CreatedBy] = @p4, [CreatedDate] = @p5, [ElectionId] = @p6, [FromFacilityId] = @p7, [ManifestNumber] = @p8, [PackedDate] = @p9, [Status] = @p10, [ToPollSiteId] = @p11
+OUTPUT 1
+WHERE [ManifestId] = @p12;
+2025-08-13 14:50:46.871 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-08-13 14:50:46.873 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi) in 28.2086ms
+2025-08-13 14:50:46.874 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 14:50:46.875 -04:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5166/api/manifests/7/items/23/pack - 200 0 null 38.6707ms
+2025-08-13 14:50:46.877 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/7/details - null null
+2025-08-13 14:50:46.880 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:46.880 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:46.881 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:46.884 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:46.888 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:46.891 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:46.892 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 14:50:46.893 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 11.0092ms
+2025-08-13 14:50:46.894 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:46.895 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/7/details - 200 null application/json; charset=utf-8 17.933ms
+2025-08-13 14:50:47.532 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/7/items/26/pack - null null
+2025-08-13 14:50:47.537 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:47.538 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/7/items/26/pack - 204 null null 6.4038ms
+2025-08-13 14:50:47.541 -04:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5166/api/manifests/7/items/26/pack - null 0
+2025-08-13 14:50:47.544 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:47.546 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 14:50:47.547 -04:00 [INF] Route matched with {action = "PackItem", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PackItem(Int32, Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:47.551 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:47.556 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 100), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ManifestItems] SET [IsPacked] = @p0, [PackedBy] = @p1, [PackedDate] = @p2
+OUTPUT 1
+WHERE [ManifestItemId] = @p3;
+UPDATE [Manifests] SET [CreatedBy] = @p4, [CreatedDate] = @p5, [ElectionId] = @p6, [FromFacilityId] = @p7, [ManifestNumber] = @p8, [PackedDate] = @p9, [Status] = @p10, [ToPollSiteId] = @p11
+OUTPUT 1
+WHERE [ManifestId] = @p12;
+2025-08-13 14:50:47.571 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-08-13 14:50:47.573 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi) in 25.0179ms
+2025-08-13 14:50:47.576 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 14:50:47.577 -04:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5166/api/manifests/7/items/26/pack - 200 0 null 35.7408ms
+2025-08-13 14:50:47.581 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/7/details - null null
+2025-08-13 14:50:47.584 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:47.585 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:47.586 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:47.589 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:47.592 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:47.595 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:47.597 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 14:50:47.598 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 10.7635ms
+2025-08-13 14:50:47.600 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 14:50:47.600 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/7/details - 200 null application/json; charset=utf-8 19.2776ms
+2025-08-13 14:50:48.228 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/7/finish-packing - null 0
+2025-08-13 14:50:48.233 -04:00 [INF] CORS policy execution successful.
+2025-08-13 14:50:48.235 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 14:50:48.241 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 14:50:48.248 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 14:50:48.252 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 14:50:48.256 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 14:50:48.257 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 13.6144ms
+2025-08-13 14:50:48.258 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 14:50:48.259 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/7/finish-packing - 500 null application/json; charset=utf-8 31.3338ms
+2025-08-13 15:50:40.846 -04:00 [WRN] No store type was specified for the decimal property 'Latitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-13 15:50:40.888 -04:00 [WRN] No store type was specified for the decimal property 'Longitude' on entity type 'PollSite'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2025-08-13 15:50:41.290 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-08-13 15:50:41.353 -04:00 [INF] Executed DbCommand (55ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+2025-08-13 15:50:41.357 -04:00 [INF] Database initialized successfully
+2025-08-13 15:50:41.363 -04:00 [INF] AVID Logistics Warehouse Management API starting up...
+2025-08-13 15:50:41.375 -04:00 [INF] User profile is available. Using 'C:\Users\GraceZhou\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-08-13 15:50:41.416 -04:00 [INF] Now listening on: http://localhost:5166
+2025-08-13 15:50:41.420 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-08-13 15:50:41.422 -04:00 [INF] Hosting environment: Development
+2025-08-13 15:50:41.424 -04:00 [INF] Content root path: C:\Users\GraceZhou\Documents\AVIDLogistics\backend\AVIDLogistics.WebApi
+2025-08-13 15:51:06.506 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/auth/profile - null null
+2025-08-13 15:51:06.506 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-08-13 15:51:06.515 -04:00 [WRN] Failed to determine the https port for redirect.
+2025-08-13 15:51:06.548 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:06.548 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:06.665 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 15:51:06.665 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 15:51:06.680 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-08-13 15:51:06.680 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller AVIDLogistics.WebApi.Controllers.AuthController (AVIDLogistics.WebApi).
+2025-08-13 15:51:06.689 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:51:06.718 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/auth/profile - null null
+2025-08-13 15:51:06.718 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi) in 31.4211ms
+2025-08-13 15:51:06.724 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:06.727 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 15:51:06.731 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 15:51:06.731 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/auth/profile - 200 null application/json; charset=utf-8 226.4081ms
+2025-08-13 15:51:06.732 -04:00 [INF] Route matched with {action = "GetProfile", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetProfile() on controller AVIDLogistics.WebApi.Controllers.AuthController (AVIDLogistics.WebApi).
+2025-08-13 15:51:06.737 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 15:51:06.739 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType7`2[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:51:06.741 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:06.744 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi) in 5.4344ms
+2025-08-13 15:51:06.745 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AuthController.GetProfile (AVIDLogistics.WebApi)'
+2025-08-13 15:51:06.747 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/auth/profile - 200 null application/json; charset=utf-8 28.9523ms
+2025-08-13 15:51:06.749 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 15:51:06.754 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 15:51:06.756 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 19.0023ms
+2025-08-13 15:51:06.761 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 15:51:06.766 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:06.768 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 15:51:06.770 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 15:51:06.772 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 10.8117ms
+2025-08-13 15:51:06.775 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/logo192.png - null null
+2025-08-13 15:51:06.782 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/logo192.png - 404 0 null 7.8329ms
+2025-08-13 15:51:06.787 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/logo192.png, Response status code: 404
+2025-08-13 15:51:06.943 -04:00 [ERR] Failed executing DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-08-13 15:51:06.959 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5fe3fd3f-a77b-49de-9ee6-2b728c3c0e62
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5fe3fd3f-a77b-49de-9ee6-2b728c3c0e62
+Error Number:207,State:1,Class:16
+2025-08-13 15:51:06.968 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:51:06.980 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 297.6948ms
+2025-08-13 15:51:06.982 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/elections - null null
+2025-08-13 15:51:06.992 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 15:51:06.995 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:07.002 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 15:51:07.004 -04:00 [INF] Route matched with {action = "GetElections", controller = "Elections"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetElections() on controller AVIDLogistics.WebApi.Controllers.ElectionsController (AVIDLogistics.WebApi).
+2025-08-13 15:51:07.010 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 506.3737ms
+2025-08-13 15:51:07.071 -04:00 [ERR] Failed executing DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[ElectionId], [e].[CreatedBy], [e].[CreatedDate], [e].[ElectionDate], [e].[ElectionType], [e].[ModifiedBy], [e].[ModifiedDate], [e].[Name], [e].[Status]
+FROM [Elections] AS [e]
+WHERE [e].[ElectionDate] > GETUTCDATE()
+ORDER BY [e].[ElectionDate]
+2025-08-13 15:51:07.076 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5fe3fd3f-a77b-49de-9ee6-2b728c3c0e62
+Error Number:207,State:1,Class:16
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ElectionDate'.
+Invalid column name 'CreatedBy'.
+Invalid column name 'ElectionDate'.
+Invalid column name 'ElectionType'.
+Invalid column name 'ModifiedBy'.
+Invalid column name 'Status'.
+Invalid column name 'ElectionDate'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__209_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5fe3fd3f-a77b-49de-9ee6-2b728c3c0e62
+Error Number:207,State:1,Class:16
+2025-08-13 15:51:07.085 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:51:07.087 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi) in 78.405ms
+2025-08-13 15:51:07.088 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ElectionsController.GetElections (AVIDLogistics.WebApi)'
+2025-08-13 15:51:07.090 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/elections - 500 null application/json; charset=utf-8 107.9672ms
+2025-08-13 15:51:23.303 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/main.19c699790171c36b4d05.hot-update.json - null null
+2025-08-13 15:51:23.310 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/main.19c699790171c36b4d05.hot-update.json - 404 0 null 6.5592ms
+2025-08-13 15:51:23.316 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/main.19c699790171c36b4d05.hot-update.json, Response status code: 404
+2025-08-13 15:51:23.720 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 15:51:23.725 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:23.726 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:51:23.730 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/logo192.png - null null
+2025-08-13 15:51:23.732 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/logo192.png - 404 0 null 2.1909ms
+2025-08-13 15:51:23.737 -04:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5166/logo192.png, Response status code: 404
+2025-08-13 15:51:23.737 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:51:23.869 -04:00 [INF] Executed DbCommand (32ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 15:51:23.879 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:51:23.893 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 151.2402ms
+2025-08-13 15:51:23.894 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 15:51:23.895 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:51:23.897 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:23.897 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 177.2589ms
+2025-08-13 15:51:23.898 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:51:23.900 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:51:23.905 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 15:51:23.907 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:51:23.909 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 7.1035ms
+2025-08-13 15:51:23.910 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:51:23.924 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 16.5753ms
+2025-08-13 15:51:36.478 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 15:51:36.481 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:51:36.483 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 15:51:36.486 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 15:51:36.488 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 10.3837ms
+2025-08-13 15:52:06.482 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 15:52:06.485 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:06.486 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 15:52:06.487 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 15:52:06.489 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 6.5394ms
+2025-08-13 15:52:36.470 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/alerts/active - null null
+2025-08-13 15:52:36.472 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:36.473 -04:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin|WarehouseStaff|Auditor)
+2025-08-13 15:52:36.474 -04:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-08-13 15:52:36.474 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/alerts/active - 401 0 null 4.0986ms
+2025-08-13 15:52:49.436 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 15:52:49.448 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:49.455 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:52:49.460 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:52:49.476 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 15:52:49.479 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:52:49.482 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 16.1672ms
+2025-08-13 15:52:49.483 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 15:52:49.483 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:52:49.487 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:49.491 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 54.7033ms
+2025-08-13 15:52:49.493 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:52:49.501 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:52:49.505 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 15:52:49.508 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:52:49.510 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 7.4558ms
+2025-08-13 15:52:49.514 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:52:49.515 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 32.1812ms
+2025-08-13 15:52:51.168 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/kits/packed - null null
+2025-08-13 15:52:51.171 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:51.173 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.KitsController.GetPackedKits (AVIDLogistics.WebApi)'
+2025-08-13 15:52:51.177 -04:00 [INF] Route matched with {action = "GetPackedKits", controller = "Kits"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPackedKits() on controller AVIDLogistics.WebApi.Controllers.KitsController (AVIDLogistics.WebApi).
+2025-08-13 15:52:51.199 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[KitID], [k].[CreatedDate], [k].[Name], [k].[PollSiteID], [k].[Status], [k].[KitType]
+FROM [Kits] AS [k]
+WHERE [k].[Status] = @__status_0
+2025-08-13 15:52:51.204 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.KitSummaryDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:52:51.209 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.KitsController.GetPackedKits (AVIDLogistics.WebApi) in 31.1573ms
+2025-08-13 15:52:51.213 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.KitsController.GetPackedKits (AVIDLogistics.WebApi)'
+2025-08-13 15:52:51.215 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/kits/packed - 200 null application/json; charset=utf-8 47.6029ms
+2025-08-13 15:52:53.823 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets?status=Available - null null
+2025-08-13 15:52:53.823 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/pollsites - null null
+2025-08-13 15:52:53.826 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:53.825 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:52:53.827 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:52:53.827 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.PollSitesController.GetPollSites (AVIDLogistics.WebApi)'
+2025-08-13 15:52:53.834 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-08-13 15:52:53.835 -04:00 [INF] Route matched with {action = "GetPollSites", controller = "PollSites"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPollSites() on controller AVIDLogistics.WebApi.Controllers.PollSitesController (AVIDLogistics.WebApi).
+2025-08-13 15:52:53.840 -04:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType17`6[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]][]'.
+2025-08-13 15:52:53.845 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.PollSitesController.GetPollSites (AVIDLogistics.WebApi) in 5.6948ms
+2025-08-13 15:52:53.848 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.PollSitesController.GetPollSites (AVIDLogistics.WebApi)'
+2025-08-13 15:52:53.850 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/pollsites - 200 null application/json; charset=utf-8 26.7511ms
+2025-08-13 15:52:53.869 -04:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-08-13 15:52:53.928 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListWhereIterator`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:52:53.953 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 115.672ms
+2025-08-13 15:52:53.955 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:52:53.956 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets?status=Available - 200 null application/json; charset=utf-8 133.5069ms
+2025-08-13 15:53:00.517 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/create-with-assets - null null
+2025-08-13 15:53:00.522 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:00.523 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/create-with-assets - 204 null null 6.8293ms
+2025-08-13 15:53:00.526 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - application/json 68
+2025-08-13 15:53:00.527 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:00.528 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:53:00.530 -04:00 [INF] Route matched with {action = "CreateManifestWithAssets", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateManifestWithAssets(AVIDLogistics.Application.DTOs.CreateManifestWithAssetsInput) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:00.558 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:00.564 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:00.658 -04:00 [INF] Executed DbCommand (16ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 200), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kits] ([CreatedDate], [Name], [PollSiteID], [Status], [KitType])
+OUTPUT INSERTED.[KitID]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-13 15:53:00.743 -04:00 [INF] Executed DbCommand (39ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p13='?' (DbType = Int32), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p19='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 200), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AssetKits] ([AssetId], [KitId], [AssignedBy], [AssignedDate])
+VALUES (@p0, @p1, @p2, @p3),
+(@p4, @p5, @p6, @p7);
+UPDATE [Assets] SET [ModifiedDate] = @p8, [Status] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+UPDATE [Assets] SET [ModifiedDate] = @p11, [Status] = @p12
+OUTPUT 1
+WHERE [Id] = @p13;
+UPDATE [Kits] SET [CreatedDate] = @p14, [Name] = @p15, [PollSiteID] = @p16, [Status] = @p17, [KitType] = @p18
+OUTPUT 1
+WHERE [KitID] = @p19;
+2025-08-13 15:53:00.793 -04:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 100), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Manifests] ([CreatedBy], [CreatedDate], [ElectionId], [FromFacilityId], [ManifestNumber], [PackedDate], [Status], [ToPollSiteId])
+OUTPUT INSERTED.[ManifestId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2025-08-13 15:53:00.823 -04:00 [INF] Executed DbCommand (24ms) [Parameters=[@p8='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 50), @p14='?' (DbType = Int32), @p15='?' (DbType = Boolean), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = DateTime2), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [ManifestItems] USING (
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, 0),
+(@p14, @p15, @p16, @p17, @p18, @p19, 1)) AS i ([AssetId], [IsPacked], [ManifestId], [PackedBy], [PackedDate], [SealNumber], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([AssetId], [IsPacked], [ManifestId], [PackedBy], [PackedDate], [SealNumber])
+VALUES (i.[AssetId], i.[IsPacked], i.[ManifestId], i.[PackedBy], i.[PackedDate], i.[SealNumber])
+OUTPUT INSERTED.[ManifestItemId], i._Position;
+2025-08-13 15:53:00.855 -04:00 [INF] Executed DbCommand (13ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-08-13 15:53:00.860 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-08-13 15:53:00.888 -04:00 [INF] Executed DbCommand (6ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:00.894 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:00.897 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:00.901 -04:00 [INF] Executing CreatedAtActionResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:53:00.911 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi) in 379.3383ms
+2025-08-13 15:53:00.913 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:53:00.914 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - 201 null application/json; charset=utf-8 388.3281ms
+2025-08-13 15:53:00.919 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - null null
+2025-08-13 15:53:00.922 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:00.923 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:00.924 -04:00 [INF] Route matched with {action = "GetManifestsWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestsWithDetails(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:00.928 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__status_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+WHERE [m].[Status] = @__status_0
+ORDER BY [m].[CreatedDate], [m].[ManifestId]
+2025-08-13 15:53:00.933 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:00.938 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:00.941 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:00.943 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Application.DTOs.ManifestWithDetailsDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:53:00.945 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi) in 18.3526ms
+2025-08-13 15:53:00.946 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestsWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:00.947 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/with-details?status=ReadyForPacking - 200 null application/json; charset=utf-8 28.1733ms
+2025-08-13 15:53:02.216 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/8/details - null null
+2025-08-13 15:53:02.223 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:02.226 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:02.229 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:02.234 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:02.237 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:02.240 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:02.241 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:53:02.243 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 11.5505ms
+2025-08-13 15:53:02.244 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:02.244 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/8/details - 200 null application/json; charset=utf-8 28.1399ms
+2025-08-13 15:53:03.637 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/8/items/9/pack - null null
+2025-08-13 15:53:03.643 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:03.645 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/8/items/9/pack - 204 null null 6.7362ms
+2025-08-13 15:53:03.647 -04:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5166/api/manifests/8/items/9/pack - null 0
+2025-08-13 15:53:03.649 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:03.649 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 15:53:03.652 -04:00 [INF] Route matched with {action = "PackItem", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PackItem(Int32, Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:03.658 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:03.672 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 100), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ManifestItems] SET [IsPacked] = @p0, [PackedBy] = @p1, [PackedDate] = @p2
+OUTPUT 1
+WHERE [ManifestItemId] = @p3;
+UPDATE [Manifests] SET [CreatedBy] = @p4, [CreatedDate] = @p5, [ElectionId] = @p6, [FromFacilityId] = @p7, [ManifestNumber] = @p8, [PackedDate] = @p9, [Status] = @p10, [ToPollSiteId] = @p11
+OUTPUT 1
+WHERE [ManifestId] = @p12;
+2025-08-13 15:53:03.682 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-08-13 15:53:03.684 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi) in 28.7562ms
+2025-08-13 15:53:03.686 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 15:53:03.688 -04:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5166/api/manifests/8/items/9/pack - 200 0 null 40.2704ms
+2025-08-13 15:53:03.692 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/8/details - null null
+2025-08-13 15:53:03.696 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:03.697 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:03.698 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:03.702 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:03.706 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:03.709 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:03.711 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:53:03.713 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 13.1698ms
+2025-08-13 15:53:03.714 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:03.716 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/8/details - 200 null application/json; charset=utf-8 23.598ms
+2025-08-13 15:53:04.455 -04:00 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/8/items/21/pack - null null
+2025-08-13 15:53:04.461 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:04.463 -04:00 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5166/api/manifests/8/items/21/pack - 204 null null 7.8166ms
+2025-08-13 15:53:04.469 -04:00 [INF] Request starting HTTP/1.1 PUT http://localhost:5166/api/manifests/8/items/21/pack - null 0
+2025-08-13 15:53:04.474 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:04.475 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 15:53:04.477 -04:00 [INF] Route matched with {action = "PackItem", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] PackItem(Int32, Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:04.481 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:04.485 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Boolean), @p1='?' (DbType = Int32), @p2='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p4='?' (DbType = Int32), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32), @p8='?' (Size = 100), @p9='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ManifestItems] SET [IsPacked] = @p0, [PackedBy] = @p1, [PackedDate] = @p2
+OUTPUT 1
+WHERE [ManifestItemId] = @p3;
+UPDATE [Manifests] SET [CreatedBy] = @p4, [CreatedDate] = @p5, [ElectionId] = @p6, [FromFacilityId] = @p7, [ManifestNumber] = @p8, [PackedDate] = @p9, [Status] = @p10, [ToPollSiteId] = @p11
+OUTPUT 1
+WHERE [ManifestId] = @p12;
+2025-08-13 15:53:04.489 -04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-08-13 15:53:04.490 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi) in 11.2655ms
+2025-08-13 15:53:04.491 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.PackItem (AVIDLogistics.WebApi)'
+2025-08-13 15:53:04.492 -04:00 [INF] Request finished HTTP/1.1 PUT http://localhost:5166/api/manifests/8/items/21/pack - 200 0 null 23.7544ms
+2025-08-13 15:53:04.495 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/8/details - null null
+2025-08-13 15:53:04.499 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:04.499 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:04.500 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:04.503 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:04.507 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:04.510 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:53:04.512 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:53:04.513 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 11.138ms
+2025-08-13 15:53:04.514 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:53:04.515 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/8/details - 200 null application/json; charset=utf-8 20.2246ms
+2025-08-13 15:53:05.145 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - null 0
+2025-08-13 15:53:05.151 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:05.153 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:05.159 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:05.166 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:05.170 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:05.172 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 11.0731ms
+2025-08-13 15:53:05.173 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:05.175 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - 500 null application/json; charset=utf-8 29.5263ms
+2025-08-13 15:53:05.876 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - null 0
+2025-08-13 15:53:05.882 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:05.883 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:05.885 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:05.889 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:05.893 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:05.894 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 7.3028ms
+2025-08-13 15:53:05.896 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:05.897 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - 500 null application/json; charset=utf-8 20.723ms
+2025-08-13 15:53:06.109 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - null 0
+2025-08-13 15:53:06.111 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:06.114 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.115 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:06.119 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:06.120 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:06.121 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 4.0199ms
+2025-08-13 15:53:06.123 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.125 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - 500 null application/json; charset=utf-8 16.0796ms
+2025-08-13 15:53:06.322 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - null 0
+2025-08-13 15:53:06.328 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:06.329 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.331 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:06.334 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:06.337 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:06.338 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 5.5217ms
+2025-08-13 15:53:06.339 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.341 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - 500 null application/json; charset=utf-8 19.1122ms
+2025-08-13 15:53:06.510 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - null 0
+2025-08-13 15:53:06.516 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:06.517 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.519 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:06.524 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:06.527 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:06.529 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 7.3697ms
+2025-08-13 15:53:06.530 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.531 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - 500 null application/json; charset=utf-8 21.6227ms
+2025-08-13 15:53:06.695 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - null 0
+2025-08-13 15:53:06.701 -04:00 [INF] CORS policy execution successful.
+2025-08-13 15:53:06.703 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.705 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:06.710 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:06.714 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:06.716 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 7.9823ms
+2025-08-13 15:53:06.717 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:06.719 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/8/finish-packing - 500 null application/json; charset=utf-8 23.8719ms
+2025-08-13 15:53:56.990 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/1/finish-packing - application/json 0
+2025-08-13 15:53:56.994 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:56.995 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:53:57.001 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:53:57.005 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:53:57.007 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 8.6543ms
+2025-08-13 15:53:57.011 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:53:57.013 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/1/finish-packing - 500 null application/json; charset=utf-8 22.8821ms
+2025-08-13 15:54:10.887 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests - null null
+2025-08-13 15:54:10.890 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-08-13 15:54:10.893 -04:00 [INF] Route matched with {action = "GetManifests", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifests(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:54:10.952 -04:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+ORDER BY [m].[ManifestId]
+2025-08-13 15:54:10.957 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[AVIDLogistics.Domain.Entities.Manifest, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AVIDLogistics.Application.DTOs.ManifestSummaryDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:54:10.961 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi) in 63.8579ms
+2025-08-13 15:54:10.963 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-08-13 15:54:10.964 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests - 200 null application/json; charset=utf-8 77.316ms
+2025-08-13 15:54:24.779 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/3/details - null null
+2025-08-13 15:54:24.782 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:54:24.783 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:54:24.787 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:54:24.790 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:54:24.794 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:54:24.796 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:54:24.798 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 12.9189ms
+2025-08-13 15:54:24.799 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:54:24.801 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/3/details - 200 null application/json; charset=utf-8 21.7554ms
+2025-08-13 15:54:34.261 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests - null null
+2025-08-13 15:54:34.266 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-08-13 15:54:34.267 -04:00 [INF] Route matched with {action = "GetManifests", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifests(System.String) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:54:34.271 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM [Manifests] AS [m]
+LEFT JOIN [ManifestItems] AS [m0] ON [m].[ManifestId] = [m0].[ManifestId]
+ORDER BY [m].[ManifestId]
+2025-08-13 15:54:34.274 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Linq.Enumerable+ListSelectIterator`2[[AVIDLogistics.Domain.Entities.Manifest, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AVIDLogistics.Application.DTOs.ManifestSummaryDto, AVIDLogistics.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:54:34.276 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi) in 6.7757ms
+2025-08-13 15:54:34.277 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifests (AVIDLogistics.WebApi)'
+2025-08-13 15:54:34.279 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests - 200 null application/json; charset=utf-8 17.3168ms
+2025-08-13 15:54:46.070 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-08-13 15:54:46.073 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:54:46.075 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-08-13 15:54:46.079 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-08-13 15:54:46.083 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:54:46.085 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 8.697ms
+2025-08-13 15:54:46.087 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:54:46.088 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 17.8547ms
+2025-08-13 15:55:00.479 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - application/json 75
+2025-08-13 15:55:00.483 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:55:00.485 -04:00 [INF] Route matched with {action = "CreateManifestWithAssets", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateManifestWithAssets(AVIDLogistics.Application.DTOs.CreateManifestWithAssetsInput) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:55:00.491 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:00.541 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType15`3[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:55:00.544 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi) in 55.3789ms
+2025-08-13 15:55:00.545 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:55:00.546 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - 500 null application/json; charset=utf-8 67.0884ms
+2025-08-13 15:55:11.710 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/assets - null null
+2025-08-13 15:55:11.714 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:55:11.716 -04:00 [INF] Route matched with {action = "GetAssets", controller = "Assets"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAssets(System.String, System.Nullable`1[System.Int32]) on controller AVIDLogistics.WebApi.Controllers.AssetsController (AVIDLogistics.WebApi).
+2025-08-13 15:55:11.722 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+2025-08-13 15:55:11.725 -04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AVIDLogistics.Domain.Entities.Asset, AVIDLogistics.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-08-13 15:55:11.728 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi) in 8.2683ms
+2025-08-13 15:55:11.730 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.AssetsController.GetAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:55:11.732 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/assets - 200 null application/json; charset=utf-8 21.7811ms
+2025-08-13 15:55:22.399 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - application/json 77
+2025-08-13 15:55:22.402 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:55:22.404 -04:00 [INF] Route matched with {action = "CreateManifestWithAssets", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateManifestWithAssets(AVIDLogistics.Application.DTOs.CreateManifestWithAssetsInput) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:55:22.409 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:22.413 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:22.437 -04:00 [INF] Executed DbCommand (21ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 200), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Kits] ([CreatedDate], [Name], [PollSiteID], [Status], [KitType])
+OUTPUT INSERTED.[KitID]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2025-08-13 15:55:22.443 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p10='?' (DbType = Int32), @p8='?' (DbType = DateTime2), @p9='?' (DbType = Int32), @p13='?' (DbType = Int32), @p11='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p19='?' (DbType = Int32), @p14='?' (DbType = DateTime2), @p15='?' (Size = 200), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AssetKits] ([AssetId], [KitId], [AssignedBy], [AssignedDate])
+VALUES (@p0, @p1, @p2, @p3),
+(@p4, @p5, @p6, @p7);
+UPDATE [Assets] SET [ModifiedDate] = @p8, [Status] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+UPDATE [Assets] SET [ModifiedDate] = @p11, [Status] = @p12
+OUTPUT 1
+WHERE [Id] = @p13;
+UPDATE [Kits] SET [CreatedDate] = @p14, [Name] = @p15, [PollSiteID] = @p16, [Status] = @p17, [KitType] = @p18
+OUTPUT 1
+WHERE [KitID] = @p19;
+2025-08-13 15:55:22.451 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 100), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Manifests] ([CreatedBy], [CreatedDate], [ElectionId], [FromFacilityId], [ManifestNumber], [PackedDate], [Status], [ToPollSiteId])
+OUTPUT INSERTED.[ManifestId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+2025-08-13 15:55:22.457 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p8='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = Int32), @p12='?' (DbType = DateTime2), @p13='?' (Size = 50), @p14='?' (DbType = Int32), @p15='?' (DbType = Boolean), @p16='?' (DbType = Int32), @p17='?' (DbType = Int32), @p18='?' (DbType = DateTime2), @p19='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+MERGE [ManifestItems] USING (
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, 0),
+(@p14, @p15, @p16, @p17, @p18, @p19, 1)) AS i ([AssetId], [IsPacked], [ManifestId], [PackedBy], [PackedDate], [SealNumber], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([AssetId], [IsPacked], [ManifestId], [PackedBy], [PackedDate], [SealNumber])
+VALUES (i.[AssetId], i.[IsPacked], i.[ManifestId], i.[PackedBy], i.[PackedDate], i.[SealNumber])
+OUTPUT INSERTED.[ManifestItemId], i._Position;
+2025-08-13 15:55:22.462 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-08-13 15:55:22.466 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@p11='?' (DbType = Int32), @p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?' (DbType = Int32), @p3='?' (DbType = DateTime2), @p4='?' (DbType = Int32), @p5='?' (Size = 200), @p6='?' (DbType = DateTime2), @p7='?' (DbType = DateTime2), @p8='?' (Size = 50), @p9='?' (Size = 100), @p10='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Assets] SET [AssetType] = @p0, [Barcode] = @p1, [Condition] = @p2, [CreatedDate] = @p3, [FacilityId] = @p4, [Location] = @p5, [ModifiedDate] = @p6, [RegisteredDate] = @p7, [RfidTag] = @p8, [SerialNumber] = @p9, [Status] = @p10
+OUTPUT 1
+WHERE [Id] = @p11;
+2025-08-13 15:55:22.470 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:55:22.477 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:22.481 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:22.484 -04:00 [INF] Executing CreatedAtActionResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:55:22.486 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi) in 79.5015ms
+2025-08-13 15:55:22.488 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.CreateManifestWithAssets (AVIDLogistics.WebApi)'
+2025-08-13 15:55:22.490 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/create-with-assets - 201 null application/json; charset=utf-8 91.2669ms
+2025-08-13 15:55:35.160 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/9/finish-packing - application/json 0
+2025-08-13 15:55:35.177 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:55:35.179 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:55:35.184 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:55:35.189 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:35.194 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:35.212 -04:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 200), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (DbType = Int32), @p8='?' (DbType = Int32), @p5='?' (DbType = Boolean), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime2), @p12='?' (DbType = Int32), @p9='?' (DbType = Boolean), @p10='?' (DbType = Int32), @p11='?' (DbType = DateTime2), @p15='?' (DbType = Int32), @p13='?' (DbType = DateTime2), @p14='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Kits] ([CreatedDate], [Name], [PollSiteID], [Status], [KitType])
+OUTPUT INSERTED.[KitID]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+UPDATE [ManifestItems] SET [IsPacked] = @p5, [PackedBy] = @p6, [PackedDate] = @p7
+OUTPUT 1
+WHERE [ManifestItemId] = @p8;
+UPDATE [ManifestItems] SET [IsPacked] = @p9, [PackedBy] = @p10, [PackedDate] = @p11
+OUTPUT 1
+WHERE [ManifestItemId] = @p12;
+UPDATE [Manifests] SET [PackedDate] = @p13, [Status] = @p14
+OUTPUT 1
+WHERE [ManifestId] = @p15;
+2025-08-13 15:55:35.228 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:55:35.231 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 49.8635ms
+2025-08-13 15:55:35.234 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:55:35.236 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/9/finish-packing - 500 null application/json; charset=utf-8 76.5865ms
+2025-08-13 15:55:53.362 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/9/details - null null
+2025-08-13 15:55:53.366 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:55:53.368 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:55:53.374 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:55:53.378 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:53.382 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:55:53.387 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:55:53.388 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 16.4262ms
+2025-08-13 15:55:53.390 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:55:53.393 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/9/details - 200 null application/json; charset=utf-8 30.3489ms
+2025-08-13 15:56:03.559 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/manifests/9/details - null null
+2025-08-13 15:56:03.561 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:56:03.563 -04:00 [INF] Route matched with {action = "GetManifestWithDetails", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetManifestWithDetails(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:56:03.566 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:56:03.571 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:56:03.576 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AssetType], [a].[Barcode], [a].[Condition], [a].[CreatedDate], [a].[FacilityId], [a].[Location], [a].[ModifiedDate], [a].[RegisteredDate], [a].[RfidTag], [a].[SerialNumber], [a].[Status]
+FROM [Assets] AS [a]
+WHERE [a].[Id] = @__id_0
+2025-08-13 15:56:03.578 -04:00 [INF] Executing OkObjectResult, writing value of type 'AVIDLogistics.Application.DTOs.ManifestWithDetailsDto'.
+2025-08-13 15:56:03.579 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi) in 13.9173ms
+2025-08-13 15:56:03.580 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.GetManifestWithDetails (AVIDLogistics.WebApi)'
+2025-08-13 15:56:03.581 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/manifests/9/details - 200 null application/json; charset=utf-8 21.4636ms
+2025-08-13 15:56:15.253 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5166/api/kits - null null
+2025-08-13 15:56:15.256 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.KitsController.GetKits (AVIDLogistics.WebApi)'
+2025-08-13 15:56:15.259 -04:00 [INF] Route matched with {action = "GetKits", controller = "Kits"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetKits(System.String) on controller AVIDLogistics.WebApi.Controllers.KitsController (AVIDLogistics.WebApi).
+2025-08-13 15:56:15.271 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [k].[KitID], [k].[CreatedDate], [k].[Name], [k].[PollSiteID], [k].[Status], [k].[KitType]
+FROM [Kits] AS [k]
+2025-08-13 15:56:15.278 -04:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AVIDLogistics.Infrastructure.Data.WarehouseDbContext'.
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at lambda_method614(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+System.InvalidCastException: Unable to cast object of type 'System.String' to type 'System.Int32'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int32()
+   at lambda_method614(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-08-13 15:56:15.283 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:56:15.285 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.KitsController.GetKits (AVIDLogistics.WebApi) in 24.0307ms
+2025-08-13 15:56:15.286 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.KitsController.GetKits (AVIDLogistics.WebApi)'
+2025-08-13 15:56:15.288 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5166/api/kits - 500 null application/json; charset=utf-8 35.4735ms
+2025-08-13 15:58:30.420 -04:00 [INF] Request starting HTTP/1.1 POST http://localhost:5166/api/manifests/2/finish-packing - application/json 0
+2025-08-13 15:58:30.428 -04:00 [INF] Executing endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:58:30.431 -04:00 [INF] Route matched with {action = "FinishPacking", controller = "Manifests"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] FinishPacking(Int32) on controller AVIDLogistics.WebApi.Controllers.ManifestsController (AVIDLogistics.WebApi).
+2025-08-13 15:58:30.437 -04:00 [INF] Executed DbCommand (1ms) [Parameters=[@__manifestId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[ManifestId], [t].[CreatedBy], [t].[CreatedDate], [t].[ElectionId], [t].[FromFacilityId], [t].[ManifestNumber], [t].[PackedDate], [t].[Status], [t].[ToPollSiteId], [m0].[ManifestItemId], [m0].[AssetId], [m0].[IsPacked], [m0].[ManifestId], [m0].[PackedBy], [m0].[PackedDate], [m0].[SealNumber]
+FROM (
+    SELECT TOP(1) [m].[ManifestId], [m].[CreatedBy], [m].[CreatedDate], [m].[ElectionId], [m].[FromFacilityId], [m].[ManifestNumber], [m].[PackedDate], [m].[Status], [m].[ToPollSiteId]
+    FROM [Manifests] AS [m]
+    WHERE [m].[ManifestId] = @__manifestId_0
+) AS [t]
+LEFT JOIN [ManifestItems] AS [m0] ON [t].[ManifestId] = [m0].[ManifestId]
+ORDER BY [t].[ManifestId]
+2025-08-13 15:58:30.442 -04:00 [INF] Executing ObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-08-13 15:58:30.445 -04:00 [INF] Executed action AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi) in 10.0684ms
+2025-08-13 15:58:30.447 -04:00 [INF] Executed endpoint 'AVIDLogistics.WebApi.Controllers.ManifestsController.FinishPacking (AVIDLogistics.WebApi)'
+2025-08-13 15:58:30.448 -04:00 [INF] Request finished HTTP/1.1 POST http://localhost:5166/api/manifests/2/finish-packing - 500 null application/json; charset=utf-8 28.0065ms

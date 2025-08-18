@@ -3,127 +3,127 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Serilog;
 using AVIDLogistics.Infrastructure.Data;
 using AVIDLogistics.Application.Interfaces;
+using AVIDLogistics.Infrastructure.Repositories;
 using AVIDLogistics.Infrastructure.Services;
+using AVIDLogistics.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
-    .Enrich.FromLogContext()
     .WriteTo.Console()
-    .WriteTo.File("logs/warehouse-api-.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.File("logs/avidlogistics-.txt", rollingInterval: RollingInterval.Day)
     .CreateLogger();
 
 builder.Host.UseSerilog();
 
 // Add services to the container
-builder.Services.AddControllers()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-    });
-
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddControllers();
 
 // Configure Entity Framework
 builder.Services.AddDbContext<WarehouseDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("AVIDLogisticsDatabase")));
 
 // Configure JWT Authentication
-var jwtKey = builder.Configuration["Jwt:Secret"] ?? "your-256-bit-secret-key-here-make-it-long-enough";
-var jwtIssuer = builder.Configuration["Jwt:Issuer"] ?? "AVIDLogistics";
-var jwtAudience = builder.Configuration["Jwt:Audience"] ?? "AVIDLogistics";
+var jwtKey = builder.Configuration["Jwt:Key"] ?? "your-super-secret-jwt-key-that-is-at-least-32-characters-long";
+var key = Encoding.ASCII.GetBytes(jwtKey);
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey)),
-            ValidateIssuer = true,
-            ValidIssuer = jwtIssuer,
-            ValidateAudience = true,
-            ValidAudience = jwtAudience,
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero
-        };
-    });
-
-// Configure role-based authorization policies
-builder.Services.AddAuthorization(options =>
+builder.Services.AddAuthentication(options =>
 {
-    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
-    options.AddPolicy("WarehouseStaff", policy => policy.RequireRole("Admin", "WarehouseStaff"));
-    options.AddPolicy("Courier", policy => policy.RequireRole("Admin", "WarehouseStaff", "Courier"));
-    options.AddPolicy("Auditor", policy => policy.RequireRole("Admin", "Auditor"));
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(options =>
+{
+    options.RequireHttpsMetadata = false;
+    options.SaveToken = true;
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ClockSkew = TimeSpan.Zero
+    };
 });
 
-
-
-// Register Infrastructure repositories
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.AssetRepository>();
-builder.Services.AddScoped<IAssetRepository, AVIDLogistics.Infrastructure.Repositories.AssetRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ElectionRepository>();
-builder.Services.AddScoped<IElectionRepository, AVIDLogistics.Infrastructure.Repositories.ElectionRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.SealRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ManifestRepository>();
-builder.Services.AddScoped<IManifestRepository, AVIDLogistics.Infrastructure.Repositories.ManifestRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ManifestItemRepository>();
-builder.Services.AddScoped<IManifestItemRepository, AVIDLogistics.Infrastructure.Repositories.ManifestItemRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ChainOfCustodyRepository>();
-builder.Services.AddScoped<IChainOfCustodyRepository, AVIDLogistics.Infrastructure.Repositories.ChainOfCustodyRepository>();
-builder.Services.AddScoped<IScannedFormRepository, AVIDLogistics.Infrastructure.Repositories.ScannedFormRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.ActivityRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.FacilityRepository>();
-builder.Services.AddScoped<IFacilityRepository, AVIDLogistics.Infrastructure.Repositories.FacilityRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.KitRepository>();
-builder.Services.AddScoped<IKitRepository, AVIDLogistics.Infrastructure.Repositories.KitRepository>();
-builder.Services.AddScoped<AVIDLogistics.Infrastructure.Repositories.PollSiteRepository>();
-builder.Services.AddScoped<IPollSiteRepository, AVIDLogistics.Infrastructure.Repositories.PollSiteRepository>();
-builder.Services.AddScoped<INotificationGateway, AVIDLogistics.Infrastructure.Services.NotificationGateway>();
-
-// Register new CoC repositories
-builder.Services.AddScoped<ISignatureRepository, AVIDLogistics.Infrastructure.Repositories.SignatureRepository>();
-builder.Services.AddScoped<ICoCFormStatusRepository, AVIDLogistics.Infrastructure.Repositories.CoCFormStatusRepository>();
-
-// Register Application services
-builder.Services.AddScoped<AVIDLogistics.Application.Services.ManifestService>();
-builder.Services.AddScoped<AVIDLogistics.Application.Services.CoCFormGenerationService>();
-builder.Services.AddScoped<AVIDLogistics.Application.Services.CoCNotificationService>();
-builder.Services.AddScoped<AVIDLogistics.Application.UseCases.ChainOfCustody.ScannedFormService>();
-
-// Add CORS for frontend
+// Configure CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:3000", "http://localhost:3001")
+        policy.AllowAnyOrigin()
               .AllowAnyMethod()
-              .AllowAnyHeader()
-              .AllowCredentials();
+              .AllowAnyHeader();
     });
 });
+
+// Register Repositories (both interfaces and concrete classes for controllers)
+builder.Services.AddScoped<IActivityRepository, ActivityRepository>();
+builder.Services.AddScoped<ActivityRepository>();
+builder.Services.AddScoped<IAlertsRepository, AlertsRepository>();
+builder.Services.AddScoped<AlertsRepository>();
+builder.Services.AddScoped<IAssetRepository, AssetRepository>();
+builder.Services.AddScoped<AssetRepository>();
+builder.Services.AddScoped<IAuditSessionRepository, AuditSessionRepository>();
+builder.Services.AddScoped<AuditSessionRepository>();
+builder.Services.AddScoped<IChainOfCustodyRepository, ChainOfCustodyRepository>();
+builder.Services.AddScoped<ChainOfCustodyRepository>();
+builder.Services.AddScoped<ICoCFormStatusRepository, CoCFormStatusRepository>();
+builder.Services.AddScoped<CoCFormStatusRepository>();
+builder.Services.AddScoped<IDeliveryManifestRepository, DeliveryManifestRepository>();
+builder.Services.AddScoped<DeliveryManifestRepository>();
+builder.Services.AddScoped<IElectionRepository, ElectionRepository>();
+builder.Services.AddScoped<ElectionRepository>();
+builder.Services.AddScoped<IFacilityRepository, FacilityRepository>();
+builder.Services.AddScoped<FacilityRepository>();
+builder.Services.AddScoped<IKitRepository, KitRepository>();
+builder.Services.AddScoped<KitRepository>();
+builder.Services.AddScoped<IManifestItemRepository, ManifestItemRepository>();
+builder.Services.AddScoped<ManifestItemRepository>();
+builder.Services.AddScoped<IManifestRepository, ManifestRepository>();
+builder.Services.AddScoped<ManifestRepository>();
+builder.Services.AddScoped<IPollSiteRepository, PollSiteRepository>();
+builder.Services.AddScoped<PollSiteRepository>();
+builder.Services.AddScoped<IReportingRepository, ReportingRepository>();
+builder.Services.AddScoped<ReportingRepository>();
+builder.Services.AddScoped<IScannedFormRepository, ScannedFormRepository>();
+builder.Services.AddScoped<ScannedFormRepository>();
+builder.Services.AddScoped<ISealRepository, SealRepository>();
+builder.Services.AddScoped<SealRepository>();
+builder.Services.AddScoped<ISignatureRepository, SignatureRepository>();
+builder.Services.AddScoped<SignatureRepository>();
+
+// Register Services
+builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IJwtService, JwtService>();
+builder.Services.AddScoped<INotificationGateway, NotificationGateway>();
+// builder.Services.AddScoped<IManifestService, ManifestService>(); // Commented out due to interface mismatch
+builder.Services.AddScoped<CoCFormGenerationService>();
+builder.Services.AddScoped<CoCNotificationService>();
+
+// Register Use Cases - only register classes that exist
+// Note: Use case registrations can be added later as needed
+
+// Register OCR Service - commented out due to missing interface
+// builder.Services.AddScoped<IOcrService, OcrService>();
 
 // Configure Swagger/OpenAPI
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "AVID Logistics Warehouse Management API",
+    c.SwaggerDoc("v1", new OpenApiInfo 
+    { 
+        Title = "AVID Logistics API", 
         Version = "v1",
-        Description = "Election-centric warehouse management system for tracking assets, chain of custody, and manifests"
+        Description = "API for AVID Logistics Management System"
     });
-
+    
+    // Add JWT authentication to Swagger
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Enter 'Bearer' [space] and then your token in the text input below.",
@@ -132,7 +132,7 @@ builder.Services.AddSwaggerGen(c =>
         Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer"
     });
-
+    
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
@@ -149,101 +149,47 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Remove hardcoded port configuration to use launch settings
-
-// Add health checks
-builder.Services.AddHealthChecks()
-    .AddDbContextCheck<WarehouseDbContext>();
+// Add Health Checks
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 
-// Middleware pipeline
-app.UseMiddleware<ExceptionHandlingMiddleware>();
-app.UseHttpsRedirection();
-app.UseRouting();
-app.UseCors("AllowFrontend");
-app.UseAuthentication();
-app.UseAuthorization();
-
-if (app.Environment.IsDevelopment() || app.Environment.IsStaging())
+// Configure the HTTP request pipeline
+if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AVID Logistics Warehouse API v1");
-        c.RoutePrefix = string.Empty;
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AVID Logistics API V1");
+        c.RoutePrefix = string.Empty; // Set Swagger UI at the app's root
     });
 }
 
+app.UseHttpsRedirection();
+
+app.UseCors("AllowAll");
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
+
+// Add Health Check endpoint
 app.MapHealthChecks("/health");
 
-// Ensure database is created and seeded
-using (var scope = app.Services.CreateScope())
+// Add a simple root endpoint
+app.MapGet("/", () => "AVID Logistics API is running!");
+
+try
 {
-    var context = scope.ServiceProvider.GetRequiredService<WarehouseDbContext>();
-    try
-    {
-        context.Database.EnsureCreated();
-        Log.Information("Database initialized successfully");
-    }
-    catch (Exception ex)
-    {
-        Log.Error(ex, "An error occurred while initializing the database");
-    }
+    Log.Information("Starting AVID Logistics API");
+    app.Run();
 }
-
-Log.Information("AVID Logistics Warehouse Management API starting up...");
-app.Run();
-
-// Global exception handling middleware
-public class ExceptionHandlingMiddleware
+catch (Exception ex)
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<ExceptionHandlingMiddleware> _logger;
-
-    public ExceptionHandlingMiddleware(RequestDelegate next, ILogger<ExceptionHandlingMiddleware> logger)
-    {
-        _next = next;
-        _logger = logger;
-    }
-
-    public async Task InvokeAsync(HttpContext context)
-    {
-        try
-        {
-            await _next(context);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "An unhandled exception occurred");
-            await HandleExceptionAsync(context, ex);
-        }
-    }
-
-    private static async Task HandleExceptionAsync(HttpContext context, Exception exception)
-    {
-        context.Response.ContentType = "application/json";
-
-        var response = new
-        {
-            error = new
-            {
-                message = exception.Message,
-                type = exception.GetType().Name
-            }
-        };
-
-        context.Response.StatusCode = exception switch
-        {
-            InvalidOperationException => 400,
-            UnauthorizedAccessException => 401,
-            ArgumentException => 400,
-            KeyNotFoundException => 404,
-            _ => 500
-        };
-
-        var jsonResponse = JsonSerializer.Serialize(response);
-        await context.Response.WriteAsync(jsonResponse);
-    }
+    Log.Fatal(ex, "Application terminated unexpectedly");
+}
+finally
+{
+    Log.CloseAndFlush();
 }
